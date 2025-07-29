@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinePaint - Changelog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles (Consistent with other pages) */
+        :root {
+            --primary-green: #4CAF50;
+            --primary-green-dark: #388E3C;
+            --background-color: #F5F7FA;
+            --surface-color: #FFFFFF;
+            --text-primary: #212121;
+            --text-secondary: #5f6368;
+            --divider-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation (Consistent with other pages) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            background-color: var(--surface-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            height: 64px;
+            box-sizing: border-box;
+        }
+
+        .header .logo img {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 0.2rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links a[href="changelog.html"] {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1100px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(5px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                margin: 1.5rem 0;
+                font-size: 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        /* Main Content Area */
+        main {
+            padding-top: 64px;
+        }
+
+        .changelog-section {
+            padding: 4rem 2rem 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .changelog-section .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .changelog-section .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+        }
+
+        /* New Changelog Entry Styles */
+        .version-entry {
+            background-color: var(--surface-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .version-entry h3 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .version-summary {
+            display: inline-block;
+            background-color: #e6f4ea;
+            color: var(--primary-green-dark);
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+
+        .version-content {
+            text-align: left;
+        }
+
+        .version-content h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .version-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .version-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer (Consistent with other pages) */
+        .footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: #f0f0f0;
+        color: #424242;
+        border-top: 1px solid #f0f0f0;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="MinePaint Logo"></a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#purpose">Purpose</a>
+            <a href="index.html#showcase">Showcase</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#credits">Credits</a>
+            <a href="changelog.html">Changelog</a>
+            <a href="bugtracker.html">Bugtracker</a>
+            <a href="index.html#download">Download</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Open navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="changelog-section">
+            <h2 class="page-title">Changelog</h2>
+            <p class="page-subtitle">See what's new in MinePaint. Here you can track all the latest features,
+                improvements, and bug fixes in every version.</p>
+
+            <!-- Version 1.0.0 -->
+            <div class="version-entry">
+                <center>
+                    <h3>Version 1.0.0 – July 29, 2025</h3>
+                    <div class="version-summary">Full Release! New Engine, New Features, Improvements, and more!</div>
+                </center>
+                <div class="version-content">
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+                        We're thrilled to announce our return and welcome you to the full release of MinePaint! This
+                        version is a landmark achievement, as we've switched the program's engine to allow for faster
+                        development and the implementation of highly-requested features.
+                    </p>
+
+                    <h4>The New Engine:</h4>
+                    <p>The program has been completely rewritten from the Unity engine to Python (using the PyGame
+                        framework) to enable the implementation of new and improved features!</p>
+                    <p><strong>Advantages of the New Engine:</strong></p>
+                    <ul>
+                        <li><strong>Full Development Potential:</strong> The new foundation allows us to grow the
+                            program without the previous limitations.</li>
+                        <li><strong>Feature Possibilities:</strong> Nearly any feature is now possible to implement,
+                            such as the long-awaited layer system.</li>
+                        <li><strong>Simpler, Cleaner Code:</strong> A more organized codebase means faster development
+                            and fewer bugs.</li>
+                    </ul>
+                    <p><strong>Unavoidable Downsides:</strong></p>
+                    <ul>
+                        <li>A slightly simpler GUI is necessary for performance.</li>
+                        <li>Higher system load (specifically, the application may take longer to start). We have
+                            optimized this as much as possible, and we apologize for any inconvenience.</li>
+                    </ul>
+
+                    <h4>The New "Ice Simple UI":</h4>
+                    <p>The engine change required a complete UI overhaul. Introducing "Ice Simple UI" (ISU) – a clean
+                        interface with soft edges and subtle highlights, designed for simplicity and performance. We
+                        chose the name because its primary light-blue color reminds us of Minecraft's ice block. We have
+                        no immediate plans to change the UI, but we don't rule it out for the future.</p>
+
+                    <h4>New Features:</h4>
+                    <ul>
+                        <li><strong>None Tool:</strong> A safe, default-selected tool that performs no action. It allows
+                            you to safely navigate your canvas and point things out without accidentally placing or
+                            removing blocks.</li>
+                        <li><strong>Dedicated Eraser Tool:</strong> Previously integrated into the Pen tool (via
+                            right-click), the Eraser is now its own tool for convenience. You can adjust the eraser size
+                            from 1 to 10.</li>
+                        <li><strong>Fill Tool:</strong> A tool for rapid drawing. Hold the left mouse button to select
+                            an area, and right-click to confirm the action. It has two modes:
+                            <ul>
+                                <li><strong>Place:</strong> Fills the selected area with the chosen block.</li>
+                                <li><strong>Remove:</strong> Clears all blocks from the selected area on the active
+                                    layer.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Improved Inventory:</strong> The block inventory is now organized into categories
+                            for easier searching. It also includes a search bar (use Ctrl+A+Backspace to quickly clear
+                            your search).</li>
+                        <li><strong>Grid Overlay:</strong> A toggle button in the top-right corner now enables/disables
+                            a helper grid on the canvas. The grid is for reference only and will not appear in saved PNG
+                            images.</li>
+                        <li><strong>Canvas Rulers:</strong> Next to the grid button, a new toggle enables rulers that
+                            display the block count along the X and Y axes. These are also not visible in saved images.
+                        </li>
+                        <li><strong>Layer System:</strong> The highly-anticipated layer system is here! Create complex
+                            scenes that were previously impossible. The layer manager is located to the right of the
+                            hotbar.
+                            <ul>
+                                <li>Use the `+` and `-` buttons to add or remove layers.</li>
+                                <li>Use the `^` and `v` buttons to reorder the selected layer.</li>
+                                <li>The active layer is highlighted, and the project saves your currently selected
+                                    layer.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Custom Canvas Size:</strong> Specify a canvas size on startup or via the 'Resize'
+                            button in Options. The size can range from 2x2 to a maximum of 48x27 blocks.</li>
+                        <li><strong>Special Objects (Sun & Moon):</strong> Found in the 'Special' panel, you can now add
+                            a Sun and Moon as background objects. Their availability depends on the 'Time' panel
+                            settings:
+                            <ul>
+                                <li><strong>Day:</strong> Only the Sun is available.</li>
+                                <li><strong>Night:</strong> Only the Moon is available. Right-click while placing to
+                                    cycle through its phases.</li>
+                                <li><strong>Own:</strong> Both the Sun and Moon can be placed.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Custom Background (Time: Own):</strong> When you select the 'Own' option in the
+                            'Time' panel, you can define a custom gradient background by providing two HEX color codes.
+                        </li>
+                        <li><strong>Weather Effects:</strong> Add atmospheric effects to your scene! Weather is a
+                            background effect with three options: Clear (default), Rain, and Snow.</li>
+                    </ul>
+
+                    <h4>New Blocks:</h4>
+                    <p>A significant number of new blocks, many with unique blockstates, have been added to the program,
+                        which were not available in the old MinePaint.</p>
+
+                    <h4>Improved Features:</h4>
+                    <ul>
+                        <li><strong>Visible Brush & Eraser Size:</strong> When using a brush or eraser size larger than
+                            1, a preview of the affected area is now visible on the canvas, showing exactly what you
+                            will place or erase.</li>
+                        <li><strong>Clearer Inventory Tooltips:</strong> To see a block's name in the inventory, simply
+                            hover over it. The name will now appear clearly at the bottom of the UI.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Version 0.4.0 -->
+            <div class="version-entry">
+                <center>
+                    <h3>Version 0.4.0 – March 19, 2025</h3>
+                    <div class="version-summary">New blocks, new features, UI improvements, a loading screen, and more!
+                    </div>
+                </center>
+                <div class="version-content">
+                    <h4>New Blocks & Variants:</h4>
+                    <ul>
+                        <li>Added a new "Moss Blocks" category, introducing a moss block and a pale moss block.</li>
+                        <li>Added a new category for "Shrieker Blocks" with multiple light-level states.</li>
+                        <li>Added new Log variants: Dark Oak and Pale Oak.</li>
+                        <li>Added new Leaves variants: Dark Oak and Pale Oak.</li>
+                        <li>The Grass Block now has a new blockstate: Snowy Grass.</li>
+                        <li>All leaf blocks can now be waterlogged using the block debugging tool.</li>
+                    </ul>
+
+                    <h4>New Features:</h4>
+                    <ul>
+                        <li><strong>Quick Block Selection:</strong> You can now rapidly select blocks within a category
+                            by hovering over them and pressing keys 1-9. A control hint will appear to guide you.</li>
+                        <li><strong>Quick Blockstate Change:</strong> When using the block debugging tool, you can now
+                            middle-click a block on the canvas to cycle through its special states (currently available
+                            for Shrieker blocks).</li>
+                        <li><strong>New Confirmation Screen:</strong> A warning screen now appears for confirmation
+                            before clearing the entire canvas.</li>
+                        <li><strong>Loading Screen [EXPERIMENTAL]:</strong> A new studio splash screen now appears when
+                            the project starts.</li>
+                    </ul>
+
+                    <h4>Improvements & Texture Changes:</h4>
+                    <ul>
+                        <li>The "Control Hints" feature has graduated from experimental status and is now a core
+                            feature.</li>
+                        <li>The texture of the inventory close button has been updated to be more consistent with the UI
+                            design.</li>
+                    </ul>
+
+                    <h4>Bug fixes:</h4>
+                    <ul>
+                        <li>Fixed a visual bug where the highlighting on the "New/Save/Load" buttons was not visible.
+                            (Bug #007)</li>
+                        <li>Switching from the brush to the debugging tool no longer unintentionally changes a block.
+                            (Bug #008)</li>
+                        <li>The inventory can now be correctly opened with the "E" key immediately after saving or
+                            loading a project. (Bug #009)</li>
+                    </ul>
+
+                    <h4>Technical changes:</h4>
+                    <ul>
+                        <li>Implemented a new backend system for handling complex key combinations.</li>
+                        <li>Optimized the script for creating a new canvas, removing unnecessary processes.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Version 0.3.1 -->
+            <div class="version-entry">
+                <center>
+                    <h3>Version 0.3.1 – March 17, 2025</h3>
+                    <div class="version-summary">Patch, technical, and optimization update!</div>
+                </center>
+                <div class="version-content">
+                    <h4>Technical changes:</h4>
+                    <ul>
+                        <li>Added extensive internal code comments to improve future development speed.</li>
+                        <li>Refactored the internal logic of the quick access inventory bar for better stability and
+                            performance.</li>
+                        <li>The air block is no longer treated as a standard item in the quick access bar.</li>
+                    </ul>
+
+                    <h4>Optimization:</h4>
+                    <ul>
+                        <li>Removed unnecessary code to improve overall performance.</li>
+                        <li>Deleted unused and redundant textures to reduce the application's file size.</li>
+                    </ul>
+
+                    <h4>Bug fixes:</h4>
+                    <ul>
+                        <li>Increased the size of control hints for better readability in all cases. (Bug #005)</li>
+                        <li>Fixed a visual bug where the entire UI would disappear while holding down the clear canvas
+                            shortcut ('C' + 'N'). (Bug #006)</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Version 0.3.0 -->
+            <div class="version-entry">
+                <center>
+                    <h3>Version 0.3.0 – March 16, 2025</h3>
+                    <div class="version-summary">An update adding ores, stones, and many new features, including
+                        experimental control hints!</div>
+                </center>
+                <div class="version-content">
+                    <h4>New Blocks:</h4>
+                    <ul>
+                        <li>Added stone variants: Andesite, Diorite, Calcite, Tuff, Granite.</li>
+                        <li>Added stone ores: Copper, Coal, Iron, Lapis, Redstone, Gold, Emerald, Diamonds, and placed
+                            them in the "Ores" category.</li>
+                        <li>Added Deepslate block with 3 states.</li>
+                        <li>Added deepslate ores: Copper, Coal, Iron, Lapis, Redstone, Gold, Emerald, Diamonds, and
+                            placed them in the "Deepslate Ores" category.</li>
+                        <li>Added Bedrock block.</li>
+                        <li>Added Cobweb block.</li>
+                        <li>Added Lava block with two states.</li>
+                    </ul>
+
+                    <h4>New Features:</h4>
+                    <ul>
+                        <li><strong>Block List</strong> - A new UI element in the inventory that shows all blocks
+                            belonging to a hovered category (e.g., all Dirts, Ores, Leaves).</li>
+                        <li><strong>Easier Block Switching</strong> - You can now switch blocks within a category by
+                            clicking the side previews, not just the central one.</li>
+                        <li><strong>Day/Night Toggle</strong> - You can now switch between day and night using the "T"
+                            key.</li>
+                    </ul>
+
+                    <h4>Experimental Feature:</h4>
+                    <ul>
+                        <li><strong>Control Hints</strong> - Helpful tooltips now appear when hovering over the brush
+                            tool, size options, or the block preview area.</li>
+                    </ul>
+
+                    <h4>Texture Changes:</h4>
+                    <ul>
+                        <li>The block preview area has been visually updated to better match the overall app design.
+                        </li>
+                        <li>The day/night toggle button now features improved icons for both states.</li>
+                    </ul>
+
+                    <h4>Bug fixes:</h4>
+                    <ul>
+                        <li>Fixed a bug where the changelog button could be pressed while other windows (like inventory)
+                            were open.</li>
+                        <li>Fixed a bug where the brush size would reset after a specific sequence of actions involving
+                            the debug stick and inventory. (Bug #004)</li>
+                    </ul>
+
+                    <h4>Technical changes:</h4>
+                    <ul>
+                        <li>The brush size setting is now saved more reliably across all actions.</li>
+                        <li>Internal data structures were updated to support the new Block List feature.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Version 0.2.2 -->
+            <div class="version-entry">
+                <center>
+                    <h3>Version 0.2.2 – March 16, 2025</h3>
+                    <div class="version-summary">Patch version!</div>
+                </center>
+                <div class="version-content">
+                    <h4>Bug fixes:</h4>
+                    <ul>
+                        <li>Fixed the brush size resetting after selecting the block debugging tool. (Bug #003)</li>
+                    </ul>
+                    <h4>Technical changes:</h4>
+                    <ul>
+                        <li>Refactored brush size handling to prevent it from being reset when switching between tools.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="changelog-container">
+                <!-- Version 0.2.1 -->
+                <div class="version-entry">
+                    <center>
+                        <h3>Version 0.2.1 – March 15, 2025</h3>
+                        <div class="version-summary">Patch version!</div>
+                    </center>
+                    <div class="version-content">
+                        <h4>Bug fixes:</h4>
+                        <ul>
+                            <li>Fixed a visual glitch where the daytime air block would briefly appear when removing
+                                blocks at night. (Bug #001)</li>
+                            <li>Fixed an issue where the inventory could not be closed using the "E" key. (Bug #002)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <center>
+                        <h3>Version 0.2.0 – March 15, 2025</h3>
+                        <div class="version-summary">New blocks! Graphics improvements! And bug fixes!</div>
+                    </center>
+                    <div class="version-content">
+                        <h4>New Blocks:</h4>
+                        <ul>
+                            <li>Added grass block variants: Podzol, Mycelium and Dirt Path.</li>
+                            <li>Added dirt block variants: Coarse Dirt and Rooted Dirt.</li>
+                            <li>Added two Sandstone Block Variants: Sandstone and Red Sandstone.</li>
+                            <li>Added two new variants of leaves: Birch Leaves and Spruce Leaves.</li>
+                            <li>Added cactus block.</li>
+                            <li>Added a water block with two states: full, low.</li>
+                        </ul>
+
+                        <h4>New Textures:</h4>
+                        <ul>
+                            <li>The grass block in the inventory has been given a texture change to make it fit.</li>
+                            <li>The dirt block in the inventory has been given a texture change to fit.</li>
+                            <li>The sand block in the inventory has been given a texture change to fit.</li>
+                            <li>The log block in the inventory has been changed in texture to match.</li>
+                            <li>The leaves in the inventory has been given a texture change to make it fit.</li>
+                            <li>Inventory has been updated to fit better.</li>
+                        </ul>
+
+                        <h4>Graphical changes:</h4>
+                        <ul>
+                            <li>Added highlighting for handheld inventory slots.</li>
+                        </ul>
+
+                        <h4>Bug fixes:</h4>
+                        <ul>
+                            <li>Fixed some blocks appearing in the inventory when closing and opening the inventory.
+                            </li>
+                        </ul>
+
+                        <h4>Technical changes:</h4>
+                        <ul>
+                            <li>The Handheld Inventory Board stores numbers between 0 and 9.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <center>
+                        <h3>Version 0.1.0 – March 15, 2025</h3>
+                        <div class="version-summary">First alpha released!</div>
+                    </center>
+                    <div class="version-content">
+
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 MinePaint. All Rights Reserved. A project by MrKazanek.</p>
+    </footer>
+
+    <script>
+        // Mobile menu script
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
