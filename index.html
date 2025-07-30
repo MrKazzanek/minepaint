@@ -270,7 +270,7 @@
 </header>
 
 <main>
-    <!-- The rest of the page content remains the same -->
+    
     <section id="about" class="section">
         <h2>Draw Your World, One Block at a Time</h2>
         <p class="subtitle">Welcome to MinePaint – your creative space for drawing panoramas, structure plans, block art, and beyond. All made using Minecraft-blocks</p>
@@ -339,7 +339,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Hamburger Menu Toggle
+        
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
@@ -348,7 +348,7 @@
             menuToggle.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
+        
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -358,7 +358,7 @@
             });
         });
 
-        // Scroll animations for sections
+        
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -369,7 +369,7 @@
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
 
-        // Active nav link highlighting on scroll (for desktop)
+        
         const desktopNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
         const onScroll = () => {
             let current = 'about';
