@@ -464,3 +464,7 @@ footer {
     .hero-content h1 { font-size: 2.5rem; }
     .authors-grid { flex-direction: column; align-items: center; }
 }
+
+#white{
+    color: white;
+}
