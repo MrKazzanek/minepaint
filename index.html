@@ -1,409 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MinePaint</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="app_icon.png">
-<style>
-:root {
---primary-green: #4CAF50;
---primary-green-dark: #388E3C;
---background-color: #F5F7FA;
---surface-color: #FFFFFF;
---text-primary: #212121;
---text-secondary: #5f6368;
---divider-color: #e0e0e0;
-}
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        background-color: var(--background-color);
-        color: var(--text-primary);
-    }
-
-    
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 2rem;
-        background-color: var(--surface-color);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        z-index: 1000;
-        height: 64px;
-        box-sizing: border-box;
-    }
-
-    .header .logo img {
-        height: 40px;
-        vertical-align: middle;
-    }
-
-    
-    .nav-links {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-links a {
-        font-weight: 500;
-        color: var(--text-secondary);
-        text-decoration: none;
-        margin: 0 1rem;
-        padding: 0.5rem 0.2rem;
-        border-bottom: 2px solid transparent;
-        transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-        color: var(--primary-green);
-    }
-
-    .nav-links a.active {
-        color: var(--primary-green);
-        border-bottom-color: var(--primary-green);
-    }
-    
-   
-    .menu-toggle {
-        display: none; 
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 0;
-        z-index: 1001;
-    }
-
-    .menu-toggle .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: var(--text-primary);
-        transition: all 0.3s ease-in-out;
-    }
-
-   
-    @media (max-width: 1100px) {
-        .nav-links {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(5px);
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateY(-100%);
-            transition: transform 0.4s ease-in-out;
-        }
-
-        .nav-links.active {
-            transform: translateY(0);
-        }
-
-        .nav-links a {
-            margin: 1.5rem 0;
-            font-size: 1.5rem;
-        }
-
-        .menu-toggle {
-            display: block; 
-        }
-        
-        
-        .menu-toggle.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        .menu-toggle.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-    }
-
-    main {
-        padding-top: 64px;
-    }
-    
-    .section {
-        padding: 6rem 2rem;
-        max-width: 1100px;
-        margin: 0 auto;
-        text-align: center;
-        border-bottom: 1px solid var(--divider-color);
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .section h2 {
-        font-size: 2.8rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: 1.5rem;
-    }
-    
-    .section .subtitle {
-        font-size: 1.25rem;
-        color: var(--text-secondary);
-        max-width: 700px;
-        margin: 0 auto 3rem auto;
-        line-height: 1.6;
-    }
-
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        text-align: left;
-    }
-
-    .card {
-        background-color: var(--surface-color);
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-
-    .card img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .card-content { padding: 1.5rem; }
-    .card-content h3 { font-size: 1.4rem; margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-green); }
-
-    .btn {
-        display: inline-block;
-        background-color: var(--primary-green);
-        color: white;
-        padding: 1rem 2.5rem;
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        margin: 0.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .btn:hover {
-        background-color: var(--primary-green-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-
-    .btn.secondary {
-        background-color: var(--surface-color);
-        color: var(--primary-green);
-        border: 1px solid var(--primary-green);
-    }
-    
-    .btn.secondary:hover { background-color: #e8f5e9; }
-    
-    #requirements {
-        margin-top: 3rem;
-        padding: 2rem;
-        background-color: var(--surface-color);
-        border-radius: 12px;
-        text-align: left;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    
-    #requirements h3 { text-align: center; color: var(--text-primary); }
-
-    .footer {
-        text-align: center;
-        padding: 2rem;
-        background-color: #f0f0f0;
-        color: #424242;
-        border-top: 1px solid #f0f0f0;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinePaint - The Ultimate 2D Block Drawing Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-    <div class="logo">
-        <img src="logo.png" alt="MinePaint Logo">
-    </div>
-    <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#purpose">Purpose</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#features">Features</a>
-        <a href="#credits">Credits</a>
-        <a href="changelog.html" target="_self">Changelog</a>
-        
-        <a href="#download">Download</a>
-    </nav>
-    <button class="menu-toggle" aria-label="Open navigation menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-</header>
 
-<main>
-    
-    <section id="about" class="section">
-        <h2>Draw Your World, One Block at a Time</h2>
-        <p class="subtitle">Welcome to MinePaint – your creative space for drawing panoramas, structure plans, block art, and beyond. All made using Minecraft-blocks</p>
-        <a href="#download" class="btn">Download now</a>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <!-- Placeholder for logo -->
+                <img src="https://placehold.co/50x50/3c8527/white?text=MP" alt="MinePaint Logo">
+                <span>MinePaint</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#description">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#authors">Authors</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="#download" class="btn-nav">Download</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Create. Build. Paint.</h1>
+            <p>The ultimate tool for drawing 2D images, panoramas, and schematics using blocks.</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">Download Now</a>
+                <a href="#description" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
     </section>
 
-    <section id="purpose" class="section">
-        <h2>What can you do with MinePaint?</h2>
-        <p class="subtitle">MinePaint isn’t limited to one purpose – you can use it for things like:</p>
-        <div class="card-container">
-            <div class="card"><div class="card-content"><h3>World Panoramas</h3><p>With a wide selection of blocks, you can create detailed Minecraft-style panoramas of existing biomes or entirely custom landscapes.</p></div></div>
-            <div class="card"><div class="card-content"><h3>House Floor Design</h3><p>With a vast selection of blocks, you can create the perfect floor pattern for your house and later bring it into the game!</p></div></div>
+    <!-- Description Section -->
+    <section id="description" class="section">
+        <div class="container">
+            <h2 class="section-title">What is MinePaint?</h2>
+            <div class="content-text">
+                <p>MinePaint is a powerful tool designed for drawing 2D images, panoramas, schematics, floor plans, and more using Minecraft-style blocks. Whether you are planning a massive build or creating pixel art, MinePaint gives you the canvas you need.</p>
+                <p>With an intuitive interface and a robust engine, it bridges the gap between imagination and blocky reality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features & Tools Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Tools & Features</h2>
             
+            <div class="tools-grid">
+                <div class="card tool-card">
+                    <h3>🖊️ Pen</h3>
+                    <p>Standard drawing tool for placing blocks precisely.</p>
+                </div>
+                <div class="card tool-card">
+                    <h3>🪣 Fill</h3>
+                    <p>Instantly fill or clear a selected area with blocks.</p>
+                </div>
+                <div class="card tool-card">
+                    <h3>🎨 Picker</h3>
+                    <p>Quickly select a block from the canvas to use.</p>
+                </div>
+                <div class="card tool-card">
+                    <h3>🧹 Eraser</h3>
+                    <p>Remove blocks easily. Includes size adjustment.</p>
+                </div>
+                <div class="card tool-card">
+                    <h3>🚫 None</h3>
+                    <p>Safely navigate without editing the canvas.</p>
+                </div>
+            </div>
+
+            <div class="features-list">
+                <h3>Core Capabilities</h3>
+                <ul>
+                    <li><strong>Layer System:</strong> Create complex scenes with multiple layers.</li>
+                    <li><strong>Smart Hotbar:</strong> Quick access to your last 9 used blocks.</li>
+                    <li><strong>Save & Load:</strong> Native support for <code>.mcpaint</code> files.</li>
+                    <li><strong>Export:</strong> Save your work as high-quality PNG images.</li>
+                    <li><strong>Screenshots:</strong> Capture moments instantly with F2.</li>
+                    <li><strong>Custom Size:</strong> Canvas resizing up to 300x300 blocks.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="showcase" class="section">
-        <h2>See MinePaint in Action</h2>
-        <p class="subtitle">See what the app and user interface look like:</p>
-        <div class="card-container">
-            <div class="card"><img src="ui1.png" alt="MinePaint UI"></div>
-            <div class="card"><img src="ui2.png" alt="Fill UI"></div>
-            <div class="card"><img src="ui3.png" alt="Panorama"></div>
+    <!-- Authors Section -->
+    <section id="authors" class="section">
+        <div class="container">
+            <h2 class="section-title">The Studio</h2>
+            <p class="subtitle">Brought to you by <strong>Studio QozaWorks</strong></p>
             
+            <div class="authors-grid">
+                <div class="author-card">
+                    <div class="avatar" style="background-color: #3b8526;">M</div>
+                    <h4>MrKazanek</h4>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="author-card">
+                    <div class="avatar" style="background-color: #265c85;">A</div>
+                    <h4>XYZ (Antek)</h4>
+                    <p>Developer / Contributor</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="features" class="section">
-        <h2>Powerful, Yet Simple Features</h2>
-        <p class="subtitle">We've packed MinePaint with tools that are easy to learn but powerful in practice.</p>
-        <div class="card-container">
-            <!-- <div class="card"><div class="card-content"><h3>Many tools</h3><p>They make drawing and designing easier. Try the “fill” tool – hold the left mouse button to select an area on the canvas, then fill it with a chosen block or clear it by confirming the selection with the right mouse button.</p></div></div>
-            <div class="card"><div class="card-content"><h3>Sun & Moon Control</h3><p>Set the mood by placing and positioning the sun or moon, complete with lunar phases.</p></div></div> -->
-            <div class="card"><div class="card-content"><h3>Save your work</h3><p>You can save your creation using the “Save” button and return to it later with the “Load” button. You can also save your work as an image by clicking “Save PNG”.</p></div></div>
-        </div>
-    </section>
-    
-    <section id="credits" class="section">
-        <h2>Authors & Acknowledgements</h2>
-        <p class="subtitle">MinePaint is a project developed by <strong>QozaWorks</strong>.<br><br>The main creators are MrKazanek and Antek (thanks for the help with saving – I definitely couldn’t have figured it out alone, lol), but this wouldn’t have been possible without the community’s support, which has already provided and continues to offer great ideas for improving the program!</p>
-    </section>
-
-    <section id="download" class="section">
-        <h2>Get MinePaint</h2>
-        <p class="subtitle">Download the latest version for free and start your artistic journey today.</p>
-        
-        <!-- <div>
-            v. Alp-Y25R01
-            <a href="MinePaint-v1.0-setup.exe" class="btn" target="_blank">Download (.exe)</a>
-            <a href="MinePaint-Package-1.0.zip" class="btn secondary" target="_blank">Download (Package)</a>
-        </div>
-        <hr> -->
-        <div>
+    <!-- Download Section -->
+    <section id="download" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-white">Download MinePaint</h2>
             
-            <a href="https://www.mediafire.com/file/fe73pe9o5jmmqsy/MinePaint.exe/file" class="btn" target="_blank">Download (.exe)</a>
-        </div>
-        <div id="requirements">
-            <h3>System Requirements</h3>
-            <ul>
-                <li><strong>OS:</strong> Windows 7, 8, 10, or 11</li>
-                <li><strong>Storage:</strong> 100 MB available space</li>
-                <li><em>(Note: Final requirements may vary)</em></li>
-            </ul>
+            <div class="download-layout">
+                <!-- Left: Versions -->
+                <div class="download-main">
+                    <div class="latest-release">
+                        <h3>Latest Version</h3>
+                        <div class="release-card highlight">
+                            <div class="release-info">
+                                <h4>Version Alp-Y25R01</h4>
+                                <span class="badge alpha">Alpha</span>
+                                <span class="date">December 6, 2025</span>
+                            </div>
+                            <p>New Godot Engine, improved performance, and cleaner UI.</p>
+                            <a href="#" class="btn btn-primary full-width">Download Windows (x64)</a>
+                        </div>
+                    </div>
+
+                    <div class="older-releases">
+                        <h3>Older Versions</h3>
+                        <div class="release-card small">
+                            <span>Version 1.0 (Full Release)</span>
+                            <a href="#">Download</a>
+                        </div>
+                        <div class="release-card small">
+                            <span>Version 0.4.0</span>
+                            <a href="#">Download</a>
+                        </div>
+                        <div class="release-card small">
+                            <span>Version 0.3.0</span>
+                            <a href="#">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Requirements -->
+                <div class="system-req">
+                    <h3>System Requirements</h3>
+                    <ul>
+                        <li><strong>OS:</strong> Windows 10/11 (64-bit)</li>
+                        <li><strong>Processor:</strong> Dual Core 2.0 GHz</li>
+                        <li><strong>Memory:</strong> 4 GB RAM</li>
+                        <li><strong>Graphics:</strong> OpenGL 3.3 compatible</li>
+                        <li><strong>Storage:</strong> 200 MB available space</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
-</main>
 
-<footer class="footer">
-    <p>© 2025 MinePaint. All Rights Reserved. A project by QozaWorks.</p>
-</footer>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Studio QozaWorks. All rights reserved.</p>
+            <p>MinePaint is not affiliated with Mojang Studios.</p>
+        </div>
+    </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
-
-        
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => observer.observe(section));
-
-        
-        const desktopNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-        const onScroll = () => {
-            let current = 'about';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 65) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            desktopNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', onScroll);
-    });
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
