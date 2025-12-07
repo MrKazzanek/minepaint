@@ -5,206 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MinePaint - Changelog</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-light">
 
+    <!-- Header (Simplified) -->
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://placehold.co/50x50/3c8527/white?text=MP" alt="MinePaint Logo">
-                    <span>MinePaint</span>
+                <a href="index.html">
+                    <img src="logo.png" width="200px" alt="MinePaint Logo">
+                    
                 </a>
             </div>
             <nav>
-                <a href="index.html" class="btn-nav ghost">Back to Home</a>
+                <a href="index.html" class="btn-nav ghost"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
             </nav>
         </div>
     </header>
 
-    <div class="container changelog-container">
-        <h1 class="page-title">Changelog</h1>
-
-        <!-- Version Alp-Y25R01 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version Alp-Y25R01</h2>
-                <span class="date">December 6, 2025</span>
-            </div>
-            <div class="entry-content">
-                <p><strong>We’re returning to Alpha!</strong> A brand-new engine, a fresh versioning system, and a rebuilt foundation for the future.</p>
-                
-                <h3>Back to Alpha</h3>
-                <p>Due to major internal changes, we’re officially returning to the Alpha stage. The engine migration required us to rewrite the entire project from scratch to provide a stable foundation.</p>
-
-                <h3>Why a new engine? (Godot)</h3>
-                <p>Our previous engine was not well-suited for the features we needed. Switching to Godot makes the application run smoother, faster, and more reliably. This is the final engine switch!</p>
-
-                <h3>New Versioning System</h3>
-                <p>Format: <code>Alp-Y25R01</code></p>
-                <ul>
-                    <li><strong>Alp-:</strong> Alpha release.</li>
-                    <li><strong>Y25:</strong> Release year (2025).</li>
-                    <li><strong>R01:</strong> Revision number.</li>
-                    <li><strong>a/b/c:</strong> Bugfix iterations.</li>
-                </ul>
-
-                <h3>Current Features</h3>
-                <ul>
-                    <li>Draw (LMB), Erase (RMB).</li>
-                    <li>Select 1 of 10 blocks (Keys 1-9, 0).</li>
-                    <li>Pick block under cursor (Scroll Wheel).</li>
-                    <li>Save/Load <code>.mcpaint</code> projects.</li>
-                    <li>Clear canvas & Export to PNG.</li>
-                </ul>
-
-                <h3>Implemented (Coming to UI Soon)</h3>
-                <ul>
-                    <li>Custom canvas size (up to 999x999).</li>
-                </ul>
-            </div>
+    <div class="container section">
+        <div class="changelog-header">
+            <h1>Update History</h1>
+            <p>Track the evolution of MinePaint from early Alpha to the latest release.</p>
         </div>
 
-        <!-- Version 1.0 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 1.0</h2>
-                <span class="date">July 29, 2025</span>
-            </div>
-            <div class="entry-content">
-                <p><strong>Full Release! New Engine, New Features!</strong></p>
-                <p> rewritten from Unity to Python (PyGame) for faster development. Introducing "Ice Simple UI".</p>
+        <div class="timeline">
+            
+            <!-- Version Alp-Y25R01 -->
+            <div class="timeline-item">
+                <div class="timeline-dot alpha"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                            <h2>Version Alp-Y25R01</h2>
+                        </div>
+                        <span class="version-date">December 6, 2025</span>
+                    </div>
+                    
+                    <p class="summary-text"><strong>We’re returning to Alpha!</strong> A brand-new Godot engine, a fresh versioning system, and a rebuilt foundation.</p>
 
-                <h3>New Features</h3>
-                <ul>
-                    <li><strong>None Tool:</strong> Safe navigation mode.</li>
-                    <li><strong>Dedicated Eraser:</strong> Now a separate tool.</li>
-                    <li><strong>Fill Tool:</strong> Place or Remove blocks in an area.</li>
-                    <li><strong>Improved Inventory:</strong> Categories & Search bar.</li>
-                    <li><strong>Grid & Rulers:</strong> Helper overlays (not visible in export).</li>
-                    <li><strong>Layer System:</strong> Create complex scenes.</li>
-                    <li><strong>Custom Canvas Size:</strong> 2x2 to 48x27 blocks (in this version).</li>
-                    <li><strong>Special Objects:</strong> Sun & Moon (dependent on Time settings).</li>
-                    <li><strong>Weather Effects:</strong> Rain and Snow.</li>
-                </ul>
-            </div>
-        </div>
+                    <div class="changes-list">
+                        <h3><i class="fa-solid fa-rotate"></i> Back to Alpha</h3>
+                        <p>The engine migration required us to rewrite the entire project from scratch. Switching to <strong>Godot</strong> makes the application run smoother and faster.</p>
+                        
+                        <h3><i class="fa-solid fa-tag"></i> New Versioning System</h3>
+                        <code>Alp-Y25R01</code> (Alpha - Year 25 - Rev 01)
 
-        <!-- Version 0.4.0 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.4.0</h2>
-                <span class="date">March 19, 2025</span>
+                        <h3><i class="fa-solid fa-star"></i> Current Features</h3>
+                        <ul>
+                            <li>Draw (LMB) & Erase (RMB).</li>
+                            <li>Select blocks using Keys 1-9.</li>
+                            <li>Pick block with Scroll Wheel.</li>
+                            <li>Save/Load <code>.mcpaint</code> projects.</li>
+                            <li>Support for custom canvas size (Code implemented).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="entry-content">
-                <h3>New Blocks & Variants</h3>
-                <ul>
-                    <li>Moss Blocks (standard & pale).</li>
-                    <li>Shrieker Blocks (light states).</li>
-                    <li>Dark Oak & Pale Oak logs/leaves.</li>
-                    <li>Snowy Grass blockstate.</li>
-                </ul>
-                <h3>New Features</h3>
-                <ul>
-                    <li>Quick Block Selection (Hover + 1-9).</li>
-                    <li>Middle-click to cycle blockstates (Debug tool).</li>
-                    <li>Loading Screen & Clear Canvas confirmation.</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Version 0.3.1 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.3.1</h2>
-                <span class="date">March 17, 2025</span>
-            </div>
-            <div class="entry-content">
-                <p>Patch, technical, and optimization update.</p>
-                <ul>
-                    <li>Refactored quick access inventory logic.</li>
-                    <li>Air block removed from quick access bar.</li>
-                    <li>Removed unused textures to reduce file size.</li>
-                    <li>Bug fix: UI disappearing with 'C'+'N' shortcut.</li>
-                </ul>
-            </div>
-        </div>
+            <!-- Version 1.0 -->
+            <div class="timeline-item">
+                <div class="timeline-dot release"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-release">Full Release</span>
+                            <h2>Version 1.0</h2>
+                        </div>
+                        <span class="version-date">July 29, 2025</span>
+                    </div>
 
-        <!-- Version 0.3.0 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.3.0</h2>
-                <span class="date">March 16, 2025</span>
-            </div>
-            <div class="entry-content">
-                <h3>New Blocks</h3>
-                <ul>
-                    <li>Stones: Andesite, Diorite, Calcite, Tuff, Granite.</li>
-                    <li>Ores: Copper, Coal, Iron, Lapis, Redstone, Gold, Emerald, Diamond.</li>
-                    <li>Deepslate & Deepslate Ores.</li>
-                    <li>Bedrock, Cobweb, Lava.</li>
-                </ul>
-                <h3>Features</h3>
-                <ul>
-                    <li>Block List in inventory categories.</li>
-                    <li>Day/Night toggle (Key 'T').</li>
-                    <li>Experimental: Control Hints.</li>
-                </ul>
-            </div>
-        </div>
+                    <p class="summary-text">Full Release! New Engine (Python/PyGame), "Ice Simple UI", and layer system.</p>
 
-         <!-- Version 0.2.2 & 0.2.1 -->
-         <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.2.x Patches</h2>
-                <span class="date">March 16-15, 2025</span>
+                    <div class="changes-list">
+                        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> New Features</h3>
+                        <ul>
+                            <li><strong>Tools:</strong> None Tool, Dedicated Eraser, Fill Tool.</li>
+                            <li><strong>UI:</strong> Grid Overlay, Rulers, Improved Inventory.</li>
+                            <li><strong>Core:</strong> Layer System, Custom Canvas Size (up to 48x27).</li>
+                            <li><strong>World:</strong> Sun & Moon, Weather Effects (Rain/Snow).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="entry-content">
-                <ul>
-                    <li>v0.2.2: Fixed brush size resetting.</li>
-                    <li>v0.2.1: Fixed daytime air block glitch at night.</li>
-                    <li>v0.2.1: Fixed inventory not closing with "E".</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Version 0.2.0 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.2.0</h2>
-                <span class="date">March 15, 2025</span>
+            <!-- Version 0.4.0 -->
+            <div class="timeline-item">
+                <div class="timeline-dot feature"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-feature">Feature Update</span>
+                            <h2>Version 0.4.0</h2>
+                        </div>
+                        <span class="version-date">March 19, 2025</span>
+                    </div>
+                    <div class="changes-list">
+                        <ul>
+                            <li>Added Moss Blocks, Shrieker Blocks, Dark/Pale Oak variants.</li>
+                            <li>Added Snowy Grass blockstate.</li>
+                            <li><strong>New:</strong> Quick Block Selection (Hover + 1-9).</li>
+                            <li><strong>New:</strong> Loading Screen & Clear Canvas confirmation.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="entry-content">
-                <h3>New Blocks</h3>
-                <ul>
-                    <li>Podzol, Mycelium, Dirt Path, Coarse Dirt, Rooted Dirt.</li>
-                    <li>Sandstones, Birch & Spruce Leaves, Cactus, Water.</li>
-                </ul>
-                <h3>Graphics</h3>
-                <ul>
-                    <li>Updated inventory textures for better fit.</li>
-                    <li>Handheld inventory slot highlighting.</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Version 0.1.0 -->
-        <div class="changelog-entry">
-            <div class="entry-header">
-                <h2>Version 0.1.0</h2>
-                <span class="date">March 15, 2025</span>
+            <!-- Version 0.3.1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot patch"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-patch">Patch</span>
+                            <h2>Version 0.3.1</h2>
+                        </div>
+                        <span class="version-date">March 17, 2025</span>
+                    </div>
+                    <p>Optimization and technical cleanup.</p>
+                    <div class="changes-list">
+                        <ul>
+                            <li>Refactored quick access inventory logic.</li>
+                            <li>Removed unused textures.</li>
+                            <li>Fixed UI disappearing bug.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="entry-content">
-                <p><strong>First alpha released!</strong> Basic drawing functionality established.</p>
-            </div>
-        </div>
 
+            <!-- Version 0.3.0 -->
+            <div class="timeline-item">
+                <div class="timeline-dot feature"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-feature">Feature Update</span>
+                            <h2>Version 0.3.0</h2>
+                        </div>
+                        <span class="version-date">March 16, 2025</span>
+                    </div>
+                    <div class="changes-list">
+                        <ul>
+                            <li><strong>Blocks:</strong> Stones, Ores, Deepslate, Bedrock, Lava.</li>
+                            <li><strong>Feature:</strong> Block List in inventory categories.</li>
+                            <li><strong>Feature:</strong> Day/Night toggle (Key 'T').</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 0.2.x -->
+            <div class="timeline-item">
+                <div class="timeline-dot patch"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-patch">Patches</span>
+                            <h2>Version 0.2.1 - 0.2.2</h2>
+                        </div>
+                        <span class="version-date">March 15-16, 2025</span>
+                    </div>
+                    <div class="changes-list">
+                        <ul>
+                            <li>Fixed brush size resetting.</li>
+                            <li>Fixed daytime air block glitch at night.</li>
+                            <li>Fixed inventory not closing with "E".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 0.2.0 -->
+            <div class="timeline-item">
+                <div class="timeline-dot feature"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-feature">Feature Update</span>
+                            <h2>Version 0.2.0</h2>
+                        </div>
+                        <span class="version-date">March 15, 2025</span>
+                    </div>
+                    <div class="changes-list">
+                        <ul>
+                            <li>Added Podzol, Mycelium, Dirt variants.</li>
+                            <li>Added Sandstones, Birch/Spruce Leaves, Cactus, Water.</li>
+                            <li>Updated inventory textures and highlighting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 0.1.0 -->
+            <div class="timeline-item">
+                <div class="timeline-dot alpha"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                            <h2>Version 0.1.0</h2>
+                        </div>
+                        <span class="version-date">March 15, 2025</span>
+                    </div>
+                    <p>First alpha released! Basic drawing functionality established.</p>
+                </div>
+            </div>
+
+        </div> <!-- End Timeline -->
     </div>
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 Studio QozaWorks.</p>
+            <p>&copy; 2025 Studio QozaWorks. All rights reserved.</p>
         </div>
     </footer>
 </body>
