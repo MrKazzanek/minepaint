@@ -34,7 +34,85 @@
         </div>
 
         <div class="timeline">
-            
+            <!-- Version Alp-Y25R01 -->
+            <div class="timeline-item">
+                <div class="timeline-dot alpha"></div>
+                <div class="timeline-content">
+                    <div class="version-header">
+                        <div>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                            <h2>Version Alp-Y25R01</h2>
+                        </div>
+                        <span class="version-date">December 7, 2025</span>
+                    </div>
+                    
+                    <p class="summary-text"><strong>The Big Alpha Return!</strong> A massive update introducing a new engine, layer support, advanced tools, and a data-driven block system.</p>
+
+                    <div class="changes-list">
+                        <h3><i class="fa-solid fa-layer-group"></i> Core Features</h3>
+                        <ul>
+                            <li><strong>Layer System:</strong> Full multi-layer support!
+                                <ul>
+                                    <li>Manage layers via the right-side panel (Add <code>+</code> / Remove <code>-</code>).</li>
+                                    <li>Reorder layers using <i class="fa-solid fa-caret-up"></i> and <i class="fa-solid fa-caret-down"></i>.</li>
+                                    <li>Toggle visibility with checkboxes. Active layer is highlighted.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Custom Canvas Size:</strong> Use the "Resize" button to set dimensions from <strong>1x1</strong> up to <strong>300x300</strong> blocks.</li>
+                            <li><strong>Smart Hotbar:</strong> Stores the last 9 used blocks or states. Select via clicking or keys <strong>1-9</strong>.</li>
+                        </ul>
+
+                        <h3><i class="fa-solid fa-toolbox"></i> Tools & Interaction</h3>
+                        <ul>
+                            <li><strong>New Tool Panel:</strong>
+                                <ul>
+                                    <li><i class="fa-solid fa-ban"></i> <strong>None:</strong> View-only mode (safely navigate).</li>
+                                    <li><i class="fa-solid fa-pen"></i> <strong>Pen:</strong> Draw (LMB), Pick Block (Scroll Click), Destroy (RMB).</li>
+                                    <li><i class="fa-solid fa-fill-drip"></i> <strong>Fill:</strong> 
+                                        <br> &nbsp; &bull; <strong>LMB (Start & End):</strong> Fills area with selected block.
+                                        <br> &nbsp; &bull; <strong>RMB (Start & End):</strong> Clears/Destroys area.
+                                    </li>
+                                    <li><i class="fa-solid fa-eye-dropper"></i> <strong>Picker:</strong> Selects block under cursor (works with any button).</li>
+                                    <li><i class="fa-solid fa-eraser"></i> <strong>Eraser:</strong> Destroys blocks (LMB or RMB).</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3><i class="fa-solid fa-box-open"></i> Inventory & Blockstates</h3>
+                        <ul>
+                            <li><strong>Overhauled Inventory:</strong> 
+                                <ul>
+                                    <li>Direct key selection (0-9) removed. Press <strong>'E'</strong> or click the bottom-left button.</li>
+                                    <li>Features: Search (Name/ID), Categories, and Hover Tooltips.</li>
+                                    <li>Auto-closes upon selection.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Advanced Blockstates:</strong> 
+                                <ul>
+                                    <li>Inventory previews now animate through available states (e.g., Log rotation, Grass types).</li>
+                                    <li><strong>Selector:</strong> A "Blockstates" button appears next to Inventory when a multi-state block is active.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3><i class="fa-solid fa-cube"></i> New Content</h3>
+                        <p>Added support for: <strong>Sugar Cane, Cactus, Podzol, Mycelium, Red Sand, Red Sandstone, Gravel, Bedrock, Spruce Leaves, Spruce Logs</strong>.</p>
+                        <p>New Blockstates added for: <em>Grass (Snowy), Dirt (Path), Water (Level), Oak & Spruce Logs.</em></p>
+
+                        <h3><i class="fa-solid fa-flask"></i> Experimental</h3>
+                        <ul>
+                            <li><strong>Screenshot Utility:</strong> Press <strong>F2</strong> to save a snapshot to the <code>MinePaint_Screenshots</code> folder.</li>
+                        </ul>
+
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Technical & Fixes</h3>
+                        <ul>
+                            <li><strong>Data-Driven Architecture:</strong> Blocks are now loaded dynamically from <code>data/blocks.json</code> instead of hardcoded tilesets. This allows easier modification of IDs, names, and textures without engine recompilation.</li>
+                            <li><strong>UI Polish:</strong> Default font changed to <em>Minecraft Five Bold</em>. App logo updated.</li>
+                            <li><strong>Fixes:</strong> Resolved file naming issues during export/save. Fixed Canvas UI scaling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <!-- Version Alp-Y25R01 -->
             <div class="timeline-item">
                 <div class="timeline-dot alpha"></div>
@@ -226,5 +304,6 @@
     </footer>
 </body>
 </html>
+
 
 
