@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -16,7 +18,6 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <!-- Placeholder for logo -->
                 <img src="https://placehold.co/50x50/3c8527/white?text=MP" alt="MinePaint Logo">
                 <span>MinePaint</span>
             </div>
@@ -25,6 +26,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#description">About</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#authors">Authors</a></li>
                     <li><a href="changelog.html">Changelog</a></li>
                     <li><a href="#download" class="btn-nav">Download</a></li>
@@ -36,21 +38,23 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Image -->
     <section id="home" class="hero">
+        <!-- Zmień background.jpg na swój zrzut ekranu -->
+        <div class="hero-bg" style="background-image: url('https://placehold.co/1920x1080/1a1a1a/3c8527?text=MinePaint+Screenshot+Background');"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="container hero-content hidden-el">
             <h1>Create. Build. Paint.</h1>
             <p>The ultimate tool for drawing 2D images, panoramas, and schematics using blocks.</p>
             <div class="hero-buttons">
                 <a href="#download" class="btn btn-primary">Download Now</a>
-                <a href="#description" class="btn btn-secondary">Learn More</a>
+                <a href="#description" class="btn btn-secondary text-white">Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- Description Section -->
-    <section id="description" class="section">
+    <section id="description" class="section hidden-el">
         <div class="container">
             <h2 class="section-title">What is MinePaint?</h2>
             <div class="content-text">
@@ -63,32 +67,37 @@
     <!-- Features & Tools Section -->
     <section id="features" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Tools & Features</h2>
+            <h2 class="section-title hidden-el">Tools & Features</h2>
             
-            <div class="tools-grid">
+            <div class="tools-grid hidden-el">
                 <div class="card tool-card">
-                    <h3>🖊️ Pen</h3>
+                    <div class="icon-box"><i class="fa-solid fa-pen"></i></div>
+                    <h3>Pen</h3>
                     <p>Standard drawing tool for placing blocks precisely.</p>
                 </div>
                 <div class="card tool-card">
-                    <h3>🪣 Fill</h3>
+                    <div class="icon-box"><i class="fa-solid fa-fill-drip"></i></div>
+                    <h3>Fill</h3>
                     <p>Instantly fill or clear a selected area with blocks.</p>
                 </div>
                 <div class="card tool-card">
-                    <h3>🎨 Picker</h3>
+                    <div class="icon-box"><i class="fa-solid fa-eye-dropper"></i></div>
+                    <h3>Picker</h3>
                     <p>Quickly select a block from the canvas to use.</p>
                 </div>
                 <div class="card tool-card">
-                    <h3>🧹 Eraser</h3>
+                    <div class="icon-box"><i class="fa-solid fa-eraser"></i></div>
+                    <h3>Eraser</h3>
                     <p>Remove blocks easily. Includes size adjustment.</p>
                 </div>
                 <div class="card tool-card">
-                    <h3>🚫 None</h3>
+                    <div class="icon-box"><i class="fa-solid fa-hand"></i></div>
+                    <h3>None</h3>
                     <p>Safely navigate without editing the canvas.</p>
                 </div>
             </div>
 
-            <div class="features-list">
+            <div class="features-list hidden-el">
                 <h3>Core Capabilities</h3>
                 <ul>
                     <li><strong>Layer System:</strong> Create complex scenes with multiple layers.</li>
@@ -102,20 +111,41 @@
         </div>
     </section>
 
-    <!-- Authors Section -->
-    <section id="authors" class="section">
+    <!-- Gallery Section (New) -->
+    <section id="gallery" class="section">
         <div class="container">
-            <h2 class="section-title">The Studio</h2>
-            <p class="subtitle">Brought to you by <strong>Studio QozaWorks</strong></p>
+            <h2 class="section-title hidden-el">Screenshots</h2>
+            <div class="gallery-grid hidden-el">
+                <!-- Zmień src na swoje zrzuty ekranu -->
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400/222/white?text=Interface+Preview" alt="MinePaint Interface">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400/333/white?text=Layer+System" alt="Layer System">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400/444/white?text=Drawing+Tools" alt="Drawing Tools">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section id="authors" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title hidden-el">The Studio</h2>
+            <p class="subtitle hidden-el">Brought to you by <strong>Studio QozaWorks</strong></p>
             
-            <div class="authors-grid">
+            <div class="authors-grid hidden-el">
                 <div class="author-card">
-                    <div class="avatar" style="background-color: #3b8526;">M</div>
+                    <!-- Zmień src na awatar -->
+                    <img src="https://placehold.co/150x150/3b8526/white?text=M" alt="MrKazanek" class="avatar-img">
                     <h4>MrKazanek</h4>
                     <p>Lead Developer</p>
                 </div>
                 <div class="author-card">
-                    <div class="avatar" style="background-color: #265c85;">A</div>
+                    <!-- Zmień src na awatar -->
+                    <img src="https://placehold.co/150x150/265c85/white?text=A" alt="Antek" class="avatar-img">
                     <h4>XYZ (Antek)</h4>
                     <p>Developer / Contributor</p>
                 </div>
@@ -124,7 +154,7 @@
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="section bg-dark">
+    <section id="download" class="section bg-dark hidden-el">
         <div class="container">
             <h2 class="section-title text-white">Download MinePaint</h2>
             
@@ -152,10 +182,6 @@
                         </div>
                         <div class="release-card small">
                             <span>Version 0.4.0</span>
-                            <a href="#">Download</a>
-                        </div>
-                        <div class="release-card small">
-                            <span>Version 0.3.0</span>
                             <a href="#">Download</a>
                         </div>
                     </div>
