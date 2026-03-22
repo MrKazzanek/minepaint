@@ -67,6 +67,13 @@ ul { list-style: none; }
 .text-white { color: white !important; }
 
 /* --- Buttons --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Pozwala na zejście przycisków do nowej linii na telefonie */
+}
+
 .btn {
     display: inline-block;
     padding: 14px 28px;
@@ -96,7 +103,6 @@ ul { list-style: none; }
     background-color: transparent;
     border: 2px solid white;
     color: white;
-    margin-left: 15px;
 }
 
 .btn-secondary:hover {
@@ -142,13 +148,23 @@ header {
     letter-spacing: -0.5px;
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .logo img { border-radius: 0px; }
 
 .nav-links { display: flex; gap: 30px; align-items: center; }
 .nav-links a { font-weight: 600; font-size: 0.95rem; color: #555; }
 .nav-links a:hover { color: var(--primary); }
 
-/* --- Hero Section (Updated) --- */
+#white { color: white; }
+
+/* --- Hero Section --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -157,10 +173,9 @@ header {
     text-align: center;
     position: relative;
     color: white;
-    margin-top: -80px; /* pull up behind transparent header if needed, else standard */
+    margin-top: -80px; 
 }
 
-/* Background Image styling */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -173,7 +188,6 @@ header {
     z-index: 1;
 }
 
-/* Overlay to darken image */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -195,7 +209,7 @@ header {
     margin-bottom: 25px;
     font-weight: 800;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    font-family: 'Inter', sans-serif; /* Cleaner look than pixel font for main title */
+    font-family: 'Inter', sans-serif;
 }
 
 .hero-content p {
@@ -285,7 +299,7 @@ header {
     font-weight: bold;
 }
 
-/* --- Gallery Section (New) --- */
+/* --- Gallery Section --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -303,14 +317,13 @@ header {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.gallery-item:hover { transform: scale(1); }
-.gallery-item:hover img { transform: scale(1); }
+.gallery-item:hover { transform: scale(1.02); }
 
-/* --- Authors (Updated) --- */
+/* --- Authors --- */
 .authors-grid {
     display: flex;
     justify-content: center;
@@ -419,55 +432,6 @@ footer {
     transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness (Fixed) --- */
-.hamburger { display: none; cursor: pointer; z-index: 1001; }
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Hidden by default */
-        width: 70%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding: 80px 30px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: right 0.3s ease-in-out;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .nav-links.active {
-        right: 0; /* Show menu */
-    }
-
-    .hamburger {
-        display: block;
-    }
-    
-    .hamburger span {
-        display: block;
-        width: 28px;
-        height: 3px;
-        background: var(--text-main);
-        margin: 6px 0;
-        transition: 0.3s;
-    }
-    
-    /* Hamburger animation when active */
-    .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
-    .hamburger.toggle span:nth-child(2) { opacity: 0; }
-    .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
-
-    .download-layout { grid-template-columns: 1fr; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .authors-grid { flex-direction: column; align-items: center; }
-}
-
-#white{
-    color: white;
-}
 /* =========================================
    CHANGELOG & TIMELINE STYLES
    ========================================= */
@@ -489,15 +453,13 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Timeline Container */
 .timeline {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    padding-left: 30px; /* Space for the line */
+    padding-left: 30px; 
 }
 
-/* The Vertical Line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -509,16 +471,14 @@ footer {
     border-radius: 2px;
 }
 
-/* Individual Items */
 .timeline-item {
     position: relative;
     margin-bottom: 50px;
 }
 
-/* The Dots on the Line */
 .timeline-dot {
     position: absolute;
-    left: -38px; /* Align with line */
+    left: -38px; 
     top: 25px;
     width: 20px;
     height: 20px;
@@ -529,13 +489,11 @@ footer {
     z-index: 2;
 }
 
-/* Dot Colors based on type */
 .timeline-dot.alpha { background: #e67e22; box-shadow: 0 0 0 2px #e67e22; }
 .timeline-dot.release { background: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
 .timeline-dot.feature { background: #3498db; box-shadow: 0 0 0 2px #3498db; }
 .timeline-dot.patch { background: #95a5a6; box-shadow: 0 0 0 2px #95a5a6; }
 
-/* The Content Card */
 .timeline-content {
     background: white;
     padding: 30px;
@@ -551,7 +509,6 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* Little arrow pointing left */
 .timeline-content::before {
     content: '';
     position: absolute;
@@ -565,7 +522,6 @@ footer {
     border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
-/* Header inside the card */
 .version-header {
     display: flex;
     justify-content: space-between;
@@ -590,7 +546,6 @@ footer {
     margin-top: 8px;
 }
 
-/* Tags / Badges */
 .version-tag {
     display: inline-block;
     padding: 4px 10px;
@@ -602,12 +557,11 @@ footer {
     margin-bottom: 5px;
 }
 
-.tag-alpha { background: #e67e22; } /* Orange */
-.tag-release { background: var(--primary); } /* Green */
-.tag-feature { background: #3498db; } /* Blue */
-.tag-patch { background: #7f8c8d; } /* Gray */
+.tag-alpha { background: #e67e22; }
+.tag-release { background: var(--primary); } 
+.tag-feature { background: #3498db; } 
+.tag-patch { background: #7f8c8d; } 
 
-/* Content Typography */
 .summary-text {
     font-size: 1.05rem;
     margin-bottom: 20px;
@@ -654,7 +608,6 @@ footer {
     font-size: 0.9em;
 }
 
-/* Ghost Button for Header */
 .btn-nav.ghost {
     background: transparent;
     border: 1px solid var(--primary);
@@ -669,34 +622,97 @@ footer {
     color: white;
 }
 
-/* Fix for logo text color in header */
-.logo a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+/* =========================================
+   MOBILE RESPONSIVENESS (UNIFIED & FIXED)
+   ========================================= */
+
+.hamburger { 
+    display: none; 
+    cursor: pointer; 
+    z-index: 1002; 
+    position: relative;
 }
 
-/* Mobile Adjustments for Timeline */
 @media (max-width: 768px) {
-    .timeline {
-        padding-left: 0;
-    }
+    /* Zmniejszenie marnowanej przestrzeni */
+    .section { padding: 60px 0; }
     
-    .timeline::before {
-        display: none; /* Hide line on small screens */
-    }
-    
-    .timeline-dot {
-        display: none; /* Hide dots on small screens */
-    }
-    
-    .timeline-content::before {
-        display: none; /* Hide arrow */
-    }
-    
-    .version-header {
+    /* Nawigacja mobilna */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: white;
         flex-direction: column;
+        padding: 100px 30px 30px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 1001;
     }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Animacja Menu Burgera */
+    .hamburger { display: block; }
+    
+    .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--text-main);
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+    
+    .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
+    .hamburger.toggle span:nth-child(2) { opacity: 0; }
+    .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
+
+    .logo img { max-width: 140px; }
+
+    /* Dopasowanie tekstów głównej sekcji */
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; }
+
+    /* Fix ucinanego boxa dla sekcji "Core Capabilities" */
+    .features-list { padding: 25px; }
+    .features-list ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Sekcja Pobierania - przejście z kolumn do 1 pod drugim */
+    .download-layout { grid-template-columns: 1fr; }
+    
+    .release-card.small {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .release-card.small a {
+        width: 100%;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    /* Karty autorów - dopasowanie szerokości */
+    .authors-grid { flex-direction: column; align-items: center; }
+    .author-card { width: 100%; max-width: 300px; padding: 30px 20px; }
+    
+    /* Changelog / Timeline dostosowanie */
+    .timeline { padding-left: 0; }
+    .timeline::before { display: none; }
+    .timeline-dot { display: none; }
+    .timeline-content::before { display: none; }
+    .version-header { flex-direction: column; }
 }
