@@ -20,16 +20,17 @@
     box-sizing: border-box;
 }
 
-html {
+/* --- Twarde zablokowanie przewijania na boki (Fix na telefon) --- */
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
     scroll-behavior: smooth;
-}
-
-body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-main);
     background-color: #fff;
-    overflow-x: hidden;
 }
 
 /* --- Custom Scrollbar --- */
@@ -59,6 +60,7 @@ ul { list-style: none; }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .section { padding: 100px 0; }
@@ -129,6 +131,7 @@ header {
     top: 0;
     z-index: 1000;
     padding: 15px 0;
+    width: 100%;
 }
 
 .nav-container {
@@ -202,6 +205,7 @@ header {
     position: relative;
     z-index: 3;
     max-width: 800px;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -280,7 +284,7 @@ header {
 
 .features-list ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 25px;
 }
@@ -416,7 +420,7 @@ footer {
     background: #0a0a0a;
     color: #666;
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 20px;
     border-top: 1px solid #222;
 }
 
@@ -622,9 +626,8 @@ footer {
     color: white;
 }
 
-
 /* =========================================
-   MOBILE RESPONSIVENESS (UNIFIED & FIXED)
+   MOBILE RESPONSIVENESS (FIXED)
    ========================================= */
 
 .hamburger { 
@@ -635,31 +638,37 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Zmniejszenie marnowanej przestrzeni */
+    /* Zmniejszenie marnowanej przestrzeni na małych ekranach */
     .section { padding: 60px 0; }
     
-    /* Nawigacja mobilna */
+    /* Zabezpieczenie szerokości dla kontenerów w mobilu */
+    .container { overflow-x: hidden; }
+
+    /* Ukryte Menu Boczne (Właściwy sposób za pomocą transform) */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
+        transform: translateX(100%); /* ← to zapobiega przesuwaniu i białemu paskowi! */
         width: 75%;
+        max-width: 320px;
         height: 100vh;
         background: white;
         flex-direction: column;
         padding: 100px 30px 30px;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: right 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         justify-content: flex-start;
         align-items: flex-start;
         z-index: 1001;
     }
 
+    /* Wywołanie Menu */
     .nav-links.active {
-        right: 0;
+        transform: translateX(0); /* Pojawia się bez psucia układu */
     }
 
-    /* Animacja Menu Burgera */
+    /* Burger Menu Animacja */
     .hamburger { display: block; }
     
     .hamburger span {
@@ -677,18 +686,18 @@ footer {
 
     .logo img { max-width: 140px; }
 
-    /* Dopasowanie tekstów głównej sekcji */
+    /* Sekcja Główna Mobile */
     .hero-content h1 { font-size: 2.2rem; }
     .hero-content p { font-size: 1.1rem; }
 
-    /* Fix ucinanego boxa dla sekcji "Core Capabilities" */
+    /* Poprawka tabeli Features (żeby nie psuła wymiarów na siłę) */
     .features-list { padding: 25px; }
     .features-list ul {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    /* Sekcja Pobierania - przejście z kolumn do 1 pod drugim */
+    /* Sekcja Download Mobile */
     .download-layout { grid-template-columns: 1fr; }
     
     .release-card.small {
@@ -705,11 +714,11 @@ footer {
         border-radius: 6px;
     }
 
-    /* Karty autorów - dopasowanie szerokości */
+    /* Autorzy Mobile */
     .authors-grid { flex-direction: column; align-items: center; }
     .author-card { width: 100%; max-width: 300px; padding: 30px 20px; }
     
-    /* Changelog / Timeline dostosowanie */
+    /* Sekcja Changelog Mobile */
     .timeline { padding-left: 0; }
     .timeline::before { display: none; }
     .timeline-dot { display: none; }
