@@ -133,31 +133,107 @@
 .loading-spinner { text-align: center; padding: 50px; color: var(--text-gray); font-size: 1.2rem; }
 
 /* =========================================
-   DOCS CONTENT FORMATTING (MARKDOWN STYLE)
+   DOCS CONTENT FORMATTING (ULTIMATE GUIDE)
    ========================================= */
-.docs-content-formatted { max-width: 850px; line-height: 1.7; color: #374151; }
-.docs-content-formatted h1 { font-size: 2.5rem; font-weight: 800; color: #111827; margin-bottom: 20px; border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; }
-.docs-content-formatted h2 { font-size: 1.8rem; font-weight: 700; color: #1f2937; margin-top: 40px; margin-bottom: 15px; }
-.docs-content-formatted h3 { font-size: 1.4rem; font-weight: 600; color: #374151; margin-top: 30px; margin-bottom: 10px; }
-.docs-content-formatted p { margin-bottom: 20px; font-size: 1.05rem; }
-.docs-content-formatted strong { color: #111827; }
-.docs-content-formatted a { color: var(--primary); font-weight: 500; text-decoration: underline; text-decoration-color: transparent; transition: 0.2s; }
-.docs-content-formatted a:hover { text-decoration-color: var(--primary); }
+.docs-content-formatted { max-width: 850px; line-height: 1.7; color: #374151; font-size: 1.05rem; padding-bottom: 50px;}
+
+/* --- Typografia (Nagłówki) --- */
+.docs-content-formatted h1 { font-size: 2.5rem; font-weight: 800; color: #111827; margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; line-height: 1.2;}
+.docs-content-formatted h2 { font-size: 1.8rem; font-weight: 700; color: #1f2937; margin-top: 45px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;}
+.docs-content-formatted h3 { font-size: 1.4rem; font-weight: 600; color: #374151; margin-top: 35px; margin-bottom: 15px; }
+.docs-content-formatted h4 { font-size: 1.15rem; font-weight: 700; color: #4b5563; margin-top: 25px; margin-bottom: 10px; }
+.docs-content-formatted p { margin-bottom: 20px; }
+
+/* --- Tekst Inline --- */
+.docs-content-formatted strong, .docs-content-formatted b { font-weight: 700; color: #111827; }
+.docs-content-formatted em, .docs-content-formatted i { font-style: italic; }
+.docs-content-formatted u { text-decoration: underline; text-decoration-color: var(--primary); text-underline-offset: 3px; }
+.docs-content-formatted s, .docs-content-formatted del { text-decoration: line-through; color: #9ca3af; }
+.docs-content-formatted mark { background-color: #fef08a; padding: 2px 4px; border-radius: 4px; color: #854d0e; }
+.docs-content-formatted sub { vertical-align: sub; font-size: 0.8em; }
+.docs-content-formatted sup { vertical-align: super; font-size: 0.8em; }
+.docs-content-formatted abbr { text-decoration: underline dotted; cursor: help; }
+
+/* --- Linki --- */
+.docs-content-formatted a { color: var(--primary); font-weight: 600; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; transition: var(--transition); }
+.docs-content-formatted a:hover { text-decoration-color: var(--primary); background: var(--primary-light); padding: 0 2px; border-radius: 4px; }
+
+/* --- Listy (Punktory i Numery) --- */
 .docs-content-formatted ul, .docs-content-formatted ol { margin-bottom: 20px; padding-left: 25px; }
 .docs-content-formatted li { margin-bottom: 8px; }
-.docs-content-formatted ul li { list-style-type: disc; }
-.docs-content-formatted img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin: 20px 0; display: block; }
-.docs-content-formatted table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
-.docs-content-formatted th, .docs-content-formatted td { border: 1px solid var(--border-color); padding: 12px 15px; text-align: left; }
-.docs-content-formatted th { background-color: var(--bg-light); color: #111827; font-weight: 600; }
+.docs-content-formatted ul li { list-style-type: disc; marker: var(--primary); }
+.docs-content-formatted ol li { list-style-type: decimal; }
+.docs-content-formatted ul ul, .docs-content-formatted ol ol, .docs-content-formatted ul ol, .docs-content-formatted ol ul { margin-top: 8px; margin-bottom: 0; }
+
+/* Custom: Lista Kroków (Steps) */
+.docs-content-formatted .steps { list-style-type: none; padding-left: 0; counter-reset: step-counter; }
+.docs-content-formatted .steps > li { position: relative; padding-left: 45px; margin-bottom: 20px; }
+.docs-content-formatted .steps > li::before { content: counter(step-counter); counter-increment: step-counter; position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: var(--primary-light); color: var(--primary); font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; border: 2px solid white; box-shadow: 0 0 0 2px var(--primary); }
+
+/* --- Zdjęcia i Multimedia --- */
+.docs-content-formatted img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); margin: 25px 0; display: block; transition: transform 0.3s ease; }
+.docs-content-formatted img:hover { transform: scale(1.02); }
+.docs-content-formatted figure { margin: 25px 0; text-align: center; }
+.docs-content-formatted figcaption { font-size: 0.85rem; color: var(--text-gray); margin-top: 10px; font-style: italic; }
+.docs-content-formatted hr { border: 0; height: 1px; background: var(--border-color); margin: 40px 0; }
+
+/* --- Tabele --- */
+.docs-content-formatted table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; box-shadow: var(--shadow-sm); border-radius: 8px; overflow: hidden; }
+.docs-content-formatted th, .docs-content-formatted td { border: 1px solid var(--border-color); padding: 14px 16px; text-align: left; }
+.docs-content-formatted th { background-color: var(--bg-light); color: #111827; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
 .docs-content-formatted tr:nth-child(even) { background-color: #f9fafb; }
-.docs-content-formatted code { font-family: 'Fira Code', monospace; background-color: #f3f4f6; color: #be123c; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; border: 1px solid #e5e7eb; }
-.docs-content-formatted pre { background-color: #1f2937; color: #f8f8f2; padding: 20px; border-radius: 12px; overflow-x: auto; margin: 25px 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); }
-.docs-content-formatted pre code { background-color: transparent; color: inherit; padding: 0; border: none; font-size: 0.95rem; }
-.docs-content-formatted blockquote { background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 25px 0; border-radius: 0 8px 8px 0; color: #92400e; }
-.docs-content-formatted blockquote p { margin-bottom: 0; }
-.docs-content-formatted blockquote strong { color: #b45309; }
-.docs-content-formatted .info-box { background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 25px 0; border-radius: 0 8px 8px 0; color: #1e3a8a; }
+.docs-content-formatted tr:hover { background-color: #f3f4f6; }
+
+/* --- Klawisze Klawiatury (<kbd>) --- */
+.docs-content-formatted kbd { background-color: #f3f4f6; border: 1px solid #d1d5db; border-bottom: 2px solid #9ca3af; border-radius: 6px; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 0.85em; font-weight: 600; color: #374151; margin: 0 2px; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1); }
+
+/* --- Kod W Linii (Inline Code) --- */
+.docs-content-formatted code { font-family: 'Fira Code', monospace; background-color: #f3f4f6; color: #be123c; padding: 3px 6px; border-radius: 6px; font-size: 0.85em; border: 1px solid #e5e7eb; font-weight: 500;}
+
+/* --- Bloki Kodu (Pre/Code) --- */
+.docs-content-formatted pre { background-color: #1f2937; color: #f8f8f2; padding: 20px; border-radius: 12px; overflow-x: auto; margin: 25px 0; box-shadow: var(--shadow-md); position: relative; border: 1px solid #374151; }
+.docs-content-formatted pre code { background-color: transparent; color: inherit; padding: 0; border: none; font-size: 0.9rem; font-family: 'Fira Code', monospace; line-height: 1.5; }
+.docs-content-formatted pre::-webkit-scrollbar { height: 8px; }
+.docs-content-formatted pre::-webkit-scrollbar-track { background: #374151; border-radius: 4px; }
+.docs-content-formatted pre::-webkit-scrollbar-thumb { background: #6b7280; border-radius: 4px; }
+
+/* --- Rozwijane Sekcje (Details/Summary) --- */
+.docs-content-formatted details { background: white; border: 1px solid var(--border-color); border-radius: 8px; margin: 20px 0; overflow: hidden; transition: all 0.3s; }
+.docs-content-formatted summary { padding: 15px 20px; font-weight: 600; color: #1f2937; background: var(--bg-light); cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+.docs-content-formatted summary::-webkit-details-marker { display: none; }
+.docs-content-formatted summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s; color: var(--text-gray); }
+.docs-content-formatted details[open] summary { border-bottom: 1px solid var(--border-color); }
+.docs-content-formatted details[open] summary::after { transform: rotate(180deg); }
+.docs-content-formatted details > div { padding: 20px; }
+
+/* --- Custom: Odznaki (Badges) --- */
+.docs-content-formatted .badge { display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; vertical-align: middle; margin: 0 5px; }
+.docs-content-formatted .badge-blue { background: #dbeafe; color: #1e40af; }
+.docs-content-formatted .badge-green { background: #dcfce7; color: #166534; }
+.docs-content-formatted .badge-red { background: #fee2e2; color: #991b1b; }
+.docs-content-formatted .badge-yellow { background: #fef9c3; color: #854d0e; }
+
+/* --- Custom: Alerty / Callouty --- */
+.docs-content-formatted .callout { padding: 20px 20px 20px 50px; border-radius: 12px; margin: 25px 0; position: relative; }
+.docs-content-formatted .callout::before { font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 20px; top: 22px; font-size: 1.2rem; }
+.docs-content-formatted .callout p:last-child { margin-bottom: 0; }
+.docs-content-formatted .callout-title { font-weight: 700; display: block; margin-bottom: 5px; font-size: 1.1rem; }
+
+/* Info */
+.docs-content-formatted .callout-info { background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+.docs-content-formatted .callout-info::before { content: '\f05a'; color: #3b82f6; }
+/* Tip / Sukces */
+.docs-content-formatted .callout-tip { background-color: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+.docs-content-formatted .callout-tip::before { content: '\f0eb'; color: #22c55e; }
+/* Ostrzeżenie */
+.docs-content-formatted .callout-warn { background-color: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+.docs-content-formatted .callout-warn::before { content: '\f071'; color: #f59e0b; }
+/* Błąd / Niebezpieczeństwo */
+.docs-content-formatted .callout-danger { background-color: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+.docs-content-formatted .callout-danger::before { content: '\f057'; color: #ef4444; }
+
+/* Tradycyjny Blockquote */
+.docs-content-formatted blockquote { border-left: 4px solid var(--border-color); padding-left: 20px; color: var(--text-gray); font-style: italic; margin: 25px 0; }
 
 /* --- Mobile Responsiveness --- */
 .docs-hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
