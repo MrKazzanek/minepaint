@@ -41,7 +41,8 @@ const docsConfig = {
                     { title: "Blockstates Inventory", id: "blockstates-inventory-old", file: "pages/Alp-Y25R02/blockstates.html" },
                     { title: "Hotbar", id: "hotbar-old", file: "pages/Alp-Y25R02/hotbar.html" },
                     { title: "Saving & Loading", id: "save-and-load-old", file: "pages/Alp-Y25R01/save_and_load.html" },
-                    { title: "Resizing Canvas", id: "resize-old", file: "pages/Alp-Y25R02/resize.html" }
+                    { title: "Resizing Canvas", id: "resize-old", file: "pages/Alp-Y25R02/resize.html" },
+                    { title: "Layers System", id: "layers-old", file: "pages/Alp-Y25R02/layers.html" }
                     
                     
                 ]
