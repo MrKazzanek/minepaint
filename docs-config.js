@@ -22,7 +22,7 @@ const docsConfig = {
                 ]
             }
         ],
-        "v1.2": [
+        "Alp-Y25R01": [
             {
                 category: "Getting Started",
                 pages: [
