@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinePaint Documentation</title>
+    <link rel="icon" type="image/x-icon" href="app_icon.png">
+    
+    <!-- Główne style strony i czcionki (zachowujemy z index.html) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Style dedykowane tylko dla dokumentacji -->
+    <link rel="stylesheet" href="docstyle.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="docs-body">
+
+    <!-- Header (Kompaktowy) -->
+    <header id="navbar" class="compact-header docs-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="MinePaint Logo">
+                <span class="pixel-text">MinePaint Docs</span>
+            </a>
+            
+            <nav class="nav-right">
+                <a href="index.html" class="btn btn-outline dark btn-sm"><i class="fa-solid fa-house"></i> Main Site</a>
+                <button class="docs-hamburger"><i class="fa-solid fa-bars"></i> Menu</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Struktura Dokumentacji -->
+    <div class="docs-layout">
+        
+        <!-- Pasek boczny (Nawigacja i Wersje) -->
+        <aside class="docs-sidebar" id="docs-sidebar">
+            <div class="version-selector-wrap">
+                <label for="version-select">Documentation Version</label>
+                <select id="version-select" class="version-select">
+                    <!-- Opcje generowane przez JS -->
+                </select>
+            </div>
+            
+            <nav class="docs-nav" id="docs-nav">
+                <!-- Menu generowane przez JS na podstawie wybranej wersji -->
+            </nav>
+        </aside>
+
+        <!-- Główny obszar zawartości (Tu wstrzykujemy HTML) -->
+        <main class="docs-main">
+            <div class="docs-breadcrumbs" id="docs-breadcrumbs">
+                <!-- np. Getting Started / Introduction -->
+            </div>
+            
+            <div id="docs-content" class="docs-content-formatted">
+                <!-- Tu wpadnie zawartość z plików z folderu pages -->
+                <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading content...</div>
+            </div>
+            
+            <!-- Nawigacja dół (Poprzednia/Następna strona) -->
+            <div class="docs-footer-nav" id="docs-footer-nav">
+                <button id="btn-prev" class="btn btn-outline dark"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                <button id="btn-next" class="btn btn-primary">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </main>
+        
+    </div>
+
+    <!-- Skrypty -->
+    <script src="docs-config.js"></script>
+    <script src="docscript.js"></script>
+</body>
+</html>
