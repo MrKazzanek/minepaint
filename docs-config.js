@@ -2,7 +2,7 @@ const docsConfig = {
     // Domyślna (najnowsza) wersja
     defaultVersion: "v1.3",
     // Lista dostępnych wersji do wyboru w dropdownie
-    versions: ["v1.3", "v1.2"],
+    versions: ["v1.3", "Alp-Y25R01"],
     
     // Struktura zawartości dla każdej wersji
     content: {
@@ -26,8 +26,8 @@ const docsConfig = {
             {
                 category: "Getting Started",
                 pages: [
-                    { title: "Introduction", id: "intro-old", file: "pages/v1.2/intro.html" },
-                    { title: "Installation", id: "install-old", file: "pages/v1.2/install.html" }
+                    { title: "Introduction", id: "intro-old", file: "pages/Alp-Y25R01/intro.html" },
+                    { title: "Installation", id: "install-old", file: "pages/Alp-Y25R01/install.html" }
                 ]
             }
             // Mniej narzędzi, bo to starsza wersja
