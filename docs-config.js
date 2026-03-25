@@ -34,7 +34,8 @@ const docsConfig = {
             {
                 category: "Navigating the Program",
                 pages: [
-                    { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R01/drawing.html" }
+                    { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R01/drawing.html" },
+                    { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R01/erasing.html" }
                     
                 ]
             }
