@@ -270,3 +270,68 @@ code { background: var(--bg-light); padding: 2px 6px; border-radius: 4px; font-f
     .card-header { flex-direction: column; }
     .ver-info h2 { font-size: 1.3rem; }
 }
+/* =========================================
+   CUSTOM: FILE / DIRECTORY TREE
+   ========================================= */
+.docs-content-formatted pre.file-tree {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    color: #334155;
+    padding: 20px 25px;
+    font-family: 'Fira Code', monospace;
+    line-height: 1.8;
+    border-radius: 12px;
+}
+
+.docs-content-formatted pre.file-tree code {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Wyróżnianie struktury znaków (gałęzi) */
+.docs-content-formatted pre.file-tree span.tree-branch {
+    color: #cbd5e1;
+    user-select: none; /* Zapobiega kopiowaniu krzaczków przy zaznaczaniu tekstu */
+}
+
+/* Ikony Folderów i Plików */
+.docs-content-formatted pre.file-tree span.folder {
+    color: #3b82f6;
+    font-weight: 600;
+}
+.docs-content-formatted pre.file-tree span.folder::before {
+    content: '\f07b'; /* Fa-folder */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    color: #60a5fa;
+}
+
+.docs-content-formatted pre.file-tree span.folder-open {
+    color: #3b82f6;
+    font-weight: 600;
+}
+.docs-content-formatted pre.file-tree span.folder-open::before {
+    content: '\f07c'; /* Fa-folder-open */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    color: #60a5fa;
+}
+
+.docs-content-formatted pre.file-tree span.file {
+    color: #334155;
+}
+.docs-content-formatted pre.file-tree span.file::before {
+    content: '\f15b'; /* Fa-file */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 400;
+    margin-right: 8px;
+    color: #94a3b8;
+}
+
+/* Specyficzne typy plików (Opcjonalnie dla bajeru) */
+.docs-content-formatted pre.file-tree span.file-json::before { content: '\f1c9'; color: #f59e0b; font-weight: 900;} /* Plik z kodem/Json */
+.docs-content-formatted pre.file-tree span.file-image::before { content: '\f1c5'; color: #10b981; font-weight: 900;} /* Obrazek */
+.docs-content-formatted pre.file-tree span.file-archive::before { content: '\f1c6'; color: #ef4444; font-weight: 900;} /* Zip/Exe */
