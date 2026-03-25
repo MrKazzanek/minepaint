@@ -8,223 +8,250 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="app_icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="google-site-verification" content="Sg_ayDz8K2uK6r4KxLsO_2mUFIJtg_uOjWzivv_IG7E" />
 </head>
 <body>
 
     <!-- Header / Navigation -->
-    <header>
+    <header id="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="logo.png" width="200px" alt="MinePaint Logo">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="MinePaint Logo">
                 
-            </div>
-            <nav>
+            </a>
+            <nav class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#description">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#authors">Authors</a></li>
-                    <li><a href="changelog.html">Changelog</a></li>
-                    <li><a href="https://mcpbugtracker.netlify.app/">Bug Tracker</a></li>
-                    <li><a href="#download" id="white" class="btn-nav">Download</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#description" class="nav-link">About</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#authors" class="nav-link">Authors</a></li>
+                    <li><a href="changelog.html" class="nav-link">Changelog</a></li>
+                    <li><a href="https://mcpbugtracker.netlify.app/" target="_blank" class="nav-link">Bug Tracker</a></li>
+                    <li><a href="#download" class="btn btn-primary btn-sm">Download</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span><span></span><span></span>
-                </div>
             </nav>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section with Background Image -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Zmień background.jpg na swój zrzut ekranu -->
         <div class="hero-bg" style="background-image: url('PanoramaLasUpdate.png');"></div>
+        <div class="hero-pattern"></div> <!-- Subtelna siatka kropek dodana od siebie -->
         <div class="hero-overlay"></div>
-        <div class="container hero-content hidden-el">
-            <h1>Create. Build. Paint.</h1>
-            <p>The ultimate tool for drawing 2D images, panoramas, and schematics using blocks.</p>
+        
+        <div class="container hero-content reveal">
+            <div class="hero-badge">Alpha Release Y26R01 Available</div>
+            <h1 class="hero-title">Create. Build. <span class="text-gradient">Paint.</span></h1>
+            <p class="hero-subtitle">The ultimate tool for drawing 2D images, panoramas, and schematics using blocks. Bridge the gap between imagination and blocky reality.</p>
             <div class="hero-buttons">
-                <a href="#download" class="btn btn-primary">Download Now</a>
-                <a href="#description" class="btn btn-secondary text-white">Learn More</a>
+                <a href="#download" class="btn btn-primary btn-lg"><i class="fa-solid fa-download"></i> Download Now</a>
+                <a href="#description" class="btn btn-outline btn-lg"><i class="fa-solid fa-compass"></i> Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- Description Section -->
-    <section id="description" class="section hidden-el">
-        <div class="container">
-            <h2 class="section-title">What is MinePaint?</h2>
-            <div class="content-text">
+    <section id="description" class="section reveal">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title">What is MinePaint?</h2>
                 <p>MinePaint is a powerful tool designed for drawing 2D images, panoramas, schematics, floor plans, and more using Minecraft-style blocks. Whether you are planning a massive build or creating pixel art, MinePaint gives you the canvas you need.</p>
-                <p>With an intuitive interface and a robust engine, it bridges the gap between imagination and blocky reality.</p>
+                <p>With an intuitive interface, a robust engine, and built-in layers, it’s the perfect companion for every digital architect.</p>
+            </div>
+            <div class="about-visual">
+                <div class="floating-block block-1"><i class="fa-solid fa-cube"></i></div>
+                <div class="floating-block block-2"><i class="fa-solid fa-pen-nib"></i></div>
+                <div class="floating-block block-3"><i class="fa-solid fa-layer-group"></i></div>
             </div>
         </div>
     </section>
 
-    <!-- Features & Tools Section -->
-    <section id="features" class="section bg-light">
+    <!-- Features Section -->
+    <section id="features" class="section bg-light reveal">
         <div class="container">
-            <h2 class="section-title hidden-el">Tools & Features</h2>
+            <div class="section-header center">
+                <h2 class="section-title">Tools & Features</h2>
+                <p class="section-desc">Everything you need to craft your masterpiece.</p>
+            </div>
             
-            <div class="tools-grid hidden-el">
-                <div class="card tool-card">
+            <!-- Tools Grid -->
+            <div class="tools-grid">
+                <div class="tool-card hover-lift">
                     <div class="icon-box"><i class="fa-solid fa-pen"></i></div>
                     <h3>Pen</h3>
                     <p>Standard drawing tool for placing blocks precisely.</p>
                 </div>
-                <div class="card tool-card">
+                <div class="tool-card hover-lift">
                     <div class="icon-box"><i class="fa-solid fa-fill-drip"></i></div>
                     <h3>Fill</h3>
                     <p>Instantly fill or clear a selected area with blocks.</p>
                 </div>
-                <div class="card tool-card">
+                <div class="tool-card hover-lift">
                     <div class="icon-box"><i class="fa-solid fa-eye-dropper"></i></div>
                     <h3>Picker</h3>
                     <p>Quickly select a block from the canvas to use.</p>
                 </div>
-                <div class="card tool-card">
+                <div class="tool-card hover-lift">
                     <div class="icon-box"><i class="fa-solid fa-eraser"></i></div>
                     <h3>Eraser</h3>
                     <p>Remove blocks easily. Includes size adjustment.</p>
                 </div>
-                <div class="card tool-card">
+                <div class="tool-card hover-lift">
                     <div class="icon-box"><i class="fa-solid fa-hand"></i></div>
                     <h3>None</h3>
                     <p>Safely navigate without editing the canvas.</p>
                 </div>
             </div>
 
-            <div class="features-list hidden-el">
-                <h3>Core Capabilities</h3>
-                <ul>
-                    <li><strong>Layer System:</strong> Create complex scenes with multiple layers.</li>
-                    <li><strong>Smart Hotbar:</strong> Quick access to your last 9 used blocks.</li>
-                    <li><strong>Save & Load:</strong> Native support for <code>.mcpaint</code> files.</li>
-                    <li><strong>Export:</strong> Save your work as high-quality PNG images.</li>
-                    <li><strong>Screenshots:</strong> Capture moments instantly with F2.</li>
-                    <li><strong>Custom Size:</strong> Canvas resizing up to 300x300 blocks.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section (New) -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title hidden-el">Screenshots</h2>
-            <div class="gallery-grid hidden-el">
-                <!-- Zmień src na swoje zrzuty ekranu -->
-                <div class="gallery-item">
-                    <img src="ui1.png" alt="MinePaint Interface">
+            <!-- Bento Box Features -->
+            <div class="bento-grid mt-50 reveal">
+                <div class="bento-item bento-large bg-dark-card">
+                    <h3>Layer System</h3>
+                    <p>Create complex scenes with multiple layers. Manage visibility and order with ease.</p>
+                    <i class="fa-solid fa-layer-group bento-bg-icon"></i>
                 </div>
-                <div class="gallery-item">
-                    <img src="ui2.png" alt="Inventory Menu">
+                <div class="bento-item">
+                    <h3>Smart Hotbar</h3>
+                    <p>Quick access to your last 9 used blocks.</p>
+                    <i class="fa-solid fa-box-open text-primary mb-icon"></i>
                 </div>
-                <div class="gallery-item">
-                    <img src="ui3.png" alt="Resize Menu">
+                <div class="bento-item">
+                    <h3>Custom Size</h3>
+                    <p>Canvas resizing up to 300x300 blocks.</p>
+                    <i class="fa-solid fa-expand text-primary mb-icon"></i>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Authors Section -->
-    <section id="authors" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title hidden-el">The Studio</h2>
-           <center> <p class="subtitle hidden-el">Brought to you by <strong> QozaWorks</strong></p></center><br>
-            
-            <div class="authors-grid hidden-el">
-                <div class="author-card">
-                    <!-- Zmień src na awatar -->
-                    <img src="kazanek.png" alt="MrKazanek" class="avatar-img">
-                    <h4>MrKazanek</h4>
-                    <p>Lead Developer</p>
-                </div>
-                <div class="author-card">
-                    <!-- Zmień src na awatar -->
-                    <img src="https://placehold.co/150x150/265c85/white?text=XYZ" alt="Antek" class="avatar-img">
-                    <h4>XYZ (Antek)</h4>
-                    <p>Contributor</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="section bg-dark hidden-el">
-        <div class="container">
-            <h2 class="section-title text-white">Download MinePaint</h2>
-            
-            <div class="download-layout">
-                <!-- Left: Versions -->
-                <div class="download-main">
-                    <div class="latest-release">
-                        <h3>Latest Version</h3>
-                        <div class="release-card highlight">
-                            <div class="release-info">
-                                <h4>Version Alp-Y26R01</h4>
-                                <span class="badge alpha">Alpha</span>
-                                <span class="date">March 22, 2026</span>
-                            </div>
-                            <p>New DiaxUI, new blocks, keyboard shortcuts, objects/time/weather system, and bugfixes.</p>
-                            <a href="https://www.mediafire.com/file/c6r85hke2drqmqj/MinePaint_Installer.exe/file" class="btn btn-primary full-width">Download</a>
-                        </div>
-                    </div>
-
-                    <div class="older-releases">
-                        <h3>Older Versions</h3>
-                        <div class="release-card small">
-                            <span>Version Alp-Y25R02 (Alpha)</span>
-                            <a href="https://www.mediafire.com/file/dh2i5ihcezpq6zi/MinePaint-Installer.exe/file">Download</a>
-                        </div>
-                        <div class="release-card small">
-                            <span>Version Alp-Y25R01 (Alpha)</span>
-                            <a href="https://www.mediafire.com/file/fe73pe9o5jmmqsy/MinePaint.exe/file">Download</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Requirements -->
-                <div class="system-req">
-                    <h3>System Requirements</h3>
-                    <ul>
-                        <li><strong>OS:</strong> Windows 10/11</li>
-                        <li><strong>Storage:</strong> ~500 MB available space</li>
+                <div class="bento-item bento-wide">
+                    <h3>Save & Export</h3>
+                    <ul class="minimal-list">
+                        <li><i class="fa-solid fa-check"></i> Native support for <code>.mcpaint</code> files</li>
+                        <li><i class="fa-solid fa-check"></i> Save your work as high-quality PNG images</li>
+                        <li><i class="fa-solid fa-check"></i> Capture moments instantly with F2</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Gallery Section -->
+    <section id="gallery" class="section reveal">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Screenshots</h2>
+                <p class="section-desc">Take a look inside the application.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="ui1.png" alt="MinePaint Interface">
+                    <div class="gallery-overlay"><span>Main Interface</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="ui2.png" alt="Inventory Menu">
+                    <div class="gallery-overlay"><span>Inventory Menu</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="ui3.png" alt="Resize Menu">
+                    <div class="gallery-overlay"><span>Resize Options</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section id="authors" class="section bg-light reveal">
+        <div class="container center">
+            <div class="section-header center">
+                <h2 class="section-title">The Studio</h2>
+                <p class="section-desc">Brought to you by <strong>QozaWorks</strong></p>
+            </div>
+            
+            <div class="authors-grid">
+                <div class="author-card hover-lift">
+                    <div class="avatar-wrapper">
+                        <img src="kazanek.png" alt="MrKazanek" class="avatar-img">
+                    </div>
+                    <h4>MrKazanek</h4>
+                    <span class="role-badge primary">Lead Developer</span>
+                </div>
+                <div class="author-card hover-lift">
+                    <div class="avatar-wrapper">
+                        <img src="https://placehold.co/150x150/265c85/white?text=XYZ" alt="Antek" class="avatar-img">
+                    </div>
+                    <h4>XYZ (Antek)</h4>
+                    <span class="role-badge secondary">Contributor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section dark-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Download MinePaint</h2>
+                <p class="section-desc text-gray">Get the latest alpha build and start creating today.</p>
+            </div>
+            
+            <div class="download-layout">
+                <!-- Latest Version -->
+                <div class="download-main">
+                    <div class="release-card highlight">
+                        <div class="card-glow"></div>
+                        <div class="release-header">
+                            <div>
+                                <h3>Version Alp-Y26R01</h3>
+                                <span class="badge alpha">Alpha</span>
+                            </div>
+                            <span class="date">March 22, 2026</span>
+                        </div>
+                        <p class="release-desc">New DiaxUI, new blocks, keyboard shortcuts, objects/time/weather system, and bugfixes.</p>
+                        <a href="https://www.mediafire.com/file/c6r85hke2drqmqj/MinePaint_Installer.exe/file" class="btn btn-primary full-width btn-lg"><i class="fa-solid fa-download"></i> Download for Windows</a>
+                    </div>
+                </div>
+
+                <!-- Older & Req -->
+                <div class="download-sidebar">
+                    <div class="system-req mb-30">
+                        <h4>System Requirements</h4>
+                        <ul class="req-list">
+                            <li><span>OS:</span> Windows 10/11</li>
+                            <li><span>Storage:</span> ~500 MB space</li>
+                        </ul>
+                    </div>
+                    <div class="older-releases">
+                        <h4>Older Versions</h4>
+                        <a href="https://www.mediafire.com/file/dh2i5ihcezpq6zi/MinePaint-Installer.exe/file" class="old-version-link">
+                            <span>Alp-Y25R02</span> <i class="fa-solid fa-download"></i>
+                        </a>
+                        <a href="https://www.mediafire.com/file/fe73pe9o5jmmqsy/MinePaint.exe/file" class="old-version-link">
+                            <span>Alp-Y25R01</span> <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
         <div class="container footer-content">
-            <p>&copy; 2026 QozaWorks. All rights reserved.</p>
-            <p>MinePaint is not affiliated with Mojang Studios.</p>
+            <div class="footer-left">
+                <img src="logo.png" alt="Logo" class="footer-logo">
+                <p>&copy; 2026 QozaWorks. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p class="disclaimer">MinePaint is not affiliated with Mojang Studios.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
