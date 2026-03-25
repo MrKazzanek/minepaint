@@ -6,9 +6,8 @@
     <title>MinePaint Documentation</title>
     <link rel="icon" type="image/x-icon" href="app_icon.png">
     
-    <!-- Główne style strony i czcionki (zachowujemy z index.html) -->
+    <!-- Główne style z index.html i style dla dokumentacji -->
     <link rel="stylesheet" href="style.css">
-    <!-- Style dedykowane tylko dla dokumentacji -->
     <link rel="stylesheet" href="docstyle.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -16,7 +15,7 @@
 </head>
 <body class="docs-body">
 
-    <!-- Header (Kompaktowy) -->
+    <!-- Header -->
     <header id="navbar" class="compact-header docs-header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -34,8 +33,8 @@
     <!-- Struktura Dokumentacji -->
     <div class="docs-layout">
         
-        <!-- Pasek boczny (Nawigacja i Wersje) -->
-         <aside class="docs-sidebar" id="docs-sidebar">
+        <!-- Pasek boczny (Wersje, Szukajka, Nawigacja) -->
+        <aside class="docs-sidebar" id="docs-sidebar">
             <div class="version-selector-wrap">
                 <label for="version-select">Documentation Version</label>
                 <select id="version-select" class="version-select">
@@ -43,7 +42,6 @@
                 </select>
             </div>
             
-            <!-- NOWE: Wyszukiwarka -->
             <div class="docs-search-wrap">
                 <div class="search-input-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,14 +53,14 @@
             </div>
             
             <nav class="docs-nav" id="docs-nav">
-                <!-- Menu generowane przez JS na podstawie wybranej wersji -->
+                <!-- Menu generowane przez JS -->
             </nav>
         </aside>
 
-        <!-- Główny obszar zawartości (Tu wstrzykujemy HTML) -->
+        <!-- Główny obszar zawartości -->
         <main class="docs-main">
             <div class="docs-breadcrumbs" id="docs-breadcrumbs">
-                <!-- np. Getting Started / Introduction -->
+                <!-- Ścieżka (Breadcrumbs) -->
             </div>
             
             <div id="docs-content" class="docs-content-formatted">
@@ -70,16 +68,14 @@
                 <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading content...</div>
             </div>
             
-            <!-- Nawigacja dół (Poprzednia/Następna strona) -->
+            <!-- Nawigacja dół -->
             <div class="docs-footer-nav" id="docs-footer-nav">
                 <button id="btn-prev" class="btn btn-outline dark"><i class="fa-solid fa-arrow-left"></i> Previous</button>
                 <button id="btn-next" class="btn btn-primary">Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </main>
-        
     </div>
 
-    <!-- Skrypty -->
     <script src="docs-config.js"></script>
     <script src="docscript.js"></script>
 </body>
