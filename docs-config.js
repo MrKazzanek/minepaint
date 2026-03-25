@@ -1,8 +1,8 @@
 const docsConfig = {
     // Domyślna (najnowsza) wersja
-    defaultVersion: "Alp-Y25R01",
+    defaultVersion: "Alp-Y25R02",
     // Lista dostępnych wersji do wyboru w dropdownie
-    versions: ["Alp-Y25R01"],
+    versions: ["Alp-Y25R02","Alp-Y25R01"],
     
     // Struktura zawartości dla każdej wersji
     content: {
