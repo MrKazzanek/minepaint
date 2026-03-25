@@ -1,0 +1,263 @@
+/* =========================================
+   DOCS LAYOUT (SIDEBAR + MAIN)
+   ========================================= */
+.docs-body {
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Przewijanie tylko wewnątrz paneli */
+}
+
+.docs-header {
+    position: relative; /* Wyłącza sticky z głównego CSS */
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+    background: white;
+}
+
+.docs-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Sidebar --- */
+.docs-sidebar {
+    width: 280px;
+    background-color: var(--bg-light);
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.version-selector-wrap {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.version-selector-wrap label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.version-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+.version-select:focus { border-color: var(--primary); }
+
+.docs-nav {
+    padding: 0 10px;
+}
+
+.docs-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 15px 10px 5px 10px;
+    text-transform: uppercase;
+}
+
+.docs-nav-link {
+    display: block;
+    padding: 8px 10px;
+    margin-bottom: 2px;
+    color: var(--text-gray);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.docs-nav-link:hover {
+    background: rgba(59, 133, 38, 0.05);
+    color: var(--primary);
+}
+
+.docs-nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary-hover);
+    font-weight: 600;
+}
+
+/* --- Main Content Area --- */
+.docs-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px 60px;
+    background: white;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.docs-breadcrumbs {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+.docs-breadcrumbs span { color: var(--text-main); font-weight: 600; }
+
+.docs-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 50px;
+    color: var(--text-gray);
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   DOCS CONTENT FORMATTING (MARKDOWN STYLE)
+   ========================================= */
+.docs-content-formatted {
+    max-width: 850px;
+    line-height: 1.7;
+    color: #374151;
+}
+
+/* Nagłówki */
+.docs-content-formatted h1 { font-size: 2.5rem; font-weight: 800; color: #111827; margin-bottom: 20px; border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; }
+.docs-content-formatted h2 { font-size: 1.8rem; font-weight: 700; color: #1f2937; margin-top: 40px; margin-bottom: 15px; }
+.docs-content-formatted h3 { font-size: 1.4rem; font-weight: 600; color: #374151; margin-top: 30px; margin-bottom: 10px; }
+
+/* Teksty i Paragrafy */
+.docs-content-formatted p { margin-bottom: 20px; font-size: 1.05rem; }
+.docs-content-formatted strong { color: #111827; }
+
+/* Linki w tekście */
+.docs-content-formatted a { color: var(--primary); font-weight: 500; text-decoration: underline; text-decoration-color: transparent; transition: 0.2s; }
+.docs-content-formatted a:hover { text-decoration-color: var(--primary); }
+
+/* Listy */
+.docs-content-formatted ul, .docs-content-formatted ol { margin-bottom: 20px; padding-left: 25px; }
+.docs-content-formatted li { margin-bottom: 8px; }
+.docs-content-formatted ul li { list-style-type: disc; }
+
+/* Obrazki */
+.docs-content-formatted img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin: 20px 0;
+    display: block;
+}
+
+/* Tabele */
+.docs-content-formatted table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 0.95rem;
+}
+.docs-content-formatted th, .docs-content-formatted td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: left;
+}
+.docs-content-formatted th {
+    background-color: var(--bg-light);
+    color: #111827;
+    font-weight: 600;
+}
+.docs-content-formatted tr:nth-child(even) { background-color: #f9fafb; }
+
+/* Kod w linii (Inline Code) */
+.docs-content-formatted code {
+    font-family: 'Fira Code', monospace;
+    background-color: #f3f4f6;
+    color: #be123c;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid #e5e7eb;
+}
+
+/* Bloki kodu (Code Blocks) */
+.docs-content-formatted pre {
+    background-color: #1f2937;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 25px 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+.docs-content-formatted pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border: none;
+    font-size: 0.95rem;
+}
+
+/* Ostrzeżenia / Blockquotes */
+.docs-content-formatted blockquote {
+    background-color: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+    color: #92400e;
+}
+.docs-content-formatted blockquote p { margin-bottom: 0; }
+.docs-content-formatted blockquote strong { color: #b45309; }
+
+/* Info Box */
+.docs-content-formatted .info-box {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+    color: #1e3a8a;
+}
+
+/* --- Mobile Responsiveness --- */
+.docs-hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
+
+@media (max-width: 900px) {
+    .docs-hamburger { display: block; margin-left: 15px; }
+    .nav-right .btn { display: none; } /* Ukrywamy Main Site na mobile by zaoszczedzić miejsce */
+    
+    .docs-sidebar {
+        position: fixed;
+        left: -300px;
+        top: 60px; /* Wysokosc headera */
+        height: calc(100vh - 60px);
+        z-index: 99;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+    .docs-sidebar.active { transform: translateX(300px); }
+    
+    .docs-main { padding: 30px 20px; }
+    .docs-content-formatted h1 { font-size: 2rem; }
+}
