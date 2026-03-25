@@ -7,192 +7,224 @@
     <link rel="icon" type="image/x-icon" href="app_icon.png">
     <link rel="stylesheet" href="style.css">
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Łatka dla szarych tagów typu Patch -->
+    <style>
+        .timeline-marker.tag-patch { background: #6b7280; }
+        .badge.patch { background: #6b7280; color: white; }
+    </style>
 </head>
 <body class="bg-light">
 
-    <!-- Header (Simplified) -->
-    <header>
+    <!-- Compact Header -->
+    <header id="navbar" class="compact-header">
         <div class="container nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo.png" width="200px" alt="MinePaint Logo">
-                    
-                </a>
-            </div>
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="MinePaint Logo">
+                
+            </a>
             <nav>
-                <a href="index.html" class="btn-nav ghost"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                <a href="index.html" class="btn btn-outline dark btn-sm"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
             </nav>
         </div>
     </header>
 
-    <div class="container section">
-        <div class="changelog-header">
-            <h1>Update History</h1>
-            <p>Track the evolution of MinePaint from early Alpha to the latest release.</p>
+    <div class="container section pt-120">
+        <div class="changelog-header text-center reveal">
+            <h1 class="pixel-title">Update History</h1>
+            <p class="text-gray">Track the evolution of MinePaint from early Alpha to the latest release.</p>
         </div>
 
-        <div class="timeline">
+        <div class="modern-timeline">
+            <!-- Line in the middle -->
+            <div class="timeline-line"></div>
 
             <!-- Version Alp-Y26R01 -->
-            <div class="timeline-item"> <div class="timeline-dot alpha"></div> <div class="timeline-content"> <div class="version-header"> <div> <span class="version-tag tag-alpha">Alpha</span> <h2>Version Alp-Y26R01</h2> </div> <span class="version-date">March 22, 2026</span> </div>
-    <p class="summary-text"><strong>Welcome back after a long hiatus!</strong> This Alpha update introduces a completely new UI, object system, weather and time controls, new blocks, and many other exciting improvements.</p>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-alpha"><i class="fa-solid fa-rocket"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge alpha">Alpha</span>
+                            <h2>Version Alp-Y26R01</h2>
+                        </div>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 22, 2026</span>
+                    </div>
+                    
+                    <p class="summary-text"><strong>Welcome back after a long hiatus!</strong> This Alpha update introduces a completely new UI, object system, weather and time controls, new blocks, and many other exciting improvements.</p>
 
-    <div class="changes-list">
-        <h3><i class="fa-solid fa-window-maximize"></i> DiaxUI</h3>
-        <ul>
-            <li>Brand-new interface design for MinePaint 1.0.</li>
-            <li>Simple, clean aesthetic that improves upon the previous Ice Simple UI.</li>
-            <li>Further refinements planned in future updates.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-window-maximize text-primary"></i> DiaxUI</h3>
+                        <ul>
+                            <li>Brand-new interface design for MinePaint 1.0.</li>
+                            <li>Simple, clean aesthetic that improves upon the previous Ice Simple UI.</li>
+                            <li>Further refinements planned in future updates.</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-cubes"></i> Object System</h3>
-        <ul>
-            <li>New panel for background objects, which can be placed freely on the canvas independent of the layer system.</li>
-            <li>Available objects include <strong>Sun</strong> and <strong>Moon</strong>:</li>
-            <ul>
-                <li>Only one object can exist at a time (Sun or Moon).</li>
-                <li>Mouse scroll adjusts object scale during placement (scroll up to enlarge, scroll down to shrink).</li>
-                <li>Moon has 8 phases selectable with right-click during placement:
-                    <ol>
-                        <li>Full Moon</li>
-                        <li>Waning Gibbous</li>
-                        <li>Third Quarter</li>
-                        <li>Waning Crescent</li>
-                        <li>New Moon</li>
-                        <li>Waxing Crescent</li>
-                        <li>First Quarter</li>
-                        <li>Waxing Gibbous</li>
-                    </ol>
-                </li>
-                <li>Sun and Moon placement occurs at the clicked position with left mouse button.</li>
-            </ul>
-            <li><strong>Clear</strong> button removes all objects from the canvas.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-cubes text-primary"></i> Object System</h3>
+                        <ul>
+                            <li>New panel for background objects, which can be placed freely on the canvas independent of the layer system.</li>
+                            <li>Available objects include <strong>Sun</strong> and <strong>Moon</strong>:</li>
+                            <ul>
+                                <li>Only one object can exist at a time (Sun or Moon).</li>
+                                <li>Mouse scroll adjusts object scale during placement (scroll up to enlarge, scroll down to shrink).</li>
+                                <li>Moon has 8 phases selectable with right-click during placement:
+                                    <ol style="padding-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+                                        <li>Full Moon</li>
+                                        <li>Waning Gibbous</li>
+                                        <li>Third Quarter</li>
+                                        <li>Waning Crescent</li>
+                                        <li>New Moon</li>
+                                        <li>Waxing Crescent</li>
+                                        <li>First Quarter</li>
+                                        <li>Waxing Gibbous</li>
+                                    </ol>
+                                </li>
+                                <li>Sun and Moon placement occurs at the clicked position with left mouse button.</li>
+                            </ul>
+                            <li><strong>Clear</strong> button removes all objects from the canvas.</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-cloud-sun-rain"></i> Weather System</h3>
-        <ul>
-            <li>Independent weather layer visible behind all other layers.</li>
-            <li>Three selectable options: <strong>Clear</strong>, <strong>Rain</strong>, <strong>Snow</strong>.</li>
-            <li>Only one weather effect can be active at a time.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-cloud-sun-rain text-primary"></i> Weather System</h3>
+                        <ul>
+                            <li>Independent weather layer visible behind all other layers.</li>
+                            <li>Three selectable options: <strong>Clear</strong>, <strong>Rain</strong>, <strong>Snow</strong>.</li>
+                            <li>Only one weather effect can be active at a time.</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-clock"></i> Time System</h3>
-        <ul>
-            <li>Controls canvas background colors to simulate time of day.</li>
-            <li>Three options:
-                <ul>
-                    <li><strong>Day:</strong> Default daytime colors.</li>
-                    <li><strong>Night:</strong> Nighttime colors.</li>
-                    <li><strong>Custom:</strong> Define top and bottom colors using HEX codes.</li>
-                </ul>
-            </li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-clock text-primary"></i> Time System</h3>
+                        <ul>
+                            <li>Controls canvas background colors to simulate time of day.</li>
+                            <li>Three options:
+                                <ul>
+                                    <li><strong>Day:</strong> Default daytime colors.</li>
+                                    <li><strong>Night:</strong> Nighttime colors.</li>
+                                    <li><strong>Custom:</strong> Define top and bottom colors using HEX codes.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-ruler"></i> Tool Size</h3>
-        <ul>
-            <li>New size panel available for <strong>Pen</strong> and <strong>Eraser</strong> tools.</li>
-            <li>Adjustable from 1 (default) to 64.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-ruler text-primary"></i> Tool Size</h3>
+                        <ul>
+                            <li>New size panel available for <strong>Pen</strong> and <strong>Eraser</strong> tools.</li>
+                            <li>Adjustable from 1 (default) to 64.</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-keyboard"></i> Keyboard Shortcuts</h3>
-        <ul>
-            <li><strong>Canvas Management:</strong>
-                <ul>
-                    <li>Ctrl + S – Save canvas to <code>.mcpaint</code></li>
-                    <li>Ctrl + P – Export canvas to <code>.png</code></li>
-                    <li>Ctrl + N – Clear canvas</li>
-                    <li>Ctrl + L – Load canvas from <code>.mcpaint</code></li>
-                    <li>Ctrl + Shift + R – Resize canvas</li>
-                </ul>
-            </li>
-            <li><strong>Tools & Inventory:</strong>
-                <ul>
-                    <li>N – Select None tool</li>
-                    <li>P – Select Pen tool</li>
-                    <li>F – Select Fill tool</li>
-                    <li>C – Select Picker tool</li>
-                    <li>X – Select Eraser tool</li>
-                    <li>E – Open/close Inventory</li>
-                </ul>
-            </li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-keyboard text-primary"></i> Keyboard Shortcuts</h3>
+                        <ul>
+                            <li><strong>Canvas Management:</strong>
+                                <ul>
+                                    <li><code>Ctrl + S</code> – Save canvas to <code>.mcpaint</code></li>
+                                    <li><code>Ctrl + P</code> – Export canvas to <code>.png</code></li>
+                                    <li><code>Ctrl + N</code> – Clear canvas</li>
+                                    <li><code>Ctrl + L</code> – Load canvas from <code>.mcpaint</code></li>
+                                    <li><code>Ctrl + Shift + R</code> – Resize canvas</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tools & Inventory:</strong>
+                                <ul>
+                                    <li><code>N</code> – Select None tool</li>
+                                    <li><code>P</code> – Select Pen tool</li>
+                                    <li><code>F</code> – Select Fill tool</li>
+                                    <li><code>C</code> – Select Picker tool</li>
+                                    <li><code>X</code> – Select Eraser tool</li>
+                                    <li><code>E</code> – Open/close Inventory</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-leaf"></i> New Blocks</h3>
-        <p>Added a variety of natural and building blocks:</p>
-        <ul>
-            <li>Short Dry Grass, Tall Dry Grass, Cactus Flower, Dead Bush, Bush, Cobweb</li>
-            <li>Brown Mushroom, Red Mushroom, Coarse Dirt, Rooted Dirt, Snow, Snow Block, Powder Snow</li>
-            <li>Ice, Packed Ice, Blue Ice, Clay, Mud</li>
-            <li>Birch Log, Jungle Log, Acacia Log (all with 3 blockstates), Birch Leaves, Jungle Leaves, Acacia Leaves</li>
-            <li>Granite, Diorite, Andesite, Calcite, Tuff, Dripstone, Deepslate (3 blockstates), Obsidian, Crying Obsidian</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-leaf text-primary"></i> New Blocks</h3>
+                        <p class="text-gray" style="margin-bottom: 10px;">Added a variety of natural and building blocks:</p>
+                        <ul>
+                            <li>Short Dry Grass, Tall Dry Grass, Cactus Flower, Dead Bush, Bush, Cobweb</li>
+                            <li>Brown Mushroom, Red Mushroom, Coarse Dirt, Rooted Dirt, Snow, Snow Block, Powder Snow</li>
+                            <li>Ice, Packed Ice, Blue Ice, Clay, Mud</li>
+                            <li>Birch Log, Jungle Log, Acacia Log (all with 3 blockstates), Birch Leaves, Jungle Leaves, Acacia Leaves</li>
+                            <li>Granite, Diorite, Andesite, Calcite, Tuff, Dripstone, Deepslate (3 blockstates), Obsidian, Crying Obsidian</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-seedling"></i> Blockstate Updates</h3>
-        <ul>
-            <li>Dirt block now includes a <strong>Farmland</strong> blockstate.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-seedling text-primary"></i> Blockstate Updates</h3>
+                        <ul>
+                            <li>Dirt block now includes a <strong>Farmland</strong> blockstate.</li>
+                        </ul>
+                    </div>
 
-        <h3><i class="fa-solid fa-bug"></i> Bug Fixes & Improvements</h3>
-        <ul>
-            <li>Fixed incorrect saving of certain blocks.</li>
-            <li>Smoother canvas loading experience.</li>
-            <li>Exporting to PNG no longer causes lag.</li>
-            <li>Inventory reliably closes after use.</li>
-        </ul>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-bug text-primary"></i> Bug Fixes & Improvements</h3>
+                        <ul>
+                            <li>Fixed incorrect saving of certain blocks.</li>
+                            <li>Smoother canvas loading experience.</li>
+                            <li>Exporting to PNG no longer causes lag.</li>
+                            <li>Inventory reliably closes after use.</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://mcpbugtracker.netlify.app/" target="_blank" class="bug-link"><i class="fa-solid fa-bug"></i> Report a bug</a>
+                </div>
+            </div>
 
-        <p>Found a bug? Report it here: <a href="https://mcpbugtracker.netlify.app/" target="_blank">https://mcpbugtracker.netlify.app/</a></p>
-    </div>
-</div>
-</div>
-
-            
-            <!-- Version Alp-Y25R01 -->
-            <div class="timeline-item">
-                <div class="timeline-dot alpha"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-alpha">Alpha</span>
+            <!-- Version Alp-Y25R02 -->
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-alpha"><i class="fa-solid fa-code-branch"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge alpha">Alpha</span>
                             <h2>Version Alp-Y25R02</h2>
                         </div>
-                        <span class="version-date">December 7, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> December 7, 2025</span>
                     </div>
                     
                     <p class="summary-text"><strong>The Big Alpha Return!</strong> A massive update introducing a new engine, layer support, advanced tools, and a data-driven block system.</p>
 
-                    <div class="changes-list">
-                        <h3><i class="fa-solid fa-layer-group"></i> Core Features</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-layer-group text-primary"></i> Core Features</h3>
                         <ul>
                             <li><strong>Layer System:</strong> Full multi-layer support!
                                 <ul>
                                     <li>Manage layers via the right-side panel (Add <code>+</code> / Remove <code>-</code>).</li>
-                                    <li>Reorder layers using <i class="fa-solid fa-caret-up"></i> and <i class="fa-solid fa-caret-down"></i>.</li>
+                                    <li>Reorder layers using up and down arrows.</li>
                                     <li>Toggle visibility with checkboxes. Active layer is highlighted.</li>
                                 </ul>
                             </li>
                             <li><strong>Custom Canvas Size:</strong> Use the "Resize" button to set dimensions from <strong>1x1</strong> up to <strong>300x300</strong> blocks.</li>
                             <li><strong>Smart Hotbar:</strong> Stores the last 9 used blocks or states. Select via clicking or keys <strong>1-9</strong>.</li>
                         </ul>
+                    </div>
 
-                        <h3><i class="fa-solid fa-toolbox"></i> Tools & Interaction</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-toolbox text-primary"></i> Tools & Interaction</h3>
                         <ul>
                             <li><strong>New Tool Panel:</strong>
                                 <ul>
-                                    <li><i class="fa-solid fa-ban"></i> <strong>None:</strong> View-only mode (safely navigate).</li>
-                                    <li><i class="fa-solid fa-pen"></i> <strong>Pen:</strong> Draw (LMB), Pick Block (Scroll Click), Destroy (RMB).</li>
-                                    <li><i class="fa-solid fa-fill-drip"></i> <strong>Fill:</strong> 
-                                        <br> &nbsp; &bull; <strong>LMB (Start & End):</strong> Fills area with selected block.
-                                        <br> &nbsp; &bull; <strong>RMB (Start & End):</strong> Clears/Destroys area.
-                                    </li>
-                                    <li><i class="fa-solid fa-eye-dropper"></i> <strong>Picker:</strong> Selects block under cursor (works with any button).</li>
-                                    <li><i class="fa-solid fa-eraser"></i> <strong>Eraser:</strong> Destroys blocks (LMB or RMB).</li>
+                                    <li><strong>None:</strong> View-only mode (safely navigate).</li>
+                                    <li><strong>Pen:</strong> Draw (LMB), Pick Block (Scroll Click), Destroy (RMB).</li>
+                                    <li><strong>Fill:</strong> LMB (Start & End) fills area. RMB (Start & End) clears area.</li>
+                                    <li><strong>Picker:</strong> Selects block under cursor (works with any button).</li>
+                                    <li><strong>Eraser:</strong> Destroys blocks (LMB or RMB).</li>
                                 </ul>
                             </li>
                         </ul>
+                    </div>
 
-                        <h3><i class="fa-solid fa-box-open"></i> Inventory & Blockstates</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-box-open text-primary"></i> Inventory & Blockstates</h3>
                         <ul>
                             <li><strong>Overhauled Inventory:</strong> 
                                 <ul>
@@ -208,17 +240,23 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>
 
-                        <h3><i class="fa-solid fa-cube"></i> New Content</h3>
-                        <p>Added support for: <strong>Sugar Cane, Cactus, Podzol, Mycelium, Red Sand, Red Sandstone, Gravel, Bedrock, Spruce Leaves, Spruce Logs</strong>.</p>
-                        <p>New Blockstates added for: <em>Grass (Snowy), Dirt (Path), Water (Level), Oak & Spruce Logs.</em></p>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-cube text-primary"></i> New Content</h3>
+                        <p class="text-gray" style="margin-bottom: 10px;">Added support for: <strong>Sugar Cane, Cactus, Podzol, Mycelium, Red Sand, Red Sandstone, Gravel, Bedrock, Spruce Leaves, Spruce Logs</strong>.</p>
+                        <p class="text-gray">New Blockstates added for: <em>Grass (Snowy), Dirt (Path), Water (Level), Oak & Spruce Logs.</em></p>
+                    </div>
 
-                        <h3><i class="fa-solid fa-flask"></i> Experimental</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-flask text-primary"></i> Experimental</h3>
                         <ul>
                             <li><strong>Screenshot Utility:</strong> Press <strong>F2</strong> to save a snapshot to the <code>MinePaint_Screenshots</code> folder.</li>
                         </ul>
+                    </div>
 
-                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Technical & Fixes</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-screwdriver-wrench text-primary"></i> Technical & Fixes</h3>
                         <ul>
                             <li><strong>Data-Driven Architecture:</strong> Blocks are now loaded dynamically from <code>data/blocks.json</code> instead of hardcoded tilesets. This allows easier modification of IDs, names, and textures without engine recompilation.</li>
                             <li><strong>UI Polish:</strong> Default font changed to <em>Minecraft Five Bold</em>. App logo updated.</li>
@@ -227,28 +265,33 @@
                     </div>
                 </div>
             </div>
+
             <!-- Version Alp-Y25R01 -->
-            <div class="timeline-item">
-                <div class="timeline-dot alpha"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-alpha">Alpha</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-alpha"><i class="fa-solid fa-rotate"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge alpha">Alpha</span>
                             <h2>Version Alp-Y25R01</h2>
                         </div>
-                        <span class="version-date">December 6, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> December 6, 2025</span>
                     </div>
                     
                     <p class="summary-text"><strong>We’re returning to Alpha!</strong> A brand-new Godot engine, a fresh versioning system, and a rebuilt foundation.</p>
 
-                    <div class="changes-list">
-                        <h3><i class="fa-solid fa-rotate"></i> Back to Alpha</h3>
-                        <p>The engine migration required us to rewrite the entire project from scratch. Switching to <strong>Godot</strong> makes the application run smoother and faster.</p>
-                        
-                        <h3><i class="fa-solid fa-tag"></i> New Versioning System</h3>
-                        <code>Alp-Y25R01</code> (Alpha - Year 25 - Rev 01)
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-rotate text-primary"></i> Back to Alpha</h3>
+                        <p class="text-gray" style="margin-bottom: 10px;">The engine migration required us to rewrite the entire project from scratch. Switching to <strong>Godot</strong> makes the application run smoother and faster.</p>
+                    </div>
 
-                        <h3><i class="fa-solid fa-star"></i> Current Features</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-tag text-primary"></i> New Versioning System</h3>
+                        <p class="text-gray" style="margin-bottom: 10px;"><code>Alp-Y25R01</code> (Alpha - Year 25 - Rev 01)</p>
+                    </div>
+
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-star text-primary"></i> Current Features</h3>
                         <ul>
                             <li>Draw (LMB) & Erase (RMB).</li>
                             <li>Select blocks using Keys 1-9.</li>
@@ -261,21 +304,21 @@
             </div>
 
             <!-- Version 1.0 -->
-            <div class="timeline-item">
-                <div class="timeline-dot release"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-release">Full Release</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-release"><i class="fa-solid fa-star"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge release">Full Release</span>
                             <h2>Version 1.0</h2>
                         </div>
-                        <span class="version-date">July 29, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> July 29, 2025</span>
                     </div>
 
                     <p class="summary-text">Full Release! New Engine (Python/PyGame), "Ice Simple UI", and layer system.</p>
 
-                    <div class="changes-list">
-                        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> New Features</h3>
+                    <div class="change-group">
+                        <h3><i class="fa-solid fa-wand-magic-sparkles text-primary"></i> New Features</h3>
                         <ul>
                             <li><strong>Tools:</strong> None Tool, Dedicated Eraser, Fill Tool.</li>
                             <li><strong>UI:</strong> Grid Overlay, Rulers, Improved Inventory.</li>
@@ -287,17 +330,17 @@
             </div>
 
             <!-- Version 0.4.0 -->
-            <div class="timeline-item">
-                <div class="timeline-dot feature"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-feature">Feature Update</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-feature"><i class="fa-solid fa-plus"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge feature">Feature Update</span>
                             <h2>Version 0.4.0</h2>
                         </div>
-                        <span class="version-date">March 19, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 19, 2025</span>
                     </div>
-                    <div class="changes-list">
+                    <div class="change-group">
                         <ul>
                             <li>Added Moss Blocks, Shrieker Blocks, Dark/Pale Oak variants.</li>
                             <li>Added Snowy Grass blockstate.</li>
@@ -309,18 +352,18 @@
             </div>
 
             <!-- Version 0.3.1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot patch"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-patch">Patch</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-patch"><i class="fa-solid fa-wrench"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge patch">Patch</span>
                             <h2>Version 0.3.1</h2>
                         </div>
-                        <span class="version-date">March 17, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 17, 2025</span>
                     </div>
-                    <p>Optimization and technical cleanup.</p>
-                    <div class="changes-list">
+                    <p class="summary-text" style="margin-bottom: 10px;">Optimization and technical cleanup.</p>
+                    <div class="change-group">
                         <ul>
                             <li>Refactored quick access inventory logic.</li>
                             <li>Removed unused textures.</li>
@@ -331,17 +374,17 @@
             </div>
 
             <!-- Version 0.3.0 -->
-            <div class="timeline-item">
-                <div class="timeline-dot feature"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-feature">Feature Update</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-feature"><i class="fa-solid fa-plus"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge feature">Feature Update</span>
                             <h2>Version 0.3.0</h2>
                         </div>
-                        <span class="version-date">March 16, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 16, 2025</span>
                     </div>
-                    <div class="changes-list">
+                    <div class="change-group">
                         <ul>
                             <li><strong>Blocks:</strong> Stones, Ores, Deepslate, Bedrock, Lava.</li>
                             <li><strong>Feature:</strong> Block List in inventory categories.</li>
@@ -352,17 +395,17 @@
             </div>
 
             <!-- Version 0.2.x -->
-            <div class="timeline-item">
-                <div class="timeline-dot patch"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-patch">Patches</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-patch"><i class="fa-solid fa-wrench"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge patch">Patches</span>
                             <h2>Version 0.2.1 - 0.2.2</h2>
                         </div>
-                        <span class="version-date">March 15-16, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 15-16, 2025</span>
                     </div>
-                    <div class="changes-list">
+                    <div class="change-group">
                         <ul>
                             <li>Fixed brush size resetting.</li>
                             <li>Fixed daytime air block glitch at night.</li>
@@ -373,17 +416,17 @@
             </div>
 
             <!-- Version 0.2.0 -->
-            <div class="timeline-item">
-                <div class="timeline-dot feature"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-feature">Feature Update</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-feature"><i class="fa-solid fa-plus"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge feature">Feature Update</span>
                             <h2>Version 0.2.0</h2>
                         </div>
-                        <span class="version-date">March 15, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 15, 2025</span>
                     </div>
-                    <div class="changes-list">
+                    <div class="change-group">
                         <ul>
                             <li>Added Podzol, Mycelium, Dirt variants.</li>
                             <li>Added Sandstones, Birch/Spruce Leaves, Cactus, Water.</li>
@@ -394,31 +437,29 @@
             </div>
 
             <!-- Version 0.1.0 -->
-            <div class="timeline-item">
-                <div class="timeline-dot alpha"></div>
-                <div class="timeline-content">
-                    <div class="version-header">
-                        <div>
-                            <span class="version-tag tag-alpha">Alpha</span>
+            <div class="timeline-entry reveal">
+                <div class="timeline-marker tag-alpha"><i class="fa-solid fa-flag"></i></div>
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <div class="ver-info">
+                            <span class="badge alpha">Alpha</span>
                             <h2>Version 0.1.0</h2>
                         </div>
-                        <span class="version-date">March 15, 2025</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> March 15, 2025</span>
                     </div>
-                    <p>First alpha released! Basic drawing functionality established.</p>
+                    <p class="summary-text" style="margin-bottom: 0;">First alpha released! Basic drawing functionality established.</p>
                 </div>
             </div>
 
         </div> <!-- End Timeline -->
     </div>
 
-    <footer>
-        <div class="container footer-content">
+    <footer class="site-footer mt-50">
+        <div class="container footer-content center">
             <p>&copy; 2026 QozaWorks. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
