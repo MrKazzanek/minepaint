@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     async function loadPage(pageData, linkElement) {
         contentArea.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading ${pageData.title}...</div>`;
-        breadcrumbs.innerHTML = `${pageData.category} / <span>${pageData.title}</span>`;
+        breadcrumbs.innerHTML = `<span>${pageData.title}</span>`;
         
         document.querySelectorAll(".docs-nav-link").forEach(l => l.classList.remove("active"));
         if(linkElement) linkElement.classList.add("active");
