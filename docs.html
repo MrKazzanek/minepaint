@@ -35,12 +35,23 @@
     <div class="docs-layout">
         
         <!-- Pasek boczny (Nawigacja i Wersje) -->
-        <aside class="docs-sidebar" id="docs-sidebar">
+         <aside class="docs-sidebar" id="docs-sidebar">
             <div class="version-selector-wrap">
                 <label for="version-select">Documentation Version</label>
                 <select id="version-select" class="version-select">
                     <!-- Opcje generowane przez JS -->
                 </select>
+            </div>
+            
+            <!-- NOWE: Wyszukiwarka -->
+            <div class="docs-search-wrap">
+                <div class="search-input-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="docs-search-input" placeholder="Search docs..." autocomplete="off">
+                </div>
+                <div class="search-results" id="search-results">
+                    <!-- Wyniki wyszukiwania -->
+                </div>
             </div>
             
             <nav class="docs-nav" id="docs-nav">
