@@ -39,7 +39,9 @@ const docsConfig = {
                     { title: "Quick block selection", id: "fast-pick-block-old", file: "pages/Alp-Y25R02/fast_pick_block.html" },
                     { title: "Inventory", id: "draw-block-selection-old", file: "pages/Alp-Y25R02/draw_block_selection.html" },
                     { title: "Hotbar", id: "hotbar-old", file: "pages/Alp-Y25R02/hotbar.html" },
-                    { title: "Saving & Loading", id: "save-and-load-old", file: "pages/Alp-Y25R01/save_and_load.html" }
+                    { title: "Saving & Loading", id: "save-and-load-old", file: "pages/Alp-Y25R01/save_and_load.html" },
+                    { title: "Resizing Canvas", id: "resize-old", file: "pages/Alp-Y25R02/resize.html" }
+                    
                     
                 ]
             }
