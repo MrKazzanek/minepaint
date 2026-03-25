@@ -35,7 +35,8 @@ const docsConfig = {
                 category: "Navigating the Program",
                 pages: [
                     { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R01/drawing.html" },
-                    { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R01/erasing.html" }
+                    { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R01/erasing.html" },
+                    { title: "Quick Block Selection", id: "fast-pick-block-old", file: "pages/Alp-Y25R01/fast_pick_block.html" }
                     
                 ]
             }
