@@ -37,7 +37,8 @@ const docsConfig = {
                     { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R01/drawing.html" },
                     { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R01/erasing.html" },
                     { title: "Quick block selection", id: "fast-pick-block-old", file: "pages/Alp-Y25R01/fast_pick_block.html" },
-                    { title: "Draw block selection", id: "draw-block-selection-old", file: "pages/Alp-Y25R01/draw_block_selection.html" }
+                    { title: "Draw block selection", id: "draw-block-selection-old", file: "pages/Alp-Y25R01/draw_block_selection.html" },
+                    { title: "Saving & Loading", id: "save-and-load-old", file: "pages/Alp-Y25R01/save_and_load.html" }
                     
                 ]
             }
