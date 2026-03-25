@@ -1,0 +1,152 @@
+<h1>MinePaint Documentation Style Guide <span class="badge badge-green">New</span></h1>
+<p>Witamy w przewodniku po stylach! Ta strona zawiera <strong>absolutnie wszystkie</strong> elementy, jakich możesz użyć podczas pisania dokumentacji dla MinePaint. Po prostu skopiuj kod HTML danego elementu, gdy będziesz go potrzebować.</p>
+
+<hr>
+
+<h2>1. Alerty (Callouts)</h2>
+<p>Alerty służą do przyciągania uwagi użytkownika na ważne informacje.</p>
+
+<!-- KOD DO SKOPIOWANIA -->
+<div class="callout callout-info">
+    <span class="callout-title">Information</span>
+    <p>Zwykła informacja (Info). Używaj jej do dodawania kontekstu lub dodatkowych danych.</p>
+</div>
+
+<div class="callout callout-tip">
+    <span class="callout-title">Pro Tip</span>
+    <p>Wskazówka (Tip). Świetna do ukazywania skrótów klawiszowych lub trików ułatwiających pracę.</p>
+</div>
+
+<div class="callout callout-warn">
+    <span class="callout-title">Warning</span>
+    <p>Ostrzeżenie (Warning). Uważaj, ta akcja może być nieodwracalna lub spowodować problemy z plikiem <code>.mcpaint</code>.</p>
+</div>
+
+<div class="callout callout-danger">
+    <span class="callout-title">Danger</span>
+    <p>Niebezpieczeństwo (Danger). Nigdy nie usuwaj tego pliku, bo stracisz wszystkie dane aplikacji!</p>
+</div>
+
+<hr>
+
+<h2>2. Bloki Kodu (Code Blocks)</h2>
+<p>Do pokazywania skryptów, JSON-ów, czy komend. Kod otaczasz tagami <code>&lt;pre&gt;&lt;code&gt; ... &lt;/code&gt;&lt;/pre&gt;</code>.</p>
+
+<pre><code>{
+  "block_id": "minecraft:diamond_block",
+  "name": "Diamond Block",
+  "texture": "diamond_block.png",
+  "transparent": false
+}</code></pre>
+
+<hr>
+
+<h2>3. Klawisze Klawiatury</h2>
+<p>Aby estetycznie wyświetlić skrót klawiaturowy, użyj tagu <code>&lt;kbd&gt;</code>.</p>
+
+<p>Aby zapisać swój projekt w MinePaint, naciśnij <kbd>Ctrl</kbd> + <kbd>S</kbd>. Aby otworzyć ekwipunek, wciśnij <kbd>E</kbd>.</p>
+
+<hr>
+
+<h2>4. Listy Kroków (Tutoriale)</h2>
+<p>Jeśli tworzysz poradnik Krok-po-Kroku, zamiast zwykłej listy numerowanej, dodaj do <code>&lt;ol&gt;</code> klasę <code>class="steps"</code>.</p>
+
+<ol class="steps">
+    <li><strong>Wybierz narzędzie Pen:</strong> Znajdziesz je w lewym panelu lub klikając klawisz <kbd>P</kbd>.</li>
+    <li><strong>Wybierz blok:</strong> Otwórz ekwipunek i znajdź np. <em>Dirt</em>.</li>
+    <li><strong>Rysuj:</strong> Kliknij Lewy Przycisk Myszy (LMB) na płótnie, aby położyć blok.</li>
+</ol>
+
+<hr>
+
+<h2>5. Rozwijane Sekcje (Akapity / Spoilery)</h2>
+<p>Idealne dla FAQ (Najczęściej zadawanych pytań) lub ukrywania długich konfiguracji.</p>
+
+<details>
+    <summary>Jak zmienić rozmiar płótna w MinePaint?</summary>
+    <div>
+        <p>Aby zmienić rozmiar płótna (Canvas), musisz użyć skrótu <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>. Pojawi się nowe menu, w którym wpisujesz szerokość i wysokość.</p>
+        <div class="callout callout-warn">
+            <p>Zmniejszenie płótna usunie bloki, które znajdowały się poza nową ramką!</p>
+        </div>
+    </div>
+</details>
+
+<details>
+    <summary>Gdzie zapisują się zrzuty ekranu?</summary>
+    <div>
+        <p>Zrzuty ekranu zrobione klawiszem <kbd>F2</kbd> lądują domyślnie w folderze <code>Documents/MinePaint/Screenshots</code>.</p>
+    </div>
+</details>
+
+<hr>
+
+<h2>6. Tabele</h2>
+<p>Standardowe formatowanie tabel HTML. Kolory, krawędzie i efekty po najechaniu robią się same.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Narzędzie</th>
+            <th>Skrót</th>
+            <th>Opis Działania</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pen (Pióro)</td>
+            <td><kbd>P</kbd></td>
+            <td>Stawia pojedyncze bloki na wybranej warstwie.</td>
+            <td><span class="badge badge-green">Stable</span></td>
+        </tr>
+        <tr>
+            <td>Fill (Wiadro)</td>
+            <td><kbd>F</kbd></td>
+            <td>Wypełnia zaznaczony kwadrat wybranym blokiem.</td>
+            <td><span class="badge badge-green">Stable</span></td>
+        </tr>
+        <tr>
+            <td>Magic Wand</td>
+            <td><kbd>W</kbd></td>
+            <td>Zaznacza podobne bloki na płótnie.</td>
+            <td><span class="badge badge-blue">Beta</span></td>
+        </tr>
+        <tr>
+            <td>Objects</td>
+            <td><kbd>O</kbd></td>
+            <td>Zarządzanie tłem i obiektami (Słońce, Księżyc).</td>
+            <td><span class="badge badge-yellow">WIP</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>7. Obrazki z podpisami</h2>
+<p>Użyj tagów <code>&lt;figure&gt;</code> oraz <code>&lt;figcaption&gt;</code>, aby dodać ładny obrazek z podpisem u dołu.</p>
+
+<figure>
+    <img src="../../ui2.png" alt="MinePaint Inventory Menu">
+    <figcaption>Rysunek 1: Nowy, ulepszony Ekwipunek (Inventory) w wersji Alp-Y25R02.</figcaption>
+</figure>
+
+<hr>
+
+<h2>8. Formatowanie Tekstu (Inline)</h2>
+<p>Poniżej znajdziesz szybki przegląd dostępnych modyfikatorów tekstu w linii:</p>
+
+<ul>
+    <li>Zwykły pogrubiony tekst <strong>(Strong)</strong>.</li>
+    <li>Tekst pochylony <em>(Italic)</em>.</li>
+    <li>Przekreślenie oznaczające <del>nieaktualną funkcję</del>.</li>
+    <li>Słowo z <mark>zakreśleniem (Mark)</mark> do podkreślenia uwagi.</li>
+    <li>Link do zewnętrznej strony: <a href="https://mcpbugtracker.netlify.app/" target="_blank">Bug Tracker</a>.</li>
+    <li>Zmienne w kodzie jak np. <code>player_pos_x</code> zapisujemy tak.</li>
+    <li>Słowa z podpowiedzią: Najedź na skrót <abbr title="Minecraft Paint">MCP</abbr>, by zobaczyć pełną nazwę.</li>
+</ul>
+
+<hr>
+<blockquote>
+    To jest standardowy "Blockquote". Używany zazwyczaj do cytowania słów autora lub wyciągania ważnych wniosków z tekstu.
+</blockquote>
