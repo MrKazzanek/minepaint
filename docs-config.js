@@ -30,6 +30,13 @@ const docsConfig = {
                     { title: "Authors", id: "authors", file: "pages/Alp-Y25R01/authors.html" },
                     { title: "Installation", id: "install-old", file: "pages/Alp-Y25R01/install.html" }
                 ]
+            },
+            {
+                category: "Navigating the Program",
+                pages: [
+                    { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R01/drawing.html" },
+                    
+                ]
             }
             
         ]
