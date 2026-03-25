@@ -27,8 +27,8 @@ const docsConfig = {
                 category: "Getting Started",
                 pages: [
                     { title: "Introduction", id: "intro-oldest", file: "pages/Alp-Y25R01/intro.html" },
-                    { title: "Installation", id: "install-old", file: "pages/Alp-Y25R02/install.html" },
-                    { title: "Installation", id: "install-old", file: "pages/Alp-Y25R01/install.html" }
+                    { title: "Authors", id: "authors", file: "pages/Alp-Y25R01/authors.html" }
+                    { title: "Installation", id: "install-old", file: "pages/Alp-Y25R02/install.html" }
                 ]
             },
             {
