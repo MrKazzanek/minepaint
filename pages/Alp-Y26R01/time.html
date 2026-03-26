@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+
+
+<h1>System Czasu</h1>
+<p>System czasu jest to system ustawiania koloru tła płótna. Kolor tła jest tworzony z dwóch kolorów, które tworzą gradient liniowy top <=> down.</p>
+<hr>
+<h3>Jak używać systemu czasu?</h3>
+<p>W programie istnieje panel <code>Time</code>, w którym dostępne są trzy opcje:</p>
+<ul>
+  <li>Day - ustawia kolor płótna na kolory dzienne nieba z Minecraft. Używa do tego kolorów: Górny -> <code>#7cabff</code> i Dolny -> <code>#8cb5ff</code> </li>
+  <li>Night - ustawia kolor płótna na kolory nocne nieba z Minecraft. Używa do tego kolorów: Górny -> <code>#0a0d17</code> i Dolny -> <code>#0b0b14</code></li>
+  <li>Own - pozwala na ustawienie własnego koloru tła płótna.</li>
+</ul>
+<hr>
+<h3>Jak ustawić własny kolor tła płótna?</h3>
+<p> Kliknij przycisk <code>Own</code> w panelu <code>Time</code>, wtedy otworzy się okienko gdzie musisz podać kolory <code>Górny</code> i <code>Dolny</code> w systemie <code>Hex</code>.</p>
+
+<h4>Aby łatwo wybrać kolor możesz użyć tego narzędzia:</h4>
+<input type="text" data-coloris>
+
+
+<script>
+  Coloris({
+  theme: 'default',
+  format: 'hex'
+});
+</script>
