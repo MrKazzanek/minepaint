@@ -46,6 +46,7 @@ const docsConfig = {
                     { title: "Saving & Loading", id: "save-and-load-old", file: "pages/Alp-Y25R01/save_and_load.html" },
                     { title: "Resizing Canvas", id: "resize-old", file: "pages/Alp-Y25R02/resize.html" },
                     { title: "Layers System", id: "layers-old", file: "pages/Alp-Y25R02/layers.html" },
+                    { title: "Weather System", id: "lweather-1", file: "pages/Alp-Y26R01/weather.html" },
                     { title: "Keyboard Shortcuts", id: "keyboard-shortcuts-old", file: "pages/Alp-Y25R02/shortcuts.html" }
                     
                     
