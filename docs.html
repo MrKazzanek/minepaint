@@ -20,7 +20,6 @@
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="MinePaint Logo">
-                
             </a>
             
             <nav class="nav-right">
@@ -33,13 +32,19 @@
     <!-- Struktura Dokumentacji -->
     <div class="docs-layout">
         
+        <!-- Element przyciemniający tło na mobile -->
+        <div class="docs-mobile-overlay" id="mobile-overlay"></div>
+        
         <!-- Pasek boczny (Wersje, Szukajka, Nawigacja) -->
         <aside class="docs-sidebar" id="docs-sidebar">
             <div class="version-selector-wrap">
                 <label for="version-select">Documentation Version</label>
-                <select id="version-select" class="version-select">
-                    <!-- Opcje generowane przez JS -->
-                </select>
+                <div class="select-wrapper">
+                    <select id="version-select" class="version-select">
+                        <!-- Opcje generowane przez JS -->
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
             </div>
             
             <div class="docs-search-wrap">
