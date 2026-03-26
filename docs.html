@@ -6,7 +6,6 @@
     <title>MinePaint Documentation</title>
     <link rel="icon" type="image/x-icon" href="app_icon.png">
     
-    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="docstyle.css">
     
@@ -15,34 +14,28 @@
 </head>
 <body class="docs-body">
 
-   
     <header id="navbar" class="compact-header docs-header">
-        <div class="container nav-container">
+        <div class="nav-container docs-nav-container">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="MinePaint Logo">
             </a>
             
-            <nav class="nav-right">
+            <nav class="nav-right docs-nav-right">
                 <a href="index.html" class="btn btn-outline dark btn-sm"><i class="fa-solid fa-house"></i> Main Site</a>
                 <button class="docs-hamburger"><i class="fa-solid fa-bars"></i> Menu</button>
             </nav>
         </div>
     </header>
 
-   
     <div class="docs-layout">
-        
         
         <div class="docs-mobile-overlay" id="mobile-overlay"></div>
         
-       
         <aside class="docs-sidebar" id="docs-sidebar">
             <div class="version-selector-wrap">
                 <label for="version-select">Version</label>
                 <div class="select-wrapper">
-                    <select id="version-select" class="version-select">
-                        <!-- Generowane przez JS -->
-                    </select>
+                    <select id="version-select" class="version-select"></select>
                     <i class="fa-solid fa-chevron-down select-icon"></i>
                 </div>
             </div>
@@ -52,22 +45,18 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" id="docs-search-input" placeholder="Search docs..." autocomplete="off">
                     <div class="search-shortcut">
-                        <kbd>Ctrl</kbd> <kbd>K</kbd>
+                        <kbd>Ctrl</kbd>
+                        <kbd>K</kbd>
                     </div>
                 </div>
                 <div class="search-results" id="search-results"></div>
             </div>
             
-            <nav class="docs-nav" id="docs-nav">
-                <!-- Generowane przez JS -->
-            </nav>
+            <nav class="docs-nav" id="docs-nav"></nav>
         </aside>
 
-       
         <main class="docs-main" id="docs-main-area">
-            <div class="docs-breadcrumbs" id="docs-breadcrumbs">
-                <!-- Generowane przez JS -->
-            </div>
+            <div class="docs-breadcrumbs" id="docs-breadcrumbs"></div>
             
             <div id="docs-content" class="docs-content-formatted">
                 <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading...</div>
