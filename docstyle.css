@@ -170,6 +170,7 @@ html.docs-body, body.docs-body {
 .docs-content-formatted ol li span { color: #374151; font-weight: normal; }
 
 .docs-content-formatted .steps { list-style-type: none; padding-left: 0; counter-reset: step-counter; margin-top: 30px;}
+.docs-content-formatted .steps li { list-style-type: none; }
 .docs-content-formatted .steps > li { position: relative; padding-left: 55px; margin-bottom: 25px; }
 .docs-content-formatted .steps > li::before { content: counter(step-counter); counter-increment: step-counter; position: absolute; left: 0; top: -2px; width: 34px; height: 34px; background: white; color: var(--primary); font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 0 0 2px var(--primary-light), 0 4px 6px rgba(0,0,0,0.05); }
 
