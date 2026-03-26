@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnNext = document.getElementById("btn-next");
     const sidebar = document.getElementById("docs-sidebar");
     const hamburger = document.querySelector(".docs-hamburger");
+    const mobileOverlay = document.getElementById("mobile-overlay");
 
     // Search Elements
     const searchInput = document.getElementById("docs-search-input");
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.addEventListener("click", (e) => {
                     e.preventDefault();
                     loadPage(page, link);
-                    if (window.innerWidth <= 900) toggleMobileMenu();
+                    if (window.innerWidth <= 900) closeMobileMenu();
                 });
 
                 docsNav.appendChild(link);
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. ŁADOWANIE ZAWARTOŚCI (FETCH)
     // ==========================================
     async function loadPage(pageData, linkElement) {
-        contentArea.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading ${pageData.title}...</div>`;
+        contentArea.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> <span>Loading ${pageData.title}...</span></div>`;
         breadcrumbs.innerHTML = `<span>${pageData.title}</span>`;
         
         document.querySelectorAll(".docs-nav-link").forEach(l => l.classList.remove("active"));
@@ -98,12 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(pageData.file);
             if (!response.ok) throw new Error("File not found");
             const htmlContent = await response.text();
-            contentArea.innerHTML = htmlContent;
+            
+            // Dodano opakowanie dla animacji wejścia
+            contentArea.innerHTML = `<div class="docs-content-wrapper">${htmlContent}</div>`;
         } catch (error) {
             contentArea.innerHTML = `
-                <h1>Error 404</h1>
-                <p>Sorry, the documentation file <strong>${pageData.file}</strong> could not be loaded.</p>
-                <div class="info-box">Make sure you are running this site on a local server. Fetch API does not work on raw file:// protocol.</div>
+                <div class="docs-content-wrapper">
+                    <h1>Error 404</h1>
+                    <p>Sorry, the documentation file <strong>${pageData.file}</strong> could not be loaded.</p>
+                    <div class="callout callout-warn">
+                        <span class="callout-title">Localhost required</span>
+                        <p>Make sure you are running this site on a local server. Fetch API does not work on raw file:// protocol.</p>
+                    </div>
+                </div>
             `;
         }
 
@@ -203,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     searchInput.value = "";
                     searchResults.classList.remove("active");
-                    if (window.innerWidth <= 900) toggleMobileMenu();
+                    if (window.innerWidth <= 900) closeMobileMenu();
                 });
 
                 searchResults.appendChild(resultItem);
@@ -215,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         searchResults.classList.add("active");
     });
 
-    // Zamknięcie wyszukiwarki po kliknięciu poza nią
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".docs-search-wrap")) {
             searchResults.classList.remove("active");
@@ -227,8 +234,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     function toggleMobileMenu() {
         sidebar.classList.toggle("active");
+        if(mobileOverlay) mobileOverlay.classList.toggle("active");
     }
+    
+    function closeMobileMenu() {
+        sidebar.classList.remove("active");
+        if(mobileOverlay) mobileOverlay.classList.remove("active");
+    }
+
     if(hamburger) hamburger.addEventListener("click", toggleMobileMenu);
+    if(mobileOverlay) mobileOverlay.addEventListener("click", closeMobileMenu);
 
     // ==========================================
     // URUCHOMIENIE
