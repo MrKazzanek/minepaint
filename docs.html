@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="docstyle.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="docs-body">
 
-    <!-- Header -->
+    <!-- Header (Pobiera wyskokość z nav-container = 80px) -->
     <header id="navbar" class="compact-header docs-header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -29,54 +29,53 @@
         </div>
     </header>
 
-    <!-- Struktura Dokumentacji -->
+    <!-- Główny kontener aplikacji -->
     <div class="docs-layout">
         
-        <!-- Element przyciemniający tło na mobile -->
+        <!-- Przyciemnienie tła na mobile -->
         <div class="docs-mobile-overlay" id="mobile-overlay"></div>
         
-        <!-- Pasek boczny (Wersje, Szukajka, Nawigacja) -->
+        <!-- Pasek boczny -->
         <aside class="docs-sidebar" id="docs-sidebar">
             <div class="version-selector-wrap">
-                <label for="version-select">Documentation Version</label>
+                <label for="version-select">Version</label>
                 <div class="select-wrapper">
                     <select id="version-select" class="version-select">
-                        <!-- Opcje generowane przez JS -->
+                        <!-- Generowane przez JS -->
                     </select>
                     <i class="fa-solid fa-chevron-down select-icon"></i>
                 </div>
             </div>
             
             <div class="docs-search-wrap">
-                <div class="search-input-box">
+                <div class="search-input-box" id="search-trigger">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" id="docs-search-input" placeholder="Search docs..." autocomplete="off">
+                    <div class="search-shortcut">
+                        <kbd>Ctrl</kbd> <kbd>K</kbd>
+                    </div>
                 </div>
-                <div class="search-results" id="search-results">
-                    <!-- Wyniki wyszukiwania -->
-                </div>
+                <div class="search-results" id="search-results"></div>
             </div>
             
             <nav class="docs-nav" id="docs-nav">
-                <!-- Menu generowane przez JS -->
+                <!-- Generowane przez JS -->
             </nav>
         </aside>
 
-        <!-- Główny obszar zawartości -->
-        <main class="docs-main">
+        <!-- Główny obszar czytania -->
+        <main class="docs-main" id="docs-main-area">
             <div class="docs-breadcrumbs" id="docs-breadcrumbs">
-                <!-- Ścieżka (Breadcrumbs) -->
+                <!-- Generowane przez JS -->
             </div>
             
             <div id="docs-content" class="docs-content-formatted">
-                <!-- Tu wpadnie zawartość z plików z folderu pages -->
-                <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading content...</div>
+                <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading...</div>
             </div>
             
-            <!-- Nawigacja dół -->
             <div class="docs-footer-nav" id="docs-footer-nav">
-                <button id="btn-prev" class="btn btn-outline dark"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-                <button id="btn-next" class="btn btn-primary">Next <i class="fa-solid fa-arrow-right"></i></button>
+                <button id="btn-prev" class="btn btn-outline dark docs-nav-btn"><i class="fa-solid fa-arrow-left"></i> <span>Previous</span></button>
+                <button id="btn-next" class="btn btn-primary docs-nav-btn"><span>Next</span> <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </main>
     </div>
