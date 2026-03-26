@@ -36,7 +36,7 @@ const docsConfig = {
                 pages: [
                     { title: "Tool Selection", id: "tool-select-old", file: "pages/Alp-Y25R02/tool.html" },
                     { title: "Drawing", id: "drawing-old", file: "pages/Alp-Y25R02/drawing.html" },
-                    { title: "Pen Size", id: "pen-size-old", file: "pages/Alp-Y26R01/tool_size.html" },
+                    { title: "Brush Size", id: "pen-size-old", file: "pages/Alp-Y26R01/tool_size.html" },
                     { title: "Filling", id: "filling-old", file: "pages/Alp-Y25R02/filling.html" },
                     { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R02/erasing.html" },
                     { title: "Quick block selection", id: "fast-pick-block-old", file: "pages/Alp-Y25R02/fast_pick_block.html" },
