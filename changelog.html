@@ -52,28 +52,37 @@
             <span class="date"><i class="fa-regular fa-calendar"></i> March 27, 2026</span>
         </div>
         
-        <p class="summary-text"><strong>Final Alpha update!</strong> This release brings brush shapes, a new object management window, workflow improvements, DiaxUI refinements, and introduces experimental Assets Packs.</p>
+        <p class="summary-text">
+            <strong>Final Alpha Update!</strong> This release concludes the Alpha stage of MinePaint and delivers a major set of improvements and new features. 
+            It introduces brush shapes, an advanced object management system, new shortcuts, usability upgrades, visual improvements to DiaxUI, and an experimental 
+            Assets Pack system for full customization.
+        </p>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-flag-checkered text-primary"></i> End of Alpha Stage</h3>
-            <p class="text-gray">This is the final Alpha version. Beta Release Candidates will start rolling out until <strong>April 3, 2026</strong>. If no issues are found, a candidate will become the first Beta version: <strong>Bt-Y26R01</strong>.</p>
+            <p class="text-gray">
+                This is the final Alpha release. Beta Release Candidates will start appearing soon and will continue until 
+                <strong>April 3, 2026</strong>. If a candidate contains no critical issues, it will become the first official Beta version:
+                <strong>Bt-Y26R01</strong>.
+            </p>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-palette text-primary"></i> DiaxUI v1.1</h3>
             <ul>
-                <li>Further UI improvements and visual polish.</li>
+                <li>Further visual refinements and consistency improvements across the interface.</li>
                 <li>Updated windows:
                     <ul>
-                        <li><strong>Resize Window</strong></li>
-                        <li><strong>Custom Background Color Window</strong></li>
+                        <li><strong>Resize Window</strong> – improved layout and usability</li>
+                        <li><strong>Custom Background Color Window</strong> – enhanced color controls</li>
                     </ul>
                 </li>
-                <li>Inventory redesigned:
+                <li>Inventory redesign:
                     <ul>
-                        <li>Categories displayed vertically on the left.</li>
-                        <li>Block list on the right.</li>
-                        <li>Added search bar and close button.</li>
+                        <li>Categories are now displayed vertically on the left side.</li>
+                        <li>Block list is displayed on the right.</li>
+                        <li>Added search bar for faster navigation.</li>
+                        <li>Added dedicated close button.</li>
                     </ul>
                 </li>
             </ul>
@@ -82,55 +91,64 @@
         <div class="change-group">
             <h3><i class="fa-solid fa-sun text-primary"></i> Object Management Window</h3>
             <ul>
-                <li>New window available when placing <strong>Sun</strong> or <strong>Moon</strong> (right-click).</li>
+                <li>New dedicated window for managing <strong>Sun</strong> and <strong>Moon</strong> objects.</li>
+                <li>Accessible via right-click while placing an object.</li>
                 <li>Allows:
                     <ul>
-                        <li>Scale adjustment (0.3 – 6.0)</li>
-                        <li>Opacity adjustment (0% – 100%)</li>
-                        <li>Moon phase selection</li>
+                        <li>Scaling objects from <strong>0.3 up to 6.0</strong></li>
+                        <li>Adjusting opacity from <strong>0% to 100%</strong></li>
+                        <li>Changing Moon phases</li>
                     </ul>
                 </li>
-                <li>Moon phase change moved here (removed from right-click toggle).</li>
-                <li>Scroll still controls scale during placement.</li>
+                <li>Right-click no longer cycles Moon phases directly.</li>
+                <li>Mouse scroll still controls object scale during placement.</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-circle text-primary"></i> Object Improvements</h3>
             <ul>
-                <li>Max scale increased from 3.0 to 6.0.</li>
-                <li>Added opacity support.</li>
+                <li>Maximum object scale increased from <strong>3.0 to 6.0</strong>.</li>
+                <li>Added support for object transparency.</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-pen text-primary"></i> Brush Shapes</h3>
             <ul>
-                <li>Brush shape selection added to the <strong>Size</strong> panel.</li>
+                <li>Brush shape selection added to the <strong>Size panel</strong>.</li>
                 <li>Available for <strong>Pen</strong> and <strong>Eraser</strong>.</li>
-                <li>Shapes:
+                <li>Two brush types:
                     <ul>
-                        <li><strong>Square Brush</strong> (default)</li>
-                        <li><strong>Round Brush</strong></li>
+                        <li><strong>Square Brush</strong> (default) – consistent square drawing</li>
+                        <li><strong>Round Brush</strong> – circular drawing shape</li>
                     </ul>
                 </li>
-                <li>Size range: 1 – 64 (round brush uses supported values only).</li>
+                <li>Size range: <strong>1 – 64</strong>.</li>
+                <li>Round brush supports only valid sizes (auto-adjusts if unsupported).</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-bolt text-primary"></i> Usability Improvements</h3>
             <ul>
-                <li>Confirmation dialog before clearing canvas.</li>
-                <li>Reset button in resize window (default: 46x25).</li>
-                <li>Color pickers added to custom background window.</li>
-                <li>Minimize button added.</li>
-                <li><strong>Grid (#)</strong> toggle (not visible in exports, state saved).</li>
-                <li><strong>Rulers (R)</strong>:
+                <li>New confirmation dialog when clearing the canvas (prevents accidental data loss).</li>
+                <li>Reset button in Resize window (restores default size: <strong>46x25</strong>).</li>
+                <li>Added color picker palettes in Custom Background window.</li>
+                <li>New <strong>Minimize</strong> button in the window controls.</li>
+                <li><strong>Grid (#)</strong> toggle:
+                    <ul>
+                        <li>Helps visualize block placement</li>
+                        <li>Disabled by default</li>
+                        <li>Not visible in exported PNG files</li>
+                        <li>State is saved between sessions</li>
+                    </ul>
+                </li>
+                <li><strong>Rulers (R)</strong> toggle:
                     <ul>
                         <li>Off</li>
-                        <li>Every 5 blocks</li>
-                        <li>Every block</li>
+                        <li>Area mode (every 5 blocks)</li>
+                        <li>Precise mode (every block)</li>
                     </ul>
                 </li>
                 <li>Added tooltips to selected UI elements.</li>
@@ -138,10 +156,10 @@
         </div>
 
         <div class="change-group">
-            <h3><i class="fa-solid fa-save text-primary"></i> Saving System</h3>
+            <h3><i class="fa-solid fa-save text-primary"></i> Canvas Saving System</h3>
             <ul>
-                <li>Added <strong>Save As</strong>.</li>
-                <li><strong>Save</strong> now overwrites existing files.</li>
+                <li>Introduced <strong>Save As</strong> option.</li>
+                <li><strong>Save</strong> now overwrites the existing file.</li>
                 <li>If no file exists, Save behaves like Save As.</li>
             </ul>
         </div>
@@ -160,17 +178,18 @@
         <div class="change-group">
             <h3><i class="fa-solid fa-leaf text-primary"></i> New Blocks</h3>
             <ul>
-                <li>Tall Grass (2 states), Vines</li>
-                <li>Dark Oak Log (3 states), Dark Oak Leaves</li>
-                <li>Smooth Basalt, Moss Block, Moss Carpet</li>
-                <li>Pale Moss Block, Pale Moss Carpet (3 states)</li>
+                <li>Tall Grass (2 blockstates), Vines</li>
+                <li>Dark Oak Log (3 blockstates), Dark Oak Leaves</li>
+                <li>Smooth Basalt</li>
+                <li>Moss Block, Moss Carpet</li>
+                <li>Pale Moss Block, Pale Moss Carpet (3 blockstates)</li>
                 <li>All Overworld ores and Deepslate ores</li>
-                <li>Raw Copper, Gold, and Iron blocks</li>
-                <li>Lava (2 states)</li>
+                <li>Raw Copper, Raw Gold, Raw Iron blocks</li>
+                <li>Lava (2 blockstates)</li>
                 <li>Prismarine</li>
                 <li>Amethyst Block, Budding Amethyst</li>
-                <li>Small / Medium / Large Amethyst Bud (4 states)</li>
-                <li>Amethyst Cluster (4 states)</li>
+                <li>Small / Medium / Large Amethyst Bud (4 blockstates)</li>
+                <li>Amethyst Cluster (4 blockstates)</li>
                 <li>Magma Block</li>
             </ul>
         </div>
@@ -178,40 +197,65 @@
         <div class="change-group">
             <h3><i class="fa-solid fa-flask text-primary"></i> Experimental: Assets Packs</h3>
             <ul>
-                <li>Custom resource pack system.</li>
-                <li>Modify textures, blocks, categories, and more.</li>
-                <li>New <strong>AssetsPack Manager</strong> ("AP" button).</li>
-                <li>Supports multiple packs with priority order.</li>
+                <li>New system for custom resource packs.</li>
+                <li>Allows:
+                    <ul>
+                        <li>Changing textures (blocks, objects, weather overlays)</li>
+                        <li>Adding new blocks, blockstates, and categories</li>
+                        <li>Editing or removing existing content</li>
+                        <li>Managing block order and categories</li>
+                    </ul>
+                </li>
+                <li>New <strong>AssetsPack Manager</strong> (button "AP").</li>
+                <li>Supports multiple packs with priority order (top = highest priority).</li>
+                <li>Includes:
+                    <ul>
+                        <li>Enable/disable packs</li>
+                        <li>Reorder packs</li>
+                        <li>Refresh list</li>
+                        <li>Open assets folder</li>
+                    </ul>
+                </li>
+                <li>Assets location:
+                    <code>C:\Users\User\AppData\Roaming\Godot\app_userdata\MinePaint\assets_packs</code>
+                </li>
+                <li>Documentation available on the official website.</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-pen-to-square text-primary"></i> Minor Changes</h3>
             <ul>
-                <li>Blockstates → <strong>Variants</strong></li>
-                <li>Load → <strong>Open</strong></li>
-                <li>Updated layer arrow visuals</li>
-                <li>Reorganized inventory block order</li>
-                <li>Improved Short Grass texture</li>
+                <li>Renamed:
+                    <ul>
+                        <li><strong>Blockstates → Variants</strong></li>
+                        <li><strong>Load → Open</strong></li>
+                    </ul>
+                </li>
+                <li>Updated layer arrow button visuals.</li>
+                <li>Reorganized block order in inventory.</li>
+                <li>Improved Short Grass texture.</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-gear text-primary"></i> Technical Changes</h3>
             <ul>
-                <li>Textures auto-scaled to 16x16px.</li>
-                <li>Added <code>visible</code> flag for configs.</li>
-                <li>Settings stored in <code>user_settings.cfg</code>.</li>
-                <li>Assets packs config file added.</li>
-                <li>Improved data structure for blocks and categories.</li>
+                <li>Textures are automatically scaled to <strong>16x16px</strong> if larger.</li>
+                <li>Added <code>visible</code> flag for blocks and categories.</li>
+                <li>All important settings stored in <code>user_settings.cfg</code>.</li>
+                <li>Active Assets Packs stored in <code>assets_packs_config.json</code>.</li>
+                <li>Data structure reorganized into separate files per block and category.</li>
+                <li>Categories are no longer created automatically.</li>
+                <li>Cleaned up folder structure.</li>
             </ul>
         </div>
 
         <div class="change-group">
             <h3><i class="fa-solid fa-bug text-primary"></i> Bug Fixes</h3>
             <ul>
-                <li>#MCP-001 – Fixed Inventory button scaling issue.</li>
-                <li>#MCP-002 – Fixed Objects panel positioning.</li>
+                <li><strong>#MCP-001</strong> – Fixed Inventory button scaling when Variants button is visible.</li>
+                <li><strong>#MCP-002</strong> – Fixed incorrect positioning of the Objects panel.</li>
             </ul>
         </div>
 
