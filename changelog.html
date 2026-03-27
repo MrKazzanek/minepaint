@@ -40,149 +40,184 @@
         <div class="modern-timeline">
             <!-- Line in the middle -->
             <div class="timeline-line"></div>
-            <!-- Version Alp-Y26R02 -->
-<div class="timeline-item">
-    <div class="timeline-dot alpha"></div>
-    <div class="timeline-content">
-        <div class="version-header">
-            <div>
-                <span class="version-tag tag-alpha">Alpha</span>
+         <!-- Version Alp-Y26R02 -->
+<div class="timeline-entry reveal">
+    <div class="timeline-marker tag-alpha"><i class="fa-solid fa-flask"></i></div>
+    <div class="timeline-card">
+        <div class="card-header">
+            <div class="ver-info">
+                <span class="badge alpha">Alpha</span>
                 <h2>Version Alp-Y26R02</h2>
             </div>
-            <span class="version-date">March 27, 2026</span>
+            <span class="date"><i class="fa-regular fa-calendar"></i> March 27, 2026</span>
         </div>
         
-        <p class="summary-text"><strong>Ostatnia aktualizacja Alpha!</strong> Wprowadzamy kolejną dużą porcję nowości: kształt pędzla, nowe okno zarządzania obiektami, usprawnienia workflow, rozwinięcie DiaxUI oraz eksperymentalny system AssetsPacków.</p>
+        <p class="summary-text"><strong>Final Alpha update!</strong> This release brings brush shapes, a new object management window, workflow improvements, DiaxUI refinements, and introduces experimental Assets Packs.</p>
 
-        <div class="changes-list">
+        <div class="change-group">
+            <h3><i class="fa-solid fa-flag-checkered text-primary"></i> End of Alpha Stage</h3>
+            <p class="text-gray">This is the final Alpha version. Beta Release Candidates will start rolling out until <strong>April 3, 2026</strong>. If no issues are found, a candidate will become the first Beta version: <strong>Bt-Y26R01</strong>.</p>
+        </div>
 
-            <h3><i class="fa-solid fa-flag-checkered"></i> Koniec etapu Alpha</h3>
-            <p>To ostatnia wersja w fazie Alpha. Wkrótce rozpoczną się wydania kandydatów do wersji Beta (Release Candidates), które będą pojawiać się aż do <strong>03.04.2026</strong>. Jeśli któryś z kandydatów nie będzie zawierał błędów – stanie się pierwszą wersją Beta: <strong>Bt-Y26R01</strong>.</p>
-
-            <h3><i class="fa-solid fa-palette"></i> DiaxUI v1.1</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-palette text-primary"></i> DiaxUI v1.1</h3>
             <ul>
-                <li>Dalsze ulepszenia wyglądu interfejsu.</li>
-                <li>Odświeżono okna:
+                <li>Further UI improvements and visual polish.</li>
+                <li>Updated windows:
                     <ul>
                         <li><strong>Resize Window</strong></li>
                         <li><strong>Custom Background Color Window</strong></li>
                     </ul>
                 </li>
-                <li>Przebudowano okno ekwipunku:
+                <li>Inventory redesigned:
                     <ul>
-                        <li>Kategorie wyświetlane pionowo po lewej stronie.</li>
-                        <li>Lista bloków po prawej stronie.</li>
-                        <li>Dodano wyszukiwarkę oraz przycisk zamykania w górnej części.</li>
+                        <li>Categories displayed vertically on the left.</li>
+                        <li>Block list on the right.</li>
+                        <li>Added search bar and close button.</li>
                     </ul>
                 </li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-sun"></i> Okno zarządzania obiektami</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-sun text-primary"></i> Object Management Window</h3>
             <ul>
-                <li>Nowe okno dostępne podczas stawiania obiektów <strong>Sun</strong> i <strong>Moon</strong> (PPM).</li>
-                <li>Pozwala na:
+                <li>New window available when placing <strong>Sun</strong> or <strong>Moon</strong> (right-click).</li>
+                <li>Allows:
                     <ul>
-                        <li>Ustawienie skali (0.3 – 6.0)</li>
-                        <li>Ustawienie przezroczystości (0% – 100%)</li>
-                        <li>Zmianę fazy księżyca</li>
+                        <li>Scale adjustment (0.3 – 6.0)</li>
+                        <li>Opacity adjustment (0% – 100%)</li>
+                        <li>Moon phase selection</li>
                     </ul>
                 </li>
-                <li>Zmiana fazy księżyca została przeniesiona do tego okna.</li>
-                <li>Scroll nadal odpowiada za skalowanie podczas stawiania.</li>
+                <li>Moon phase change moved here (removed from right-click toggle).</li>
+                <li>Scroll still controls scale during placement.</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-circle"></i> Ulepszenia obiektów</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-circle text-primary"></i> Object Improvements</h3>
             <ul>
-                <li>Zwiększono maksymalną skalę obiektów z 3.0 do 6.0.</li>
-                <li>Dodano możliwość ustawienia przezroczystości.</li>
+                <li>Max scale increased from 3.0 to 6.0.</li>
+                <li>Added opacity support.</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-pen"></i> Kształt pędzla</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-pen text-primary"></i> Brush Shapes</h3>
             <ul>
-                <li>Dodano możliwość wyboru kształtu pędzla w panelu <strong>Size</strong>.</li>
-                <li>Dostępne dla narzędzi <strong>Pen</strong> i <strong>Eraser</strong>.</li>
-                <li>Dostępne kształty:
+                <li>Brush shape selection added to the <strong>Size</strong> panel.</li>
+                <li>Available for <strong>Pen</strong> and <strong>Eraser</strong>.</li>
+                <li>Shapes:
                     <ul>
-                        <li><strong>Square Brush</strong> (domyślny)</li>
+                        <li><strong>Square Brush</strong> (default)</li>
                         <li><strong>Round Brush</strong></li>
                     </ul>
                 </li>
-                <li>Zakres rozmiaru: 1 – 64.</li>
+                <li>Size range: 1 – 64 (round brush uses supported values only).</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-bolt"></i> Ułatwienia korzystania</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-bolt text-primary"></i> Usability Improvements</h3>
             <ul>
-                <li><strong>Potwierdzenie czyszczenia płótna</strong>.</li>
-                <li><strong>Przycisk Reset</strong> (domyślny rozmiar 46x25).</li>
-                <li><strong>Palety kolorów</strong> w oknie wyboru kolorów.</li>
-                <li><strong>Przycisk Minimize</strong>.</li>
-                <li><strong>Grid (#)</strong> – siatka płótna (stan zapisywany, niewidoczna w PNG).</li>
-                <li><strong>Linijki (R)</strong> – tryb co 5 bloków / co 1 blok.</li>
-                <li>Dodano tooltipy do wybranych elementów.</li>
+                <li>Confirmation dialog before clearing canvas.</li>
+                <li>Reset button in resize window (default: 46x25).</li>
+                <li>Color pickers added to custom background window.</li>
+                <li>Minimize button added.</li>
+                <li><strong>Grid (#)</strong> toggle (not visible in exports, state saved).</li>
+                <li><strong>Rulers (R)</strong>:
+                    <ul>
+                        <li>Off</li>
+                        <li>Every 5 blocks</li>
+                        <li>Every block</li>
+                    </ul>
+                </li>
+                <li>Added tooltips to selected UI elements.</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-save"></i> Zapis plików</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-save text-primary"></i> Saving System</h3>
             <ul>
-                <li>Dodano <strong>Save As</strong>.</li>
-                <li><strong>Save</strong> nadpisuje istniejący plik.</li>
+                <li>Added <strong>Save As</strong>.</li>
+                <li><strong>Save</strong> now overwrites existing files.</li>
+                <li>If no file exists, Save behaves like Save As.</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-keyboard"></i> Nowe skróty klawiszowe</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-keyboard text-primary"></i> New Keyboard Shortcuts</h3>
             <ul>
-                <li>Ctrl + Shift + P – folder screenshotów</li>
-                <li>Ctrl + Shift + = – zwiększ rozmiar pędzla</li>
-                <li>Ctrl + = – reset rozmiaru</li>
-                <li>Ctrl + - – zmniejsz rozmiar</li>
-                <li>Ctrl + Shift + S – Save As</li>
+                <li><code>Ctrl + Shift + P</code> – Open screenshots folder</li>
+                <li><code>Ctrl + Shift + =</code> – Increase brush size</li>
+                <li><code>Ctrl + =</code> – Reset brush size</li>
+                <li><code>Ctrl + -</code> – Decrease brush size</li>
+                <li><code>Ctrl + Shift + S</code> – Save As</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-leaf"></i> Nowe bloki</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-leaf text-primary"></i> New Blocks</h3>
             <ul>
-                <li>Tall Grass (2 blockstate), Vines</li>
-                <li>Dark Oak Log (3 blockstate), Dark Oak Leaves</li>
+                <li>Tall Grass (2 states), Vines</li>
+                <li>Dark Oak Log (3 states), Dark Oak Leaves</li>
                 <li>Smooth Basalt, Moss Block, Moss Carpet</li>
-                <li>Pale Moss Block, Pale Moss Carpet (3 blockstate)</li>
-                <li>Wszystkie rudy overworld i deepslate</li>
-                <li>Bloki surowej miedzi, złota i żelaza</li>
-                <li>Lava (2 blockstate)</li>
+                <li>Pale Moss Block, Pale Moss Carpet (3 states)</li>
+                <li>All Overworld ores and Deepslate ores</li>
+                <li>Raw Copper, Gold, and Iron blocks</li>
+                <li>Lava (2 states)</li>
                 <li>Prismarine</li>
                 <li>Amethyst Block, Budding Amethyst</li>
-                <li>Small / Medium / Large Amethyst Bud (4 blockstates)</li>
-                <li>Amethyst Cluster (4 blockstates)</li>
+                <li>Small / Medium / Large Amethyst Bud (4 states)</li>
+                <li>Amethyst Cluster (4 states)</li>
                 <li>Magma Block</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-flask"></i> Eksperymentalne: AssetsPacki</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-flask text-primary"></i> Experimental: Assets Packs</h3>
             <ul>
-                <li>System własnych paczek zasobów (tekstury, bloki, kategorie).</li>
-                <li>Nowe okno <strong>AssetsPack Manager</strong> (przycisk "AP").</li>
-                <li>Obsługa wielu paczek i priorytetów ładowania.</li>
+                <li>Custom resource pack system.</li>
+                <li>Modify textures, blocks, categories, and more.</li>
+                <li>New <strong>AssetsPack Manager</strong> ("AP" button).</li>
+                <li>Supports multiple packs with priority order.</li>
             </ul>
+        </div>
 
-            <h3><i class="fa-solid fa-pen-to-square"></i> Mniejsze zmiany</h3>
+        <div class="change-group">
+            <h3><i class="fa-solid fa-pen-to-square text-primary"></i> Minor Changes</h3>
             <ul>
                 <li>Blockstates → <strong>Variants</strong></li>
                 <li>Load → <strong>Open</strong></li>
-                <li>Nowy wygląd strzałek warstw</li>
-                <li>Zmieniono układ bloków w ekwipunku</li>
-                <li>Poprawiono teksturę Short Grass</li>
+                <li>Updated layer arrow visuals</li>
+                <li>Reorganized inventory block order</li>
+                <li>Improved Short Grass texture</li>
             </ul>
-
-            <h3><i class="fa-solid fa-gear"></i> Zmiany techniczne</h3>
-            <ul>
-                <li>Tekstury skalowane do 16x16px.</li>
-                <li>Dodano flagę <code>visible</code>.</li>
-                <li>Nowe pliki konfiguracyjne ustawień i AssetsPacków.</li>
-                <li>Lepsza organizacja danych bloków i kategorii.</li>
-            </ul>
-
-            <h3><i class="fa-solid fa-bug"></i> Poprawki błędów</h3>
-            <ul>
-                <li>#MCP-001 – Naprawiono rozmiar przycisku Inventory.</li>
-                <li>#MCP-002 – Poprawiono panel Objects.</li>
-            </ul>
-
         </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-gear text-primary"></i> Technical Changes</h3>
+            <ul>
+                <li>Textures auto-scaled to 16x16px.</li>
+                <li>Added <code>visible</code> flag for configs.</li>
+                <li>Settings stored in <code>user_settings.cfg</code>.</li>
+                <li>Assets packs config file added.</li>
+                <li>Improved data structure for blocks and categories.</li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-bug text-primary"></i> Bug Fixes</h3>
+            <ul>
+                <li>#MCP-001 – Fixed Inventory button scaling issue.</li>
+                <li>#MCP-002 – Fixed Objects panel positioning.</li>
+            </ul>
+        </div>
+
+        <a href="https://mcpbugtracker.netlify.app/" target="_blank" class="bug-link">
+            <i class="fa-solid fa-bug"></i> Found a bug? Report it here
+        </a>
     </div>
 </div>
             <!-- Version Alp-Y26R01 -->
