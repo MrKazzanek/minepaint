@@ -49,7 +49,7 @@ const docsConfig = {
                     { title: "Resizing Canvas", id: "resize-1", file: "pages/Alp-Y26R02/resize.html" },
                     { title: "Layers System", id: "layers-old", file: "pages/Alp-Y25R02/layers.html" },
                     { title: "Weather System", id: "weather-1", file: "pages/Alp-Y26R01/weather.html" },
-                    { title: "Time System", id: "time-1", file: "pages/Alp-Y26R01/time.html" },
+                    { title: "Time System", id: "time-2", file: "pages/Alp-Y26R02/time.html" },
                     { title: "Objects System", id: "objects-2", file: "pages/Alp-Y26R02/objects.html" },
                     { title: "Keyboard Shortcuts", id: "keyboard-shortcuts-1", file: "pages/Alp-Y26R02/shortcuts.html" }
                     
