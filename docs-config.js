@@ -61,7 +61,8 @@ const docsConfig = {
             {
                 category: "Developers",
                 pages: [
-                    { title: "Overview", id: "overview-oldest", file: "pages/Alp-Y26R02/overview.html" }
+                    { title: "Overview", id: "overview-oldest", file: "pages/Alp-Y26R02/overview.html" },
+                    { title: "Pack Structure", id: "structure-oldest", file: "pages/Alp-Y26R02/structure.html" }
                 ]
             },
         ],
