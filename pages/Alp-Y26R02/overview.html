@@ -1,59 +1,59 @@
 <h1>Overview</h1>
 
-  <p>
-    <strong>AssetsPacki</strong> to specjalne paczki zasobów do programu, które pozwalają na modyfikację zawartości wizualnej i strukturalnej świata gry, bez zmieniania samego działania programu. Działają one podobnie do modów czy paczek zasobów w grze <strong>Minecraft</strong>, ale z wyraźnym ograniczeniem – nie można dzięki nim dodawać nowych funkcji, narzędzi ani modyfikować mechaniki gry. AssetsPacki służą wyłącznie do zmiany wyglądu i układu elementów w grze.
-  </p>
+<p>
+  <strong>AssetsPacks</strong> are special resource packs for the program that allow modification of the visual and structural content of the game world without changing the program’s functionality. They work similarly to mods or resource packs in <strong>Minecraft</strong>, but with clear limitations – they cannot add new functions, tools, or modify game mechanics. AssetsPacks are only for changing the appearance and layout of elements in the game.
+</p>
 
-  <h3>Co można zrobić za pomocą AssetsPacków?</h3>
-  <ul>
-    <li>Zmieniać tekstury istniejących bloków, obiektów i nakładek pogodowych.</li>
-    <li>Dodawać nowe bloki, stany bloków (blockstates) i kategorie, które poszerzają zawartość programu.</li>
-    <li>Edytować istniejące bloki, stany bloków i kategorie, np. zmieniając ich właściwości lub wygląd.</li>
-    <li>Zmieniać kolejność bloków i kategorii w ekwipunku, zarówno własnych, jak i istniejących, aby dostosować ich układ do własnych potrzeb.</li>
-    <li>Usuwać bloki i kategorie, które nie są potrzebne lub mają być zastąpione.</li>
-  </ul>
+<h3>What can you do with AssetsPacks?</h3>
+<ul>
+  <li>Change textures of existing blocks, objects, and weather overlays.</li>
+  <li>Add new blocks, blockstates, and categories, expanding the program’s content.</li>
+  <li>Edit existing blocks, blockstates, and categories, e.g., changing their properties or appearance.</li>
+  <li>Rearrange blocks and categories in the inventory, both custom and existing, to suit your preferences.</li>
+  <li>Remove blocks and categories that are unnecessary or should be replaced.</li>
+</ul>
 
-  <h3>Czego nie można zrobić?</h3>
-  <ul>
-    <li>Nie można zmieniać działania programu ani dodawać nowych funkcji.</li>
-    <li>Nie można tworzyć własnych narzędzi czy mechanik – dlatego AssetsPacki nie są modami w pełnym znaczeniu tego słowa.</li>
-  </ul>
+<h3>What cannot be done?</h3>
+<ul>
+  <li>You cannot change the program’s functionality or add new features.</li>
+  <li>You cannot create custom tools or mechanics – that’s why AssetsPacks are not full-fledged mods.</li>
+</ul>
 
-  <h3>Instalacja AssetsPacków</h3>
-  <p>AssetsPacki można zainstalować na dwa sposoby:</p>
-  <ol>
-    <li>
-      <strong>Przez menedżera AssetsPacków:</strong>
-      <ul>
-        <li>Kliknij przycisk <strong>AP</strong>, aby otworzyć menedżera paczek.</li>
-        <li>Zobaczysz listę dostępnych paczek oraz paczek już włączonych.</li>
-        <li>Poniżej listy znajdują się dwa przyciski:
-          <ul>
-            <li><strong>Refresh List</strong> – odświeża listę i ładuje zawartość paczek.</li>
-            <li><strong>Open Folder</strong> – otwiera folder, do którego należy skopiować paczkę.</li>
-          </ul>
-        </li>
-        <li>Po dodaniu paczki użyj <strong>Refresh List</strong>, aby ją aktywować.</li>
-        <li>Można włączyć wiele paczek jednocześnie.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Bezpośrednio w folderze programu:</strong>
-      <p>Skopiuj folder paczki do lokalizacji:</p>
-      <pre>C:\Users\User\AppData\Roaming\Godot\app_userdata\MinePaint\assets_packs</pre>
-      <p>Następnie odśwież listę w menedżerze, aby paczka pojawiła się na liście.</p>
-    </li>
-  </ol>
+<h3>Installing AssetsPacks</h3>
+<p>AssetsPacks can be installed in two ways:</p>
+<ol>
+  <li>
+    <strong>Via the AssetsPack Manager:</strong>
+    <ul>
+      <li>Click the <strong>AP</strong> button to open the pack manager.</li>
+      <li>You will see a list of available packs and packs that are already enabled.</li>
+      <li>Below the list, there are two buttons:
+        <ul>
+          <li><strong>Refresh List</strong> – refreshes the list and loads the pack contents.</li>
+          <li><strong>Open Folder</strong> – opens the folder where the pack should be copied.</li>
+        </ul>
+      </li>
+      <li>After adding a pack, use <strong>Refresh List</strong> to activate it.</li>
+      <li>Multiple packs can be enabled at the same time.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Directly in the program folder:</strong>
+    <p>Copy the pack folder to the location:</p>
+    <pre>C:\Users\User\AppData\Roaming\Godot\app_userdata\MinePaint\assets_packs</pre>
+    <p>Then refresh the list in the manager so the pack appears in the list.</p>
+  </li>
+</ol>
 
-  <h3>Aktywacja i priorytet paczek</h3>
-  <ul>
-    <li>Aby włączyć paczkę, zaznacz jej checkbox w menedżerze AssetsPacków.</li>
-    <li>Włączona paczka zostanie podświetlona na zielono.</li>
-    <li>Po włączeniu paczki pojawiają się przyciski <strong>Up/Down</strong>, które pozwalają ustawić jej kolejność.</li>
-    <li><strong>Priorytet paczek:</strong> Paczka wyżej w kolejności ma pierwszeństwo przy konfliktach – np. jeśli dwie paczki zmieniają teksturę tego samego bloku, zastosowana zostanie ta z wyższym priorytetem.</li>
-  </ul>
+<h3>Activating Packs and Priority</h3>
+<ul>
+  <li>To enable a pack, check its checkbox in the AssetsPack manager.</li>
+  <li>An enabled pack will be highlighted in green.</li>
+  <li>Once enabled, Up/Down buttons appear to set the pack’s order.</li>
+  <li><strong>Pack Priority:</strong> Packs higher in the order have priority in conflicts – e.g., if two packs modify the texture of the same block, the one higher in priority will be applied.</li>
+</ul>
 
-  <h3>Podsumowanie</h3>
-  <p>
-    AssetsPacki są potężnym narzędziem do personalizacji programu – pozwalają wzbogacać zawartość wizualną, dodawać własne bloki i kategorie, a także porządkować ekwipunek, bez ryzyka naruszenia działania programu. Dzięki systemowi priorytetów można kontrolować, które paczki mają pierwszeństwo, co daje pełną elastyczność w tworzeniu i zarządzaniu własnymi paczkami zasobów.
-  </p>
+<h3>Summary</h3>
+<p>
+  AssetsPacks are a powerful tool for customizing the program – they allow enhancing visual content, adding custom blocks and categories, and organizing the inventory without risking program functionality. The priority system allows you to control which packs take precedence, giving full flexibility in creating and managing your own resource packs.
+</p>
