@@ -42,7 +42,7 @@ const docsConfig = {
                     { title: "Erasing", id: "erasing-old", file: "pages/Alp-Y25R02/erasing.html" },
                     { title: "Quick block selection", id: "fast-pick-block-old", file: "pages/Alp-Y25R02/fast_pick_block.html" },
                     { title: "Inventory", id: "draw-block-selection-old", file: "pages/Alp-Y25R02/draw_block_selection.html" },
-                    { title: "Blockstates Inventory", id: "blockstates-inventory-old", file: "pages/Alp-Y25R02/blockstates.html" },
+                    { title: "Blockstates Inventory", id: "blockstates-inventory-1", file: "pages/Alp-Y26R02/blockstates.html" },
                     { title: "Hotbar", id: "hotbar-old", file: "pages/Alp-Y25R02/hotbar.html" },
                     { title: "Saving & Loading", id: "save-and-load-1", file: "pages/Alp-Y26R02/save_and_load.html" },
                     { title: "Clearing the Canvas", id: "clear-1", file: "pages/Alp-Y26R02/clear.html" },
