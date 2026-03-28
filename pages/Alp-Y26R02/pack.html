@@ -1,1 +1,59 @@
-<h1>Pack File</h1> <p> The <code>pack.json</code> file acts as instructions for the program – it tells the program that a given folder is an <strong>AssetsPack</strong>. This file is <strong>required</strong>; without it, the AssetsPack will not be detected or usable in the program. It allows the program to know the pack’s name, version, and (optionally) a description of its contents. </p> <hr> <h3>Keys in the <code>pack.json</code> File</h3> <p>Below are all the keys that can be included in the <code>pack.json</code> file and their meanings:</p> <table> <thead> <tr> <th>Key</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td>name</td> <td> Defines the name of the AssetsPack. This is a <strong>required key</strong> because the program uses it to identify the pack. </td> </tr> <tr> <td>description</td> <td> An optional key that allows adding a short description of the pack – e.g., information about its contents, author, or purpose. </td> </tr> <tr> <td>version</td> <td> An optional key that specifies the version of the pack. </td> </tr> </tbody> </table> <hr> <h3>Example <code>pack.json</code> Content</h3> <p> The <code>pack.json</code> file uses the <strong>JSON</strong> format (JavaScript Object Notation), which is easy to read and edit. Each key and its value is written as a <code>key: value</code> pair. Below is an example: </p> <pre><code>{ "name": "VanillaAssetsPack", "description": "Default MinePaint resources as an AssetsPack | Author: QozaWorks", "version": "Alp-Y26R02" }</code></pre> <p> In this example: <ul> <li><strong>name</strong> – pack name: <em>VanillaAssetsPack</em></li> <li><strong>description</strong> – pack description: <em>Default MinePaint resources...</em></li> <li><strong>version</strong> – pack version: <em>Alp-Y26R02</em></li> </ul> This structure allows the program to easily load the pack and display its information in the AssetsPack manager. </p>
+<h1>Pack File</h1>
+<p>
+    The <code>pack.json</code> file acts as instructions for the program – it tells the program that a given folder is an <strong>AssetsPack</strong>. 
+    This file is <strong>required</strong>; without it, the AssetsPack will not be detected or usable in the program. 
+    It allows the program to know the pack’s name, version, and (optionally) a description of its contents.
+</p>
+<hr>
+
+<h3>Keys in the <code>pack.json</code> File</h3>
+<p>Below are all the keys that can be included in the <code>pack.json</code> file and their meanings:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>
+        Defines the name of the AssetsPack. This is a <strong>required key</strong> because the program uses it to identify the pack.
+      </td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>
+        An optional key that allows adding a short description of the pack – e.g., information about its contents, author, or purpose.
+      </td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>
+        An optional key that specifies the version of the pack. 
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+
+<h3>Example <code>pack.json</code> Content</h3>
+<p>
+    The <code>pack.json</code> file uses the <strong>JSON</strong> format (JavaScript Object Notation), which is easy to read and edit. 
+    Each key and its value is written as a <code>key: value</code> pair. Below is an example:
+</p>
+<pre><code>{
+    "name": "VanillaAssetsPack",
+    "description": "Default MinePaint resources as an AssetsPack | Author: QozaWorks",
+    "version": "Alp-Y26R02"
+}</code></pre>
+<p>
+    In this example:
+    <ul>
+        <li><strong>name</strong> – pack name: <em>VanillaAssetsPack</em></li>
+        <li><strong>description</strong> – pack description: <em>Default MinePaint resources...</em></li>
+        <li><strong>version</strong> – pack version: <em>Alp-Y26R02</em></li>
+    </ul>
+    This structure allows the program to easily load the pack and display its information in the AssetsPack manager.
+</p>
