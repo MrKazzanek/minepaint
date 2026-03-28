@@ -1,4 +1,13 @@
 {
-"version": "Alp-Y26R02",
-"url": "https://www.mediafire.com/file/1rp9ujknr49jq3b/MinePaint.exe/file"
+  "latest": "Alp-Y26R02",
+  "versions": [
+    {
+      "id": "Alp-Y26R02",
+      "name": "MinePaint Alp-Y26R02",
+      "type": "alpha",
+      "url": "https://www.mediafire.com/file/1rp9ujknr49jq3b/MinePaint.exe/file",
+      "date": "2026-03-20T12:00:00Z",
+      "changelog": "Added new brushes and fixed UI bugs."
+    }
+  ]
 }
