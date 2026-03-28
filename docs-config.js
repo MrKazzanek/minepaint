@@ -46,7 +46,7 @@ const docsConfig = {
                     { title: "Hotbar", id: "hotbar-old", file: "pages/Alp-Y25R02/hotbar.html" },
                     { title: "Saving & Loading", id: "save-and-load-1", file: "pages/Alp-Y26R02/save_and_load.html" },
                     { title: "Clearing the Canvas", id: "clear-1", file: "pages/Alp-Y26R02/clear.html" },
-                    { title: "Resizing Canvas", id: "resize-old", file: "pages/Alp-Y25R02/resize.html" },
+                    { title: "Resizing Canvas", id: "resize-1", file: "pages/Alp-Y26R02/resize.html" },
                     { title: "Layers System", id: "layers-old", file: "pages/Alp-Y25R02/layers.html" },
                     { title: "Weather System", id: "weather-1", file: "pages/Alp-Y26R01/weather.html" },
                     { title: "Time System", id: "time-1", file: "pages/Alp-Y26R01/time.html" },
