@@ -52,7 +52,8 @@ const docsConfig = {
                     { title: "Time System", id: "time-2", file: "pages/Alp-Y26R02/time.html" },
                     { title: "Objects System", id: "objects-2", file: "pages/Alp-Y26R02/objects.html" },
                     { title: "Keyboard Shortcuts", id: "keyboard-shortcuts-1", file: "pages/Alp-Y26R02/shortcuts.html" },
-                    { title: "Efficiency Features", id: "efficiency-1", file: "pages/Alp-Y26R02/efficiency.html" }
+                    { title: "Efficiency Features", id: "efficiency-1", file: "pages/Alp-Y26R02/efficiency.html" },
+                    { title: "AssetsPacks", id: "ap-1", file: "pages/Alp-Y26R02/assetspacks.html" }
                     
                     
                 ]
