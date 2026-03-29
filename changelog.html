@@ -40,7 +40,80 @@
         <div class="modern-timeline">
             <!-- Line in the middle -->
             <div class="timeline-line"></div>
+<!-- Version Bt-Y26RC02 -->
+<div class="timeline-entry reveal">
+    <div class="timeline-marker tag-alpha"><i class="fa-solid fa-vial"></i></div>
+    <div class="timeline-card">
+        <div class="card-header">
+            <div class="ver-info">
+                <span class="badge alpha">Release Candidate</span>
+                <h2>Version Bt-Y26RC02</h2>
+            </div>
+            <span class="date"><i class="fa-regular fa-calendar"></i> March 29, 2026</span>
+        </div>
+        
+        <p class="summary-text">
+            <strong>This is the second Release Candidate for the first Beta version!</strong>  
+            If no issues are found before <strong>April 2, 2026</strong>, this version will become the first official Beta release of MinePaint.
+        </p>
 
+        <p class="text-gray" style="margin-bottom: 15px;">
+            This update focuses mainly on <strong>AssetsPack-related bug fixes</strong>, but also introduces a refreshed interface update with <strong>DiaxUI v1.2</strong>.
+        </p>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-palette text-primary"></i> DiaxUI v1.2</h3>
+            <ul>
+                <li>Redesigned <strong>AssetsPack tiles</strong> in the AssetsPack Manager.</li>
+                <li>Information is now displayed in a <strong>vertical layout</strong> (stacked instead of inline).</li>
+                <li>AssetsPack <strong>version is now highlighted in yellow</strong> for better visibility.</li>
+                <li>
+                    Long text values (<code>name</code>, <code>description</code>, <code>version</code>) are now:
+                    <ul>
+                        <li>Automatically shortened with <code>...</code></li>
+                        <li>Fully visible via <strong>tooltip on hover</strong></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-bug text-primary"></i> Bug Fixes</h3>
+            <ul>
+                <li>Fixed an issue where AssetsPack metadata could contain unintended formatting characters (<code>\r</code>, <code>\n</code>).</li>
+
+                <li>Fixed horizontal scrollbar appearing when AssetsPack information was too long.</li>
+
+                <li>Fixed object settings panel showing the default built-in texture instead of the AssetsPack texture.</li>
+
+                <li>
+                    Fixed object scaling issues:
+                    <ul>
+                        <li>Previously, textures smaller or larger than <strong>16x16px</strong> caused incorrect scaling.</li>
+                        <li>Textures are now automatically normalized to <strong>16x16px</strong>.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Fixed weather texture rendering issues:
+                    <ul>
+                        <li>Incorrect sizes caused visual glitches on the canvas.</li>
+                        <li>Weather textures are now normalized to <strong>64x256px</strong>.</li>
+                    </ul>
+                </li>
+
+                <li>Fixed an issue where the <strong>Hotbar</strong> did not refresh block textures after using the <strong>Refresh List</strong> button in AssetsPack Manager.</li>
+            </ul>
+        </div>
+
+        <a href="https://mcpbugtracker.netlify.app/" target="_blank" class="bug-link">
+            <i class="fa-solid fa-bug"></i> Found a bug? Report it here
+        </a>
+    </div>
+</div>
+
+
+            
 <!-- Version Bt-Y26RC01 -->
 <div class="timeline-entry reveal">
     <div class="timeline-marker tag-alpha"><i class="fa-solid fa-vial"></i></div>
