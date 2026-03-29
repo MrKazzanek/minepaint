@@ -40,6 +40,76 @@
         <div class="modern-timeline">
             <!-- Line in the middle -->
             <div class="timeline-line"></div>
+
+<!-- Version Bt-Y26RC01 -->
+<div class="timeline-entry reveal">
+    <div class="timeline-marker tag-alpha"><i class="fa-solid fa-vial"></i></div>
+    <div class="timeline-card">
+        <div class="card-header">
+            <div class="ver-info">
+                <span class="badge alpha">Release Candidate</span>
+                <h2>Version Bt-Y26RC01</h2>
+            </div>
+            <span class="date"><i class="fa-regular fa-calendar"></i> March 29, 2026</span>
+        </div>
+        
+        <p class="summary-text">
+            <strong>Welcome to the first Beta Release Candidate!</strong>  
+            If no critical issues are discovered before <strong>April 2, 2026</strong>, this version will officially become the first Beta release of MinePaint.
+        </p>
+
+        <p class="text-gray" style="margin-bottom: 15px;">
+            This update focuses mainly on stability improvements and bug fixes, while also bringing important enhancements to the still experimental <strong>AssetsPack system</strong>.
+        </p>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-box-open text-primary"></i> AssetsPacks Improvements</h3>
+            <ul>
+                <li>AssetsPacks can now be loaded from both <strong>folders</strong> and <strong>.zip archives</strong>.</li>
+                <li>Previously, only unpacked folders were supported.</li>
+                <li>The application now automatically detects and loads valid zipped packs.</li>
+                <li>
+                    <strong>Important:</strong> For a .zip AssetsPack to work correctly, its structure must be flat:
+                    <ul>
+                        <li><code>pack.json</code> must be in the root of the archive</li>
+                        <li><code>assets/</code> and <code>data/</code> folders must also be in the root</li>
+                        <li>No additional parent folder inside the .zip</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-bug text-primary"></i> Bug Fixes</h3>
+            <ul>
+                <li>Fixed a rare issue where enabled AssetsPacks could cause the application to crash during startup.</li>
+
+                <li><strong>#MCP-003</strong> – Fixed incorrect brush size handling for <strong>Round Brush</strong>:
+                    <ul>
+                        <li>Previously, some values (e.g. 20) could not be set.</li>
+                        <li>The system incorrectly adjusted them to higher values (e.g. 31).</li>
+                        <li>This behavior has now been corrected.</li>
+                    </ul>
+                </li>
+
+                <li><strong>#MCP-004</strong> – Fixed inverted HEX color inputs in <strong>Custom Background Color Window</strong>:
+                    <ul>
+                        <li>The top color field was affecting the bottom background color.</li>
+                        <li>The bottom field was affecting the top color.</li>
+                        <li>Inputs now correctly match their respective background areas.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <a href="https://mcpbugtracker.netlify.app/" target="_blank" class="bug-link">
+            <i class="fa-solid fa-bug"></i> Found a bug? Report it here
+        </a>
+    </div>
+</div>
+
+
+            
          <!-- Version Alp-Y26R02 -->
 <div class="timeline-entry reveal">
     <div class="timeline-marker tag-alpha"><i class="fa-solid fa-flask"></i></div>
