@@ -237,6 +237,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }
         }, 15000);
+        // 22. Gravity Fall Event
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                const elements = document.querySelectorAll('section, header, footer, .author-card, .tool-card');
+                elements.forEach(el => el.classList.add('gravity-fall'));
+                setTimeout(() => {
+                    elements.forEach(el => el.classList.remove('gravity-fall'));
+                }, 3000);
+            }
+        }, 20000);
+
+        // 23. Mirror Mode Pulse
+        setInterval(() => {
+            if (Math.random() > 0.9) {
+                document.body.classList.add('mirror-mode');
+                setTimeout(() => document.body.classList.remove('mirror-mode'), 2000);
+            }
+        }, 12000);
+
+        // 24. Fake Popups Invasion
+        const popupMessages = [
+            "You won a free Diamond Pickaxe!",
+            "Herobrine wants to know your location.",
+            "Click here to download more RAM!",
+            "Warning: Too many pixels detected.",
+            "Your subscription expires in 5 seconds!",
+            "Hot Single Creepers in your area!"
+        ];
+
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                const popup = document.createElement('div');
+                popup.className = 'fake-popup';
+                popup.style.left = Math.random() * (window.innerWidth - 300) + 'px';
+                popup.style.top = Math.random() * (window.innerHeight - 200) + 'px';
+                
+                popup.innerHTML = `
+                    <div class="popup-header">
+                        <span>Windows System 95</span>
+                        <span style="cursor:pointer;" onclick="this.parentElement.parentElement.remove()">X</span>
+                    </div>
+                    <div class="popup-body">
+                        <p>${popupMessages[Math.floor(Math.random() * popupMessages.length)]}</p>
+                        <button class="popup-btn" onclick="this.parentElement.parentElement.remove()">OK</button>
+                    </div>
+                `;
+                document.body.appendChild(popup);
+            }
+        }, 10000);
     }
 
     // --- Standard Website Logic (Mobile Menu, Scroll, etc.) ---
