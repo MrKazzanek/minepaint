@@ -14,6 +14,8 @@
     <style>
         .timeline-marker.tag-patch { background: #6b7280; }
         .badge.patch { background: #6b7280; color: white; }
+        .timeline-marker.tag-beta { background: #8b5cf6; }
+    .badge.beta { background: #8b5cf6; color: white; }
     </style>
 </head>
 <body class="bg-light">
@@ -40,6 +42,122 @@
         <div class="modern-timeline">
             <!-- Line in the middle -->
             <div class="timeline-line"></div>
+
+<div class="timeline-entry reveal">
+    <div class="timeline-marker tag-beta"><i class="fa-solid fa-rocket"></i></div>
+    <div class="timeline-card">
+        <div class="card-header">
+            <div class="ver-info">
+                <span class="badge beta">Beta Release</span>
+                <h2>Version Bt-Y26R01</h2>
+            </div>
+            <span class="date"><i class="fa-regular fa-calendar"></i> April 2, 2026</span>
+        </div>
+        
+        <p class="summary-text">
+            <strong>Welcome to the first official Beta release!</strong> 
+            MinePaint has come a long way through its Alpha stages, and it's finally leveling up. This major milestone introduces a brand-new Main Menu, canvas zooming, procedural coloring, the Bucket tool, and a completely rebuilt data-driven block system.
+        </p>
+
+        <div class="change-group" style="background-color: #fee2e2; border-left: 4px solid #ef4444; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+            <h3 style="color: #b91c1c; margin-top: 0;"><i class="fa-solid fa-triangle-exclamation"></i> Critical Warning: Old Save Files</h3>
+            <p style="color: #991b1b; margin-bottom: 0;">
+                Because block IDs have transitioned from numeric values (e.g., <code>1</code>, <code>2</code>) to symbolic strings (e.g., <code>grass_block</code>), <strong>all old <code>.mcpaint</code> save files are unfortunately no longer compatible</strong> and will not load in this version.
+            </p>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-house text-primary"></i> Main Menu & Splash Screen</h3>
+            <ul>
+                <li><strong>Main Menu:</strong> The application no longer boots directly into the canvas. You are now greeted by a modern Main Menu where you can create a <strong>New Canvas</strong> (with custom dimensions), <strong>Load</strong> an existing <code>.mcpaint</code> file, access Settings, or Exit.</li>
+                <li><strong>Splash Screen:</strong> Displays upon startup, showcasing 5 beautiful panoramas created by our community. It can be skipped with any key/mouse click and can be toggled off entirely in the Settings.</li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-magnifying-glass-plus text-primary"></i> Canvas Zooming & Navigation</h3>
+            <ul>
+                <li>Added a new <strong>Zoom Panel</strong> next to the hotbar to view and adjust your current zoom level.</li>
+                <li>The canvas automatically fits to your screen upon creation.</li>
+                <li><strong>Controls:</strong>
+                    <ul>
+                        <li><code>+</code> / <code>-</code> keys or <strong>Mouse Scroll</strong> to zoom in and out.</li>
+                        <li><code>=</code> key to instantly auto-fit the canvas to your screen.</li>
+                        <li>Hold <strong>Middle Mouse Button (Scroll Click)</strong> and drag to seamlessly pan around the canvas.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-fill-drip text-primary"></i> New Tools & Procedural Coloring</h3>
+            <ul>
+                <li><strong>Bucket Tool:</strong> A highly requested tool! Fill enclosed areas or contiguous identical blocks with ease. Use <strong>LMB</strong> to fill and <strong>RMB</strong> to erase the area.</li>
+                <li><strong>Procedural Block Coloring:</strong> Supported blocks can now have dynamically colorable texture layers via HEX codes. 
+                    <ul>
+                        <li>A new <strong>Color</strong> button appears next to the inventory/variants button for supported blocks.</li>
+                        <li><em>Example:</em> You can now create custom-colored grass and leaves to build beautiful Savanna biomes!</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-desktop text-primary"></i> DiaxUI v1.3 & Settings</h3>
+            <ul>
+                <li><strong>Background Dimming:</strong> The screen now smoothly dims behind active modal windows (Inventory, Custom Background Color, etc.) for better focus.</li>
+                <li><strong>FontAwesome Icons:</strong> Replaced old system character symbols with clean FontAwesome v6 icons for UI controls (Close, Minimize, Layer Up/Down, etc.).</li>
+                <li><strong>Confirmation Dialogs:</strong> The app will now prompt you with a warning if you try to exit without saving your changes.</li>
+                <li><strong>Settings Window:</strong> Accessible from the Main Menu or the gear icon in the editor. You can now toggle the Grid, toggle Rulers, and toggle the Splash Screen from this centralized menu.</li>
+                <li>Tool shape buttons have received slight visual polish.</li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-cubes-stacked text-primary"></i> AssetsPacks Evolution</h3>
+            <p class="text-gray" style="margin-bottom: 10px;">AssetsPacks are officially out of the experimental phase!</p>
+            <ul>
+                <li><strong>Symbolic IDs:</strong> Block and blockstate IDs are now string-based (e.g., <code>grass_block</code>) instead of numbers. <em>Note: Custom AssetsPacks using old numeric IDs will need to be updated.</em></li>
+                <li><strong>Advanced Texture Layers:</strong> Block textures can now utilize multiple layers with the following new attributes:
+                    <ul>
+                        <li><code>Color</code> – Sets the layer to be procedurally colored.</li>
+                        <li><code>Opacity</code> – Adjusts the layer's transparency.</li>
+                        <li><code>Rotate</code> – Rotates the texture (0, 90, 180, 270 degrees).</li>
+                        <li><code>Flip</code> – Mirrors the texture (x, y, xy, yx).</li>
+                        <li><code>Bright</code> – Adjusts brightness (negative values darken the texture).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-tree text-primary"></i> Massive Content Update (New Blocks)</h3>
+            <p class="text-gray" style="margin-bottom: 10px;">We've heavily expanded the block catalog:</p>
+            <ul>
+                <li><strong>Flora:</strong> Fern, Large Fern, Dandelion, Poppy, Blue Orchid, Allium, Azalea Leaves, Flowering Azalea Leaves, Pumpkin.</li>
+                <li><strong>Wood:</strong> Mangrove Log/Leaves, Cherry Log/Leaves, Pale Oak Log/Leaves.</li>
+                <li><strong>Nether:</strong> Soul Sand, Soul Soil.</li>
+                <li><strong>Utility/Glass:</strong> Smoker, Blast Furnace, Fletching Table, Glass, Tinted Glass, and <em>all</em> Stained Glass colors.</li>
+                <li><strong>Community Contest Additions:</strong> A huge shoutout to <strong>Stasiek</strong>, winner of the <em>"Make Your Own Update"</em> contest! Thanks to him, we've added the: <strong>Redstone Lamp, Crafting Table, Loom, Furnace, and Barrel</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="change-group">
+            <h3><i class="fa-solid fa-screwdriver-wrench text-primary"></i> Minor Tweaks & Fixes</h3>
+            <ul>
+                <li>Added a <strong>"Back to Main Menu"</strong> button next to the exit controls.</li>
+                <li><strong>New Shortcut:</strong> Press <code>Ctrl + H</code> to instantly clear your entire Hotbar.</li>
+                <li>The Inventory search bar now supports querying specific blockstates by name.</li>
+                <li><strong>Block Picker Interaction Change:</strong> To quickly pick a block under your cursor using tools (Pen, Fill, Bucket, Picker), you must now press <code>Ctrl + Scroll Click</code> instead of just Scroll Click (which is now used for panning).</li>
+                <li>Rulers using the 5-block interval mode will now automatically switch to detailed mode (1-block interval) when heavily zoomed in.</li>
+            </ul>
+        </div>
+
+        <a href="https://mcpbugtracker.netlify.app/" target="_blank" class="bug-link">
+            <i class="fa-solid fa-bug"></i> Found a bug? Report it here
+        </a>
+    </div>
+</div>    
 <!-- Version Bt-Y26RC02 -->
 <div class="timeline-entry reveal">
     <div class="timeline-marker tag-alpha"><i class="fa-solid fa-vial"></i></div>
